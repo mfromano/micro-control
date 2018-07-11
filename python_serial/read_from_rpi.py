@@ -11,6 +11,7 @@ if __name__ == '__main__':
             s = Serial(str(port),2*115200)
             while True:
                 mvmt = s.readline()
+                print(mvmt)
                 fi.write(mvmt)
     except SerialException:
         print('Please enter a valid com port')
