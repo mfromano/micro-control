@@ -2,8 +2,9 @@
 #include "main.h"
 #include "Timer.h"
 
-CAMERA_PIN = 1;
-
+static uint8_t CAMERA_PIN = 1;
+static uint8_t MOTION_PIN = 2;
+Timer t;
 
 void setup() {
   Serial.begin(230200);
