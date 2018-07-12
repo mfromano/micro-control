@@ -8,7 +8,6 @@
 
 #include <Arduino.h>
 #include <stdint.h>
-#include "DeviceLib/timestamp.h"
 
 #define COMMAND(NAME) \
   { #NAME, NAME##_command }

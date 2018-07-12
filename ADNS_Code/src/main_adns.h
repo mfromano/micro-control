@@ -15,7 +15,7 @@
 // #include <vector>
 
 // Include ADNS Library for ADNS-9800 Sensor
-#include "ADNS9800/ADNS.h"
+#include "ADNS9800/adns.h"
 
 // Pin Settings
 const int CS_PIN_A = 20;
