@@ -208,9 +208,7 @@ void sendHeader() {
   Serial.print(String(
       String("timestamp [us]") + delimiter + flatFieldNames[0] + " [" + dunit +
       "]" + delimiter + flatFieldNames[1] + " [" + dunit + "]" + delimiter +
-      flatFieldNames[2] + " [" + tunit + "]" + delimiter + flatFieldNames[3] +
-      " [" + dunit + "]" + delimiter + flatFieldNames[4] + " [" + dunit + "]" +
-      delimiter + flatFieldNames[5] + " [" + tunit + "]" + "\n"));
+      flatFieldNames[2] + " [" + tunit + "]" + "\n"));
 }
 
 void sendData() {

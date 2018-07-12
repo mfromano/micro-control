@@ -90,12 +90,11 @@ constexpr char delimiter = ',';
 constexpr unsigned char decimalPlaces = 3;
 
 // Sensor and Field Names
-const sensor_name_t sensorNames[] = {"left", "right"};
+const sensor_name_t sensorNames[] = {"left"};
 const field_name_t fieldNames[] = {"dx", "dy", "dt"};
 const String flatFieldNames[] = {
     sensorNames[0] + '_' + fieldNames[0], sensorNames[0] + '_' + fieldNames[1],
-    sensorNames[0] + '_' + fieldNames[2], sensorNames[1] + '_' + fieldNames[0],
-    sensorNames[1] + '_' + fieldNames[1], sensorNames[1] + '_' + fieldNames[2]};
+    sensorNames[0] + '_' + fieldNames[2]};
 
 // =============================================================================
 // Task Declarations
