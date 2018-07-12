@@ -8,7 +8,7 @@
 
 #include <Arduino.h>
 #include <stdint.h>
-#include "NavSensorLib\navsensor.h"
+#include "../NavSensorLib/navsensor.h"
 #include "adns_config.h"
 
 // =============================================================================
