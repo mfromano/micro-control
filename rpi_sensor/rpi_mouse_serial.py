@@ -36,7 +36,7 @@ def send(t):
 	dxR = devices['mouse2']['dx']
 	dyR = devices['mouse2']['dy']
 	devices['mouse2'['dx'] = 0
-    devices['mouse2]['dy'] = 0
+    devices['mouse2']['dy'] = 0
     # Format and Transmit data as string, e.g. (12,-39) = '1x12y-39'
     datastring = 'L' + 'x'+ str(dxL) + 'y'+ str(dyL) + 'R' + 'x' + str(dxR) + 'y'\
 	+ str(dyR) + 't' + str(t)
