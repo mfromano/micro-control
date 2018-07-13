@@ -27,13 +27,19 @@ def to_signed(n):
     return n - ((0x80 & n) << 1)
 
 # SENDOUTPUTTHREAD - class for sending data over serial port, subclass of Thread class
-def send(dev_file, t, s):
-    dx = devices[dev_file]['dx']
-    dy = devices[dev_file]['dy']
-    devices[dev_file]['dx'] = 0
-    devices[dev_file]['dy'] = 0
-    # Format and Transmit data as string, e.g. (12,-39) = '1x12y-39' 
-    datastring = s + 'x'+ str(dx) + 'y'+ str(dy) + 't' + str(t)
+def send(t):
+    dxL = devices['mouse1']['dx']
+    dyL = devices['mouse1']['dy']
+    devices['mouse1']['dx'] = 0
+	devices['mouse1']['dy'] = 0
+
+	dxR = devices['mouse2']['dx']
+	dyR = devices['mouse2']['dy']
+	devices['mouse2'['dx'] = 0
+    devices['mouse2]['dy'] = 0
+    # Format and Transmit data as string, e.g. (12,-39) = '1x12y-39'
+    datastring = 'L' + 'x'+ str(dxL) + 'y'+ str(dyL) + 'R' + 'x' + str(dxR) + 'y'\
+	+ str(dyR) + 't' + str(t)
     sr.write(datastring+'\n')
 	    #print(datastring + '\n')
 
@@ -77,9 +83,7 @@ while not GPIO.input(16):
 
 while GPIO.input(16): #pin 16 is high
     curr = time.clock()
-    send('mouse1', time.clock()-start,devices['mouse1']['Name'])
-    send('mouse2', time.clock()-start,devices['mouse2']['Name'])
+    send(time.clock()-start)
     while (time.clock()-curr < 0.001):
         pass
     print('dx' + str(devices['mouse1']['dx']) + 'dy' + str(devices['mouse1']['dy']))
-

@@ -59,7 +59,6 @@ const int TRIGGER_OUT_3_DIVISOR = 6;
 // Data-descriptor type (string or char, variable or fixed-width)
 typedef String sensor_name_t;
 typedef String field_name_t;
-ADNS &sensor_one;
 
 // Message Frame Format
 typedef struct {
