@@ -1,19 +1,28 @@
 #include <Arduino.h>
-#include "main.h"
-#include "Timer.h"
+#include <DigitalIO.h>
+#include <time.h>
 
-static uint8_t CAMERA_PIN = 1;
-static uint8_t MOTION_PIN = 2;
-Timer t;
+const int ttlpulseout = 2;
+const int cam = 4;
+int cycle;
 
 void setup() {
-  Serial.begin(230200);
-  pinMode(MOTION_PIN,OUTPUT);
-  pinMode(CAMERA_PIN,OUTPUT);
+  fastPinMode(ttlpulseout, OUTPUT);
+  fastPinMode(cam, OUTPUT);
+
 }
-
 void loop() {
-    // put your main code here, to run repeatedly:
+  clock_t t;
+  fastDigitalWrite(ttlpulseout, HIGH);
+  while (clock() <= 500) {
+    t = clock();
+    if (((float)t)/CLOCKS_PER_SEC % millis() ~= 0) {
 
-    t.update();
+    }
+    fastDigitalWrite(cam, HIGH);
+    delayMicroseconds(500);
+    fastDigitalWrite(cam, LOW);
+    delayMicroseconds(500);
+  }
+  fastDigitalWrite(ttlpulseout, LOW);
 }
