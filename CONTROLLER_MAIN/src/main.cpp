@@ -4,25 +4,25 @@
 
 const int ttlpulseout = 2;
 const int cam = 4;
-int cycle;
+
+
 
 void setup() {
   fastPinMode(ttlpulseout, OUTPUT);
   fastPinMode(cam, OUTPUT);
-
 }
 void loop() {
   clock_t t;
+  t = clock();
   fastDigitalWrite(ttlpulseout, HIGH);
-  while (clock() <= 500) {
+  while ((float)t/CLOCKS_PER_SEC <= 500) {
     t = clock();
-    if (((float)t)/CLOCKS_PER_SEC % millis() ~= 0) {
-
+    while ((((float)t/CLOCKS_PER_SEC)*1000) - int((((float)t/CLOCKS_PER_SEC)*1000)) > 0){
     }
     fastDigitalWrite(cam, HIGH);
-    delayMicroseconds(500);
+    delay(1);
     fastDigitalWrite(cam, LOW);
-    delayMicroseconds(500);
+    delay(49);
   }
   fastDigitalWrite(ttlpulseout, LOW);
 }
