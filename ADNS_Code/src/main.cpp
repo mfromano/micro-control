@@ -41,55 +41,31 @@ volatile bool isRunning = false;
 #include "DeviceLib/devicemanager.h"
 void setup() {
   delay(400);
-  bool success;
-  success = initializeCommunication();
-  // if (success) {
-  //   Serial.println("Communication initialized");
-  //   Serial.println(fileVersion);
-  // }
-  delay(400);
-  // printBoardID();
+  initializeCommunication();
 
-  success = initializeSensors();
-  // if (success) {
-  // Serial.println("Sensors initialized");
-  // }
-  success = initializeTriggering();
-  // if (success) {
-  // Serial.println("Triggers initialized");
-  // }
-  // sampleCountRemaining = 480;
-  // cmdTicker.start();
-  // transmitTicker.start();
-  // delay(20);
+  delay(400);
+
+  initializeSensors();
+
+  initializeTriggering();
+
 }
 
 void loop() {
-  if (onoffSwitch.update()) {
+  /*if (onoffSwitch.update()) {
     if (onoffSwitch.fell()) {
       beginAcquisition();
     } else {
       if (onoffSwitch.rose()) {
         endAcquisition();
       }
+    }*/
+    beginAcquisition();
+    while (true){
+      endAcquisition();
     }
   }
 
-  // if (sampleCountRemaining > 0 {
-  //   if (!isRunning) {
-  //     beginAcquisition();
-  //   }
-  // } else {
-  //   if (isRunning) {
-  //     endAcquisition();
-  //     delay(10);
-  //   }
-  //   receiveCommand();
-  // }
-  // // transmitTicker.update();
-  // // cmdTicker.update();
-  // // hbTicker.update();
-}
 
 // =============================================================================
 //   TASKS: INITIALIZE
@@ -115,16 +91,9 @@ inline static bool initializeClocks() { return true; }
 inline static bool initializeTriggering() {
   // Set Sync In Pin Mode
   fastPinMode(TRIGGER_IN_PIN, INPUT_PULLUP);
-  // fastPinMode(MANUAL_TRIGGER_PIN, INPUT_PULLUP);
-  onoffSwitch.attach(MANUAL_TRIGGER_PIN, INPUT_PULLUP);
-  onoffSwitch.interval(50);
+  fastPinMode(4, HIGH);
   // Set Sync Out Pin Modes
-  fastPinMode(TRIGGER_OUT_1_PIN, OUTPUT);
-  fastPinMode(TRIGGER_OUT_2_PIN, OUTPUT);
-  fastPinMode(TRIGGER_OUT_3_PIN, OUTPUT);
-  fastDigitalWrite(TRIGGER_OUT_1_PIN, !TRIGGER_ACTIVE_STATE);
-  fastDigitalWrite(TRIGGER_OUT_2_PIN, !TRIGGER_ACTIVE_STATE);
-  fastDigitalWrite(TRIGGER_OUT_3_PIN, !TRIGGER_ACTIVE_STATE);
+
   delay(1);
   // Setup Sync/Trigger-Output Timing
   // FrequencyTimer2::setPeriod(1e6 / DISPLACEMENT_SAMPLE_RATE)
@@ -174,18 +143,6 @@ static inline void beginAcquisition() {
   }
 }
 static inline void beginDataFrame() {
-  // Set Trigger Outputs to Active state
-  fastDigitalWrite(TRIGGER_OUT_1_PIN, TRIGGER_ACTIVE_STATE);
-  static int triggerOut2Cnt = 1;
-  if (--triggerOut2Cnt <= 0) {
-    fastDigitalWrite(TRIGGER_OUT_2_PIN, TRIGGER_ACTIVE_STATE);
-    triggerOut2Cnt = TRIGGER_OUT_2_DIVISOR;
-  }
-  static int triggerOut3Cnt = 1;
-  if (--triggerOut3Cnt <= 0) {
-    fastDigitalWrite(TRIGGER_OUT_3_PIN, TRIGGER_ACTIVE_STATE);
-    triggerOut3Cnt = TRIGGER_OUT_3_DIVISOR;
-  }
 
   // Latch timestamp and designate/allocate current sample
   microsSinceFrameStart -= currentFrameDuration;
@@ -196,9 +153,6 @@ static inline void endDataFrame() {
   // Latch Frame Duration and Send Data
   currentFrameDuration = microsSinceFrameStart;
 
-  fastDigitalWrite(TRIGGER_OUT_1_PIN, !TRIGGER_ACTIVE_STATE);
-  fastDigitalWrite(TRIGGER_OUT_2_PIN, !TRIGGER_ACTIVE_STATE);
-  fastDigitalWrite(TRIGGER_OUT_3_PIN, !TRIGGER_ACTIVE_STATE);
 }
 static inline void endAcquisition() {
   if (isRunning) {
