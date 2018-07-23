@@ -11,6 +11,7 @@ void setup() {
   fastPinMode(ttlpulseout, OUTPUT);
   fastPinMode(cam, OUTPUT);
 }
+
 void loop() {
   fastDigitalWrite(ttlpulseout, HIGH);
   while (true) {
