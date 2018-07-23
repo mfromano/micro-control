@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include <DigitalIO.h>
-#include <time.h>
+#include <delay_cycles_avr.h>
 
 const int ttlpulseout = 2;
 const int cam = 4;
@@ -12,17 +12,13 @@ void setup() {
   fastPinMode(cam, OUTPUT);
 }
 void loop() {
-  clock_t t;
-  t = clock();
   fastDigitalWrite(ttlpulseout, HIGH);
-  while ((float)t/CLOCKS_PER_SEC <= 500) {
-    t = clock();
-    while ((((float)t/CLOCKS_PER_SEC)*1000) - int((((float)t/CLOCKS_PER_SEC)*1000)) > 0){
-    }
+  while (millis() <= 500) {
     fastDigitalWrite(cam, HIGH);
-    delay(1);
+    _delay_cycles(16000);
     fastDigitalWrite(cam, LOW);
-    delay(49);
+    _delay_cycles(784000);
+    //Arduino Uno has 16 Mhz clock cycles, may vary if a different board is used
   }
   fastDigitalWrite(ttlpulseout, LOW);
 }
