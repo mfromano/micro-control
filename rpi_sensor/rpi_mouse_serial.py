@@ -49,7 +49,7 @@ def read(dev_file, mouseno):
         # https://johnroach.io/2011/02/16/getting-raw-data-from-a-usb-mouse-in-linux-using-python/
         #status, newdx, newdy = tuple(ord(c) for c in dev_file.read(3))
         #help from https://stackoverflow.com/questions/21429369/read-file-with-timeout-in-python as well
-        [r,a,b] = select.select([dev_file], [],[],0.001)
+        [r,a,b] = select.select([dev_file], [],[],0.0001)
         if (dev_file in r):
             status, newdx, newdy = tuple(ord(c) for c in os.read(dev_file,3))
         else:
@@ -75,14 +75,18 @@ thread2.start()
 
 GPIO.setup(16, GPIO.IN)
 
-start = time.clock()
-
-while not GPIO.input(16):
-    pass
-
-while GPIO.input(16): #pin 16 is high
-    curr = time.clock()
-    send(time.clock()-start)
-    while (time.clock()-curr < 0.001):
+while True:
+    while not GPIO.input(16):
         pass
-    print('dx' + str(devices['mouse1']['dx']) + 'dy' + str(devices['mouse1']['dy']))
+
+    start = time.clock()
+    devices['mouse1']['dx'] = 0
+    devices['mouse2']['dx'] = 0
+    devices['mouse1']['dy'] = 0
+    devices['mouse2']['dx'] = 0
+    while GPIO.input(16): #pin 16 is high
+        curr = time.clock()
+        send(time.clock()-start)
+        while (time.clock()-curr < 0.001):
+            pass
+        print('dx' + str(devices['mouse1']['dx']) + 'dy' + str(devices['mouse1']['dy']))
