@@ -13,7 +13,7 @@ void setup() {
 }
 void loop() {
   fastDigitalWrite(ttlpulseout, HIGH);
-  while (millis() <= 500) {
+  while (true) {
     fastDigitalWrite(cam, HIGH);
     _delay_cycles(16000);
     fastDigitalWrite(cam, LOW);
