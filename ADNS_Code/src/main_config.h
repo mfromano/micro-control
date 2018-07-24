@@ -25,17 +25,13 @@
 // Pin Settings
 const int CS_PIN_A = 20;
 const int CS_PIN_B = 21;
-const int TRIGGER_IN_PIN = 0;
-const int TRIGGER_OUT_1_PIN = 4;
-const int TRIGGER_OUT_2_PIN = 5;
-const int TRIGGER_OUT_3_PIN = 6;
-const int MANUAL_TRIGGER_PIN = 7;
+const int INPUT_PIN = 2;
+const int INPUT_PIN2 = 3;
+const int POWER_PIN = 4;
 const bool TRIGGER_ACTIVE_STATE = HIGH;
 
 // Pre-Compute semi-synchronous sample rates for navigation sensors and camera
 const int NAVSENSOR_FPS = 240;
-const int TRIGGER_OUT_2_DIVISOR = 4;
-const int TRIGGER_OUT_3_DIVISOR = 6;
 
 // =============================================================================
 // Timing & Trigger-Output Settings and Implementation

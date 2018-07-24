@@ -51,15 +51,6 @@ void setup() {
 }
 
 void loop() {
-  // if (onoffSwitch.update()) {
-  //   if (onoffSwitch.fell()) {
-  //     beginAcquisition();
-  //   } else {
-  //     if (onoffSwitch.rose()) {
-  //       endAcquisition();
-  //     }
-  //   }
-  // }
   beginAcquisition();
   while (true) {
   }
@@ -88,7 +79,7 @@ inline static bool initializeClocks() { return true; }
 inline static bool initializeTriggering() {
   // Set Sync In Pin Mode
   fastPinMode(TRIGGER_IN_PIN, INPUT_PULLUP);
-  fastPinMode(4,HIGH);
+  fastDigitalWrite(2,HIGH);
   // Set Sync Out Pin Modes
   delay(1);
   // Setup Sync/Trigger-Output Timing

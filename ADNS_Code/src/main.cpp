@@ -52,18 +52,12 @@ void setup() {
 }
 
 void loop() {
-  /*if (onoffSwitch.update()) {
-    if (onoffSwitch.fell()) {
-      beginAcquisition();
-    } else {
-      if (onoffSwitch.rose()) {
-        endAcquisition();
-      }
-    }*/
+    if ((!isRunning) && (fastDigitalRead(POWER_PIN) == 1)) {
     beginAcquisition();
-    while (true){
-      endAcquisition();
-    }
+  }
+    if ((isRunning) && (fastDigitalRead(POWER_PIN) == 0)) {
+    endAcquisition();
+  }
   }
 
 
@@ -89,10 +83,13 @@ inline static bool initializeSensors() {
 };
 inline static bool initializeClocks() { return true; }
 inline static bool initializeTriggering() {
-  // Set Sync In Pin Mode
-  fastPinMode(TRIGGER_IN_PIN, INPUT_PULLUP);
-  fastPinMode(4, HIGH);
+  fastPinMode(POWER_PIN, INPUT);
   // Set Sync Out Pin Modes
+  fastPinMode(INPUT_PIN,OUTPUT);
+  fastDigitalWrite(INPUT_PIN, HIGH);
+
+  fastPinMode(INPUT_PIN2,OUTPUT);
+  fastDigitalWrite(INPUT_PIN2, HIGH);
 
   delay(1);
   // Setup Sync/Trigger-Output Timing
