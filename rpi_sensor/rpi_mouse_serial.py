@@ -56,7 +56,7 @@ def read(dev_file, mouseno):
             status = 0
         # Add accumulated readings
         if status:
-	    newdx = to_signed(newdx)
+	        newdx = to_signed(newdx)
             newdy = to_signed(newdy)
         lock.acquire()
         devices[mouseno]['dx'] += newdx
@@ -87,6 +87,6 @@ while True:
     while GPIO.input(16): #pin 16 is high
         curr = time.clock()
         send(time.clock()-start)
-        while (time.clock()-curr < 0.001):
+        while (time.clock()-curr < 0.01):
             pass
         print('dx' + str(devices['mouse1']['dx']) + 'dy' + str(devices['mouse1']['dy']))
