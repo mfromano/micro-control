@@ -74,6 +74,7 @@ thread1.start()
 thread2.start()
 
 GPIO.setup(16, GPIO.IN)
+GPIO.setup(15, GPIO.IN)
 
 while True:
     while not GPIO.input(16):
@@ -84,8 +85,6 @@ while True:
     devices['mouse1']['dy'] = 0
     devices['mouse2']['dx'] = 0
     while GPIO.input(16): #pin 16 is high
-        curr = time.clock()
-        while (time.clock()-curr < 0.01):
-            pass
+		GPIO.wait_for_edge(15, GPIO.RISING)
         send(time.clock()-start)
         print(curr-start)
