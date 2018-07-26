@@ -5,11 +5,12 @@ port = inputdlg(prompt,'Data Ports', [1 15; 1 15],definput);
 s = serial('COM5')
 %}
 
-global uart;
-global a;
 global huiw1;
 global huiw2;
-global fi;
+global huiw3;
+global huiw4;
+global huiw5;
+global uart;
 
 f = figure('Visible','off','Units','Normalized',...
     'Position', [0.1 0.1 0.4 0.4], 'Color', [0 0.7 0.7],...
@@ -26,15 +27,29 @@ huiw1 = uicontrol('Style','edit', 'Units', 'Normalized', ...
 huiw2 = uicontrol('Style','edit', 'Units', 'Normalized', ...
     'Position', [0.35 0.37 0.33 0.05],'string','Enter the Arduino Serial Port (i.e COM5)',...
     'FontName', 'Wawati SC', 'FontSize', 9);
+huiw3 = uicontrol('Style','edit', 'Units', 'Normalized', ...
+    'Position', [0.35 0.31 0.33 0.05],'string','Motor output file name',...
+    'FontName', 'Wawati SC', 'FontSize', 9);
+huiw4 = uicontrol('Style','edit', 'Units', 'Normalized', ...
+    'Position', [0.35 0.25 0.33 0.05],'string','Length of session? [min]',...
+    'FontName', 'Wawati SC', 'FontSize', 9);
+huiw5 = uicontrol('Style','edit', 'Units', 'Normalized', ...
+    'Position', [0.35 0.19 0.33 0.05],'string','Sampling interval? [ms]',...
+    'FontName','Wawati SC', 'FontSize',9);
 set(f, 'Visible','on');
 
 
 function callbackfn1(~,~)
     global huiw1;
     global huiw2;
+    global huiw3;
+    global huiw4;
+    global huiw5;
     global uart;
     global a;
+    global fi;
     
+    fi = fopen(huiw3.String,'w');
     try
         uart = serial(huiw1.String, 'BaudRate',115200);
         fopen(uart);
@@ -47,14 +62,26 @@ function callbackfn1(~,~)
     catch
         errordlg('There was an error connecting to the Arduino. Please check the COM port.');
     end
-    fwrite(a,'1000');
+    pause(2);
+    fwrite(a,sprintf('%s,%s',huiw4.String, huiw5.String));
+    pause(0.1);
+    nreps = fscanf(a,'%s\n');
+    repcycles = fscanf(a,'%s\n');
+    fprintf('nreps: %d, repcycles: %d\n',nreps,repcycles);
+    fprintf('Beginning acquisition\n');
+    pause(0.1);
     while true
-        fscanf(uart)
+        rd = fscanf(uart);
+        rd2 = fscanf(a);
+        fprintf(fi,'%s\n',rd);
+        fprintf(rd2);
     end
 end
 function callbackfn2(~,~)
     global uart;
     global a;
+    global fi;
+    fclose(fi);
     fclose(uart);
     delete(uart);
     clear uart

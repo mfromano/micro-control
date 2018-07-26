@@ -4,6 +4,7 @@
 -IC:\Users\Administrator\Documents\micro-control\ADNS_single_sensor\.piolibdeps\Board Identify_ID2119\src
 -IC:\Users\Administrator\Documents\micro-control\ADNS_single_sensor\.piolibdeps\CircularBuffer_ID1796
 -IC:\Users\Administrator\Documents\micro-control\ADNS_single_sensor\.piolibdeps\DigitalIO_ID200\src
+-IC:\Users\Administrator\.platformio\lib\elapsedMillis_ID1002
 -IC:\Users\Administrator\.platformio\packages\framework-arduinoteensy\libraries\Bounce2
 -IC:\Users\Administrator\.platformio\packages\framework-arduinoteensy\libraries\SPI
 -IC:\Users\Administrator\Documents\micro-control\ADNS_single_sensor\lib\FPSTimer-master

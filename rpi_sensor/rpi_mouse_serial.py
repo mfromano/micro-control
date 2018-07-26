@@ -38,7 +38,7 @@ def send(t):
     devices['mouse2']['dy'] = 0
     # Format and Transmit data as string, e.g. (12,-39) = '1x12y-39'
     datastring = 'L' + 'x'+ str(dxL) + 'y'+ str(dyL) + 'R' + 'x' + str(dxR) + 'y'\
-	+ str(dyR) + 't' + str(t)
+	+ str(dyR) + 'dt' + str(t)
     sr.write(datastring+'\n')
 	    #print(datastring + '\n')
 
@@ -79,14 +79,13 @@ while True:
     while not GPIO.input(16):
         pass
 
-    start = time.clock()
     devices['mouse1']['dx'] = 0
     devices['mouse2']['dx'] = 0
     devices['mouse1']['dy'] = 0
     devices['mouse2']['dx'] = 0
     while GPIO.input(16): #pin 16 is high
         curr = time.clock()
-        send(time.clock()-start)
         while (time.clock()-curr < 0.01):
             pass
+        send(time.clock()-curr)
         print('dx' + str(devices['mouse1']['dx']) + 'dy' + str(devices['mouse1']['dy']))
