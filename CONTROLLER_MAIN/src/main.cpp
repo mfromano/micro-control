@@ -5,18 +5,19 @@
 const int ttlpulseout = 2;
 const int cam = 4;
 const int matlab = 3;
-
+const int auxout = 5;
 
 void setup() {
   fastPinMode(ttlpulseout, OUTPUT);
   fastPinMode(cam, OUTPUT);
   fastPinMode(matlab, INPUT);
-
+  fastPinMode(auxout, OUTPUT);
 }
 
 void loop() {
   while(fastDigitalRead(matlab) == 1){ //checking for input from matlab
     fastDigitalWrite(ttlpulseout, HIGH);
+    fastDigitalWrite(auxout, HIGH);
     while (true) {
       fastDigitalWrite(cam, HIGH);
       _delay_cycles(16000);
@@ -27,4 +28,5 @@ void loop() {
     }
   }
   fastDigitalWrite(ttlpulseout, LOW);
+  fastDigitalWrite(auxout, LOW);
 }
