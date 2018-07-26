@@ -42,13 +42,14 @@ function callbackfn1(~,~)
         errordlg('There was an error connecting to the USB to UART bridge. Please check the COM port.');
     end
     try
-        a = serial(huiw2.String, 'BuadRate',115200); %The board may need to change if a different board is used
+        a = serial(huiw2.String, 'BaudRate',115200); %The board may need to change if a different board is used
+        fopen(a);
     catch
         errordlg('There was an error connecting to the Arduino. Please check the COM port.');
     end
-    fprintf(a,'Begin');
+    fwrite(a,'1000');
     while true
-        fscanf(uart);
+        fscanf(uart)
     end
 end
 function callbackfn2(~,~)
