@@ -9,6 +9,7 @@ global uart;
 global a;
 global huiw1;
 global huiw2;
+global fi;
 
 f = figure('Visible','off','Units','Normalized',...
     'Position', [0.1 0.1 0.4 0.4], 'Color', [0 0.7 0.7],...
@@ -41,18 +42,18 @@ function callbackfn1(~,~)
         errordlg('There was an error connecting to the USB to UART bridge. Please check the COM port.');
     end
     try
-        a = arduino(huiw2.String, 'uno'); %The board may need to change if a different board is used
+        a = serial(huiw2.String, 'BuadRate',115200); %The board may need to change if a different board is used
     catch
         errordlg('There was an error connecting to the Arduino. Please check the COM port.');
     end
-    writeDigitalPin(a,'D3',1);
-    fscanf(uart)
+    fprintf(a,'Begin');
+    while true
+        fscanf(uart);
+    end
 end
 function callbackfn2(~,~)
     global uart;
     global a;
-    
-    writeDigitalPin(a,'D3',0);
     fclose(uart);
     delete(uart);
     clear uart

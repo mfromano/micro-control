@@ -2,22 +2,21 @@
 #include <DigitalIO.h>
 #include <delay_cycles_avr.h>
 
-const int ttlpulseout = 2;
+const int movementout = 6;
 const int cam = 4;
-const int matlab = 3;
 const int auxout = 5;
 
 void setup() {
-  fastPinMode(ttlpulseout, OUTPUT);
+  fastPinMode(movementout, OUTPUT);
   fastPinMode(cam, OUTPUT);
-  fastPinMode(matlab, INPUT);
   fastPinMode(auxout, OUTPUT);
   Serial.begin(115200);
 }
 
 void loop() {
-  while(fastDigitalRead(matlab) == 1){ //checking for input from matlab
-    fastDigitalWrite(ttlpulseout, HIGH);
+  if(Serial.available() > 0){ //checking for input from matlab
+    Serial.readString();
+    fastDigitalWrite(movementout, HIGH);
     fastDigitalWrite(auxout, HIGH);
     while (true) {
       fastDigitalWrite(cam, HIGH);
@@ -27,7 +26,7 @@ void loop() {
       //Arduino Uno has 16 Mhz clock cycles, may vary if a different board is used
       //So, to delay for 49 milliseconds do 16Mhz*0.049s (may not be 16Mhz depending on the board)
     }
-    fastDigitalWrite(ttlpulseout, LOW);
+    fastDigitalWrite(movementout, LOW);
     fastDigitalWrite(auxout, LOW);
   }
 }
