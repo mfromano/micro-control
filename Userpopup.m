@@ -5,8 +5,10 @@ port = inputdlg(prompt,'Data Ports', [1 15; 1 15],definput);
 s = serial('COM5')
 %}
 
-global uart
-global a
+global uart;
+global a;
+global huiw1;
+global huiw2;
 
 f = figure('Visible','off','Units','Normalized',...
     'Position', [0.1 0.1 0.4 0.4], 'Color', [0 0.7 0.7],...
@@ -27,6 +29,11 @@ set(f, 'Visible','on');
 
 
 function callbackfn1(~,~)
+    global huiw1;
+    global huiw2;
+    global uart;
+    global a;
+    
     try
         uart = serial(huiw1.String, 'BaudRate',115200);
         fopen(uart);
@@ -42,8 +49,11 @@ function callbackfn1(~,~)
     fscanf(uart)
 end
 function callbackfn2(~,~)
+    global uart;
+    global a;
+    
     writeDigitalPin(a,'D3',0);
-    fclose(uart)
-    delete(uart)
+    fclose(uart);
+    delete(uart);
     clear uart
 end

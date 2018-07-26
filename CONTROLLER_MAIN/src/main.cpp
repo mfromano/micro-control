@@ -12,6 +12,7 @@ void setup() {
   fastPinMode(cam, OUTPUT);
   fastPinMode(matlab, INPUT);
   fastPinMode(auxout, OUTPUT);
+  Serial.begin(115200);
 }
 
 void loop() {
@@ -26,7 +27,7 @@ void loop() {
       //Arduino Uno has 16 Mhz clock cycles, may vary if a different board is used
       //So, to delay for 49 milliseconds do 16Mhz*0.049s (may not be 16Mhz depending on the board)
     }
+    fastDigitalWrite(ttlpulseout, LOW);
+    fastDigitalWrite(auxout, LOW);
   }
-  fastDigitalWrite(ttlpulseout, LOW);
-  fastDigitalWrite(auxout, LOW);
 }
