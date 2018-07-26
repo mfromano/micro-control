@@ -72,9 +72,8 @@ function callbackfn1(~,~)
     pause(0.1);
     while true
         rd = fscanf(uart);
-        rd2 = fscanf(a);
         fprintf(fi,'%s\n',rd);
-        fprintf(rd2);
+        fprintf(rd);
     end
 end
 function callbackfn2(~,~)
