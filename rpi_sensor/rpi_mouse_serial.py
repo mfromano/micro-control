@@ -84,8 +84,6 @@ while True:
     devices['mouse1']['dy'] = 0
     devices['mouse2']['dx'] = 0
     while GPIO.input(16): #pin 16 is high
-        curr = time.clock()
-        while (time.clock()-curr < 0.01):
-            pass
+        time.sleep(0.01):
         send(time.clock()-start)
         print(curr-start)

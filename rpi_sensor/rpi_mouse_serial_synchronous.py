@@ -40,7 +40,6 @@ def send(t):
     datastring = 'L' + 'x'+ str(dxL) + 'y'+ str(dyL) + 'R' + 'x' + str(dxR) + 'y'\
 	+ str(dyR) + 'dt' + str(t)
     sr.write(datastring+'\n')
-	    #print(datastring + '\n')
 
 def read(dev_file, mouseno):
     while True:
