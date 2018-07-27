@@ -31,10 +31,11 @@ void loop() {
     //Print these functions to MATLAB
     Serial.println(nreps);
     Serial.println(sampling_interval_ms_int);
-    double experiment_start = micros();
     double start;
     double fin;
     fastDigitalWrite(movementmode, HIGH);
+    delay(0.2);
+    double experiment_start = micros();
     for (int i=0; i<nreps; i++) {
       start = micros();
       fastDigitalWrite(cam, HIGH);
@@ -43,7 +44,7 @@ void loop() {
       fastDigitalWrite(cam, LOW);
       fastDigitalWrite(movement_trigger, LOW);
       fin = micros();
-      Serial.println(fin-experiment_start);
+      Serial.println((fin-experiment_start)/1000000);
       delay(sampling_interval_ms_int-(fin-start)/1000);
     }
     fastDigitalWrite(movementmode, LOW);
