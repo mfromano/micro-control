@@ -86,4 +86,4 @@ while True:
     while GPIO.input(16): #pin 16 is high
 	GPIO.wait_for_edge(15, GPIO.RISING)
         send(time.clock()-start)
-        print(curr-start)
+        print(time.clock()-start)
