@@ -86,6 +86,6 @@ while True:
     devices['mouse2']['dx'] = 0
     while GPIO.input(16): #pin 16 is high
         GPIO.wait_for_edge(15, GPIO.RISING)
-        currt++
+        currt+=1
 	send(currt)
         print(currt)
