@@ -78,7 +78,7 @@ GPIO.setup(15, GPIO.IN)
 while True:
     while not GPIO.input(16):
         pass
-	start = time.clock()
+    start = time.clock()
     devices['mouse1']['dx'] = 0
     devices['mouse2']['dx'] = 0
     devices['mouse1']['dy'] = 0
