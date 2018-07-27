@@ -28,6 +28,7 @@ def to_signed(n):
 
 # SENDOUTPUTTHREAD - class for sending data over serial port, subclass of Thread class
 def send(t):
+    lock.acquire() 
     dxL = devices['mouse1']['dx']
     dyL = devices['mouse1']['dy']
     devices['mouse1']['dx'] = 0
@@ -36,11 +37,11 @@ def send(t):
     dyR = devices['mouse2']['dy']
     devices['mouse2']['dx'] = 0
     devices['mouse2']['dy'] = 0
+    lock.release()
     # Format and Transmit data as string, e.g. (12,-39) = '1x12y-39'
     datastring = 'L' + 'x'+ str(dxL) + 'y'+ str(dyL) + 'R' + 'x' + str(dxR) + 'y'\
 	+ str(dyR) + 'dt' + str(t)
     sr.write(datastring+'\n')
-	    #print(datastring + '\n')
 
 def read(dev_file, mouseno):
     while True:
