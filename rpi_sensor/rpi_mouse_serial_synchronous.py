@@ -38,8 +38,8 @@ def send(t):
     devices['mouse2']['dy'] = 0
     lock.release()
     # Format and Transmit data as string, e.g. (12,-39) = '1x12y-39'
-    datastring = 'L' + 'x'+ str(dxL) + 'y'+ str(dyL) + 'R' + 'x' + str(dxR) + 'y'\
-	+ str(dyR) + 'T' + str(t)
+    datastring = 'L,' + ',x,'+ str(dxL) + ',y,'+ str(dyL) + ',R,' + 'x,' + str(dxR) + ',y,'\
+	+ str(dyR) + ',T,' + str(t)
     sr.write(datastring+'\n')
 
 def read(dev_file, mouseno):
