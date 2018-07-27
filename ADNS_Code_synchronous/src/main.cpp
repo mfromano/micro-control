@@ -134,11 +134,14 @@ static inline void beginAcquisition() {
 
     // Call begin-data-frame function (sets trigger outputs)
     beginDataFrame();
+    typedef void (*GeneralFunction) ();
+    GeneralFunction captureDisplacement();
 
+    attachInterrupt(POWER_PIN,captureDisplacement(),RISING);
     // Begin IntervalTimer
-    captureTimer.begin(captureDisplacement, samplePeriodMicros);
   }
 }
+
 static inline void beginDataFrame() {
 
   // Latch timestamp and designate/allocate current sample
