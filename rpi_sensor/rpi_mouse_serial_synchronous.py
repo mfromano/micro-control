@@ -1,5 +1,4 @@
 from serial import Serial
-import time
 import RPi.GPIO as GPIO
 from threading import Thread, Lock
 import os
@@ -78,7 +77,7 @@ GPIO.setup(15, GPIO.IN)
 while True:
     while not GPIO.input(16):
         pass
-	currt = 0
+    currt = 0
     devices['mouse1']['dx'] = 0
     devices['mouse2']['dx'] = 0
     devices['mouse1']['dy'] = 0
@@ -86,5 +85,5 @@ while True:
     while GPIO.input(16): #pin 16 is high
         GPIO.wait_for_edge(15, GPIO.RISING)
         currt++
-		send(currt)
+	send(currt)
         print(currt)
