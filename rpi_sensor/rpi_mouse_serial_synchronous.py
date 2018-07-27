@@ -55,7 +55,7 @@ def read(dev_file, mouseno):
             status = 0
         # Add accumulated readings
         if status:
-	        newdx = to_signed(newdx)
+	    newdx = to_signed(newdx)
             newdy = to_signed(newdy)
         lock.acquire()
         devices[mouseno]['dx'] += newdx
