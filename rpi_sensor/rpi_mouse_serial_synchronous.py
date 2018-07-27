@@ -38,7 +38,7 @@ def send(t):
     devices['mouse2']['dy'] = 0
     # Format and Transmit data as string, e.g. (12,-39) = '1x12y-39'
     datastring = 'L' + 'x'+ str(dxL) + 'y'+ str(dyL) + 'R' + 'x' + str(dxR) + 'y'\
-	+ str(dyR) + 'dt' + str(t)
+	+ str(dyR) + 'T' + str(t)
     sr.write(datastring+'\n')
 
 def read(dev_file, mouseno):
@@ -55,7 +55,7 @@ def read(dev_file, mouseno):
             status = 0
         # Add accumulated readings
         if status:
-	    ewdx = to_signed(newdx)
+            newdx = to_signed(newdx)
             newdy = to_signed(newdy)
         lock.acquire()
         devices[mouseno]['dx'] += newdx
@@ -78,12 +78,13 @@ GPIO.setup(15, GPIO.IN)
 while True:
     while not GPIO.input(16):
         pass
-    start = time.clock()
+	currt = 0
     devices['mouse1']['dx'] = 0
     devices['mouse2']['dx'] = 0
     devices['mouse1']['dy'] = 0
     devices['mouse2']['dx'] = 0
     while GPIO.input(16): #pin 16 is high
-	GPIO.wait_for_edge(15, GPIO.RISING)
-        send(time.clock()-start)
-        print(time.clock()-start)
+        GPIO.wait_for_edge(15, GPIO.RISING)
+        currt++
+		send(currt)
+        print(currt)

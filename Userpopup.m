@@ -10,7 +10,7 @@ global huiw2;
 global huiw3;
 global huiw4;
 global huiw5;
-global uart;
+
 
 f = figure('Visible','off','Units','Normalized',...
     'Position', [0.1 0.1 0.4 0.4], 'Color', [0 0.7 0.7],...
@@ -70,18 +70,29 @@ function callbackfn1(~,~)
     fprintf('nreps: %d, repcycles: %d\n',nreps,repcycles);
     fprintf('Beginning acquisition\n');
     pause(0.1);
-    while true
+    for i=1:str2double(nreps)
         rd = fscanf(uart);
-        fprintf(fi,'%s\n',rd);
+        fprintf(fi,'%s',rd);
+        rd = fscanf(a);
+        fprintf(fi,'t=%s',rd);
         fprintf(rd);
     end
+    fclose(a);
+    delete(a);
+    fclose(fi);
+    fclose(uart);
+    delete(uart);
+    clear uart a
 end
+
 function callbackfn2(~,~)
     global uart;
     global a;
     global fi;
+    fclose(a);
+    delete(a);
     fclose(fi);
     fclose(uart);
     delete(uart);
-    clear uart
+    clear uart a
 end
