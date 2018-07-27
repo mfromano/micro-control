@@ -48,7 +48,7 @@ function callbackfn1(~,~)
     global uart;
     global a;
     global fi;
-    
+
     fi = fopen(huiw3.String,'w');
     try
         uart = serial(huiw1.String, 'BaudRate',115200);
@@ -67,14 +67,14 @@ function callbackfn1(~,~)
     pause(0.1);
     nreps = fscanf(a,'%s\n');
     repcycles = fscanf(a,'%s\n');
-    fprintf('nreps: %d, repcycles: %d\n',nreps,repcycles);
+    fprintf('nreps: %s, repcycles: %s\n',nreps,repcycles);
     fprintf('Beginning acquisition\n');
     pause(0.1);
     for i=1:str2double(nreps)
         rd = fscanf(uart);
         fprintf(fi,'%s',rd);
-        rd = fscanf(a);
-        fprintf(fi,'t=%s',rd);
+        rd = fscanf(a,'%4.8f\n');
+        fprintf(fi,'t=%f',rd;
         fprintf(rd);
     end
     fclose(a);
