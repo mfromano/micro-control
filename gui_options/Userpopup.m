@@ -49,13 +49,13 @@ function callbackfn1(~,~)
 
     fi = fopen(huiw3.String,'w');
     try
-        uart = serial(huiw1.String, 'BaudRate',115200);
+        uart = serial(huiw1.String, 'BaudRate', 115200);
         fopen(uart);
     catch
         errordlg('There was an error connecting to the USB to UART bridge. Please check the COM port.');
     end
     try
-        a = serial(huiw2.String, 'BaudRate',115200); %The board may need to change if a different board is used
+        a = serial(huiw2.String, 'BaudRate', 115200); %The board may need to change if a different board is used
         fopen(a);
     catch
         errordlg('There was an error connecting to the Arduino. Please check the COM port.');
@@ -67,7 +67,6 @@ function callbackfn1(~,~)
     repcycles = fscanf(a,'%s\n');
     fprintf('nreps: %s, repcycles: %s\n',nreps,repcycles);
     fprintf('Beginning acquisition\n');
-    pause(0.1);
     for i=1:str2double(nreps)
         rd = fscanf(uart);
         fprintf(fi,'%s',rd);

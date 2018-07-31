@@ -27,31 +27,30 @@ class ExperimentalControl:
         b = tk.Button(self.window,text='Start Experiment', command=self.begin)
         b.pack()
     def begin(self):
-        while True:
-            print(self.serial_port_arduino.get())
-            sr1 = serial.Serial(str(self.serial_port_arduino.get()),baudrate=115200)
-            try:
-                if not sr1.isOpen():
-                    sr1.open()
-            except serial.SerialException:
-                tkMessageBox.showinfo('Error','Please enter a valid serial port for Arduino!')
-                raise
-            print(self.serial_port_motion.get())
-            sr2 = serial.Serial(str(self.serial_port_motion.get()),baudrate=115200)
-            try:
-                if not sr2.isOpen():
-                    sr2.open()
-            except serial.SerialException:
-                tkMessageBox.showinfo('Error','Please enter a valid motion serial port!')
-                raise
-            time.sleep(2)
-            str2write = "{0},{1}".format(self.experiment_length.get(), self.framerate.get())
-            sr1.write(str2write)
-            nloops = int(float(sr1.readline().strip()))
-            print(nloops)
-            ncycles = int(float(sr1.readline().strip()))
-            print(ncycles)
-            self.loop_while_true(nloops,sr1,sr2)
+        print(self.serial_port_arduino.get())
+        sr1 = serial.Serial(str(self.serial_port_arduino.get()),baudrate=115200)
+        try:
+            if not sr1.isOpen():
+                sr1.open()
+        except serial.SerialException:
+            tkMessageBox.showinfo('Error','Please enter a valid serial port for Arduino!')
+            raise
+        print(self.serial_port_motion.get())
+        sr2 = serial.Serial(str(self.serial_port_motion.get()),baudrate=115200)
+        try:
+            if not sr2.isOpen():
+                sr2.open()
+        except serial.SerialException:
+            tkMessageBox.showinfo('Error','Please enter a valid motion serial port!')
+            raise
+        time.sleep(2)
+        str2write = "{0},{1}".format(self.experiment_length.get(), self.framerate.get())
+        sr1.write(str2write)
+        nloops = int(float(sr1.readline().strip()))
+        print(nloops)
+        ncycles = int(float(sr1.readline().strip()))
+        print(ncycles)
+        self.loop_while_true(nloops,sr1,sr2)
     def loop_while_true(self,nloops,sr1,sr2):
         with open(self.output_filename.get(),'wb') as fi:
             for i in range(nloops):
