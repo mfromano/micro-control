@@ -16,11 +16,9 @@ f = figure('Visible','off','Units','Normalized',...
     'Position', [0.1 0.1 0.4 0.4], 'Color', [0 0.7 0.7],...
     'name', 'Mouseball Setup');
 huipusha = uicontrol('Style','pushbutton', 'Units', 'Normalized', ...
-    'Position', [0.3 0.5 0.2 0.1],'string','Start', 'Callback', @callbackfn1,...
+    'Position', [0.3 0.5 0.4 0.1],'string','Start', 'Callback', @callbackfn1,...
     'FontName', 'Wawati SC', 'FontSize', 14);
-huipushb = uicontrol('Style','pushbutton', 'Units', 'Normalized', ...
-    'Position', [0.5 0.5 0.2 0.1],'string','Stop', 'Callback', @callbackfn2,...
-    'FontName', 'Wawati SC', 'FontSize', 14);
+
 huiw1 = uicontrol('Style','edit', 'Units', 'Normalized', ...
     'Position', [0.35 0.43 0.33 0.05],'string','Enter the USB to UART Serial Port (i.e COM1)',...
     'FontName', 'Wawati SC', 'FontSize', 9);
@@ -77,18 +75,6 @@ function callbackfn1(~,~)
         rd = fscanf(a,'%s\n');
         fprintf(fi,'t=%s\n',rd);
     end
-    fclose(a);
-    delete(a);
-    fclose(fi);
-    fclose(uart);
-    delete(uart);
-    clear uart a
-end
-
-function callbackfn2(~,~)
-    global uart;
-    global a;
-    global fi;
     fclose(a);
     delete(a);
     fclose(fi);

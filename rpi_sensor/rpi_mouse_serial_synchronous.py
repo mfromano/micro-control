@@ -38,7 +38,7 @@ def send(t):
     devices['mouse2']['dy'] = 0
     lock.release()
     # Format and Transmit data as string, e.g. (12,-39) = '1x12y-39'
-    datastring = 'L,' + ',x,'+ str(dxL) + ',y,'+ str(dyL) + ',R,' + 'x,' + str(dxR) + ',y,'\
+    datastring = 'L,' + 'x,'+ str(dxL) + ',y,'+ str(dyL) + ',R,' + 'x,' + str(dxR) + ',y,'\
 	+ str(dyR) + ',T,' + str(t)
     sr.write(datastring+'\n')
 
@@ -87,5 +87,4 @@ while True:
     while GPIO.input(16): #pin 16 is high
         GPIO.wait_for_edge(15, GPIO.RISING)
         currt+=1
-	send(currt)
-        print(currt)
+        send(currt)

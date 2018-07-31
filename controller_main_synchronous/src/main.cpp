@@ -34,6 +34,7 @@ void loop() {
     double start;
     double fin;
     fastDigitalWrite(movementmode, HIGH);
+    fastDigitalWrite(movement_trigger, LOW);
     delay(0.2);
     double experiment_start = micros();
     for (int i=0; i<nreps; i++) {
@@ -44,7 +45,7 @@ void loop() {
       fastDigitalWrite(cam, LOW);
       fastDigitalWrite(movement_trigger, LOW);
       fin = micros();
-      Serial.println((float)((fin-experiment_start))/1000000, 10);
+      Serial.println(((float)fin-(float)experiment_start)/1000000, 10);
       delay(sampling_interval_ms_int-(fin-start)/1000);
     }
     fastDigitalWrite(movementmode, LOW);
