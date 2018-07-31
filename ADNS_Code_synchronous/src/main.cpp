@@ -52,10 +52,10 @@ void setup() {
 }
 
 void loop() {
-    if ((!isRunning) && (fastDigitalRead(POWER_PIN) == 1)) {
+    if ((!isRunning) && (fastDigitalRead(MODE_PIN) == 1)) {
     beginAcquisition();
   }
-    if ((isRunning) && (fastDigitalRead(POWER_PIN) == 0)) {
+    if ((isRunning) && (fastDigitalRead(MODE_PIN) == 0)) {
     endAcquisition();
   }
   }
@@ -85,12 +85,7 @@ inline static bool initializeClocks() { return true; }
 inline static bool initializeTriggering() {
   fastPinMode(POWER_PIN, INPUT);
   // Set Sync Out Pin Modes
-  fastPinMode(INPUT_PIN,OUTPUT);
-  fastDigitalWrite(INPUT_PIN, HIGH);
-
-  fastPinMode(INPUT_PIN2,OUTPUT);
-  fastDigitalWrite(INPUT_PIN2, HIGH);
-
+  fastPinMode(MODE_PIN, INPUT);
   delay(1);
   // Setup Sync/Trigger-Output Timing
   // FrequencyTimer2::setPeriod(1e6 / DISPLACEMENT_SAMPLE_RATE)
@@ -134,10 +129,9 @@ static inline void beginAcquisition() {
 
     // Call begin-data-frame function (sets trigger outputs)
     beginDataFrame();
-    typedef void (*GeneralFunction) ();
-    GeneralFunction captureDisplacement();
-
-    attachInterrupt(POWER_PIN,captureDisplacement(),RISING);
+    // typedef void (*GeneralFunction) ();
+    // GeneralFunction captureDisplacement();
+    attachInterrupt(POWER_PIN,captureDisplacement,RISING);
     // Begin IntervalTimer
   }
 }
@@ -157,7 +151,7 @@ static inline void endDataFrame() {
 static inline void endAcquisition() {
   if (isRunning) {
     // End IntervalTimer
-    captureTimer.end();
+    detachInterrupt(POWER_PIN);
     endDataFrame();
 
     // Trigger start using class methods in ADNS library

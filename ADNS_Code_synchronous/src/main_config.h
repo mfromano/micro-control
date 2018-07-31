@@ -25,9 +25,8 @@
 // Pin Settings
 const int CS_PIN_A = 20;
 const int CS_PIN_B = 21;
-const int INPUT_PIN = 2;
-const int INPUT_PIN2 = 3;
 const int POWER_PIN = 4;
+const int MODE_PIN = 3;
 const bool TRIGGER_ACTIVE_STATE = HIGH;
 
 // Pre-Compute semi-synchronous sample rates for navigation sensors and camera
