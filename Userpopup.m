@@ -73,9 +73,9 @@ function callbackfn1(~,~)
     for i=1:str2double(nreps)
         rd = fscanf(uart);
         fprintf(fi,'%s',rd);
-        rd = fscanf(a,'%s');
-        fprintf(fi,'t=%s',rd;
-        fprintf(rd);
+        fprintf('%s\n',rd);
+        rd = fscanf(a,'%s\n');
+        fprintf(fi,'t=%s\n',rd);
     end
     fclose(a);
     delete(a);
