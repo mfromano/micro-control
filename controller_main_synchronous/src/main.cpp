@@ -35,6 +35,7 @@ void loop() {
     fastDigitalWrite(ttl, LOW);
     delay(500);
     double experiment_start = micros();
+    delay(sampling_interval_ms_int);
     for (int i=0; i<nreps; i++) {
       start = micros();
       fastDigitalWrite(ttl, HIGH);
