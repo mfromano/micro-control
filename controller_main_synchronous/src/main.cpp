@@ -40,11 +40,11 @@ void loop() {
     delay(sampling_interval_ms_int);
     start = micros();
     for (int i=0; i<nreps; i++) {
+      fin = micros();
+      Serial.println(((float)(fin-experiment_start))/1000000.0, 10);
       fastDigitalWrite(ttl, HIGH);
       delayMicroseconds(1000);
       fastDigitalWrite(ttl, LOW);
-      fin = micros();
-      Serial.println(((float)(fin-experiment_start))/1000000.0, 10);
       delay_time = sampling_interval_ms_int-(micros()-start)/1000.0;
       delay(floor(delay_time));
       delayMicroseconds(1000.0*(delay_time-floor(delay_time)));

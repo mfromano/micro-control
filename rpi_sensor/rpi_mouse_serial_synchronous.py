@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 from threading import Thread, Lock
 import os
 import select
-
+import time
 
 os.nice(-20)
 # Open serial port and mouse interfaces -> store mouse-data in dicts
@@ -79,12 +79,15 @@ GPIO.setup(15, GPIO.IN)
 while True:
     while not GPIO.input(16):
         pass
-    currt = 0
+    started = False
     devices['mouse1']['dx'] = 0
     devices['mouse2']['dx'] = 0
     devices['mouse1']['dy'] = 0
     devices['mouse2']['dx'] = 0
     while GPIO.input(16): #pin 16 is high
         GPIO.wait_for_edge(15, GPIO.RISING)
-        currt+=1
-        send(currt)
+		if not started:
+            started = True
+			start = time.clock()
+		ctime = time.clock()
+		send(ctime-start)
