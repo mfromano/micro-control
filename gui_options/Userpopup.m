@@ -72,7 +72,7 @@ function callbackfn1(~,~)
         fprintf(fi,'%s',strip(rd));
         fprintf('%s\n',rd);
         rd = fscanf(a,'%s\n');
-        fprintf(fi,'t=%s\n',rd);
+        fprintf(fi,',t=%s\n',rd);
     end
     fclose(a);
     delete(a);

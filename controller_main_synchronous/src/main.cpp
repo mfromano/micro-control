@@ -38,11 +38,11 @@ void loop() {
     for (int i=0; i<nreps; i++) {
       start = micros();
       fastDigitalWrite(ttl, HIGH);
-      delayMicroseconds(1000);
+      delayMicroseconds(100);
       fastDigitalWrite(ttl, LOW);
       fin = micros();
       Serial.println(((float)fin-(float)experiment_start)/1000000, 10);
-      delay(sampling_interval_ms_int-(fin-start)/1000);
+      delay(sampling_interval_ms_int-(micros()-start)/1000);
     }
     fastDigitalWrite(movementmode, LOW);
   }
