@@ -69,7 +69,7 @@ function callbackfn1(~,~)
     fprintf('Beginning acquisition\n');
     for i=1:str2double(nreps)
         rd = fscanf(uart);
-        fprintf(fi,'%s',rd);
+        fprintf(fi,'%s',strip(rd));
         fprintf('%s\n',rd);
         rd = fscanf(a,'%s\n');
         fprintf(fi,'t=%s\n',rd);

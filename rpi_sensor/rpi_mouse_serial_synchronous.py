@@ -5,7 +5,7 @@ import os
 import select
 
 
-os.nice(1)
+os.nice(-20)
 # Open serial port and mouse interfaces -> store mouse-data in dicts
 sr = Serial("/dev/ttyS0",baudrate=115200)
 GPIO.setmode(GPIO.BOARD) #for questions and/or BOARD layout see https://www.raspberrypi-spy.co.uk/2012/06/simple-guide-to-the-rpi-gpio-header-and-pins/
