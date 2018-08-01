@@ -61,18 +61,22 @@ function callbackfn1(~,~)
         errordlg('There was an error connecting to the Arduino. Please check the COM port.');
     end
     pause(2);
+
     fwrite(a,sprintf('%s,%s',huiw4.String, huiw5.String));
     pause(0.1);
-    nreps = fscanf(a,'%s\n');
+    nreps = str2double(fscanf(a,'%s\n'));
     repcycles = fscanf(a,'%s\n');
-    fprintf('nreps: %s, repcycles: %s\n',nreps,repcycles);
+    movement = cell(nreps,1);
+    times = cell(nreps,1);
+    fprintf('nreps: %d, repcycles: %s\n',nreps,repcycles);
     fprintf('Beginning acquisition\n');
-    for i=1:str2double(nreps)
-        rd = fscanf(uart);
-        fprintf(fi,'%s',strip(rd));
-        fprintf('%s\n',rd);
-        rd = fscanf(a,'%s\n');
-        fprintf(fi,',t=%s\n',rd);
+    for i=1:nreps
+        movement{i} = fscanf(uart,'%s');
+        times{i} = fscanf(a,'%s');
+        fprintf('Done with iter %d\n',i);
+    end
+    for i=1:(nreps)
+        fprintf(fi,'%s,t=%s\n',movement{i},times{i});
     end
     fclose(a);
     delete(a);

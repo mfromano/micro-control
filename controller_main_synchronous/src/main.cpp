@@ -6,7 +6,9 @@ const int ttl = 4;
 char *trial_length_minutes;
 char *sampling_interval_ms;
 char matlab_input[50];
-
+volatile double delay_time;
+double ms_time;
+double micro_time;
 void setup() {
   fastPinMode(movementmode, OUTPUT);
   fastPinMode(ttl, OUTPUT);
@@ -39,11 +41,13 @@ void loop() {
     start = micros();
     for (int i=0; i<nreps; i++) {
       fastDigitalWrite(ttl, HIGH);
-      delayMicroseconds(100);
+      delayMicroseconds(1000);
       fastDigitalWrite(ttl, LOW);
       fin = micros();
-      Serial.println(((float)fin-(float)experiment_start)/1000000, 10);
-      delay(sampling_interval_ms_int-(micros()-start)/1000);
+      Serial.println(((float)(fin-experiment_start))/1000000.0, 10);
+      delay_time = sampling_interval_ms_int-(micros()-start)/1000.0;
+      delay(floor(delay_time));
+      delayMicroseconds(1000.0*(delay_time-floor(delay_time)));
       start = micros();
     }
     fastDigitalWrite(movementmode, LOW);
