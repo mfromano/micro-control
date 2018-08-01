@@ -16,11 +16,9 @@ f = figure('Visible','off','Units','Normalized',...
     'Position', [0.1 0.1 0.4 0.4], 'Color', [0 0.7 0.7],...
     'name', 'Mouseball Setup');
 huipusha = uicontrol('Style','pushbutton', 'Units', 'Normalized', ...
-    'Position', [0.3 0.5 0.2 0.1],'string','Start', 'Callback', @callbackfn1,...
+    'Position', [0.3 0.5 0.4 0.1],'string','Start', 'Callback', @callbackfn1,...
     'FontName', 'Wawati SC', 'FontSize', 14);
-huipushb = uicontrol('Style','pushbutton', 'Units', 'Normalized', ...
-    'Position', [0.5 0.5 0.2 0.1],'string','Stop', 'Callback', @callbackfn2,...
-    'FontName', 'Wawati SC', 'FontSize', 14);
+
 huiw1 = uicontrol('Style','edit', 'Units', 'Normalized', ...
     'Position', [0.35 0.43 0.33 0.05],'string','Enter the USB to UART Serial Port (i.e COM1)',...
     'FontName', 'Wawati SC', 'FontSize', 9);
@@ -51,44 +49,35 @@ function callbackfn1(~,~)
 
     fi = fopen(huiw3.String,'w');
     try
-        uart = serial(huiw1.String, 'BaudRate',115200);
+        uart = serial(huiw1.String, 'BaudRate', 115200);
         fopen(uart);
     catch
         errordlg('There was an error connecting to the USB to UART bridge. Please check the COM port.');
     end
     try
-        a = serial(huiw2.String, 'BaudRate',115200); %The board may need to change if a different board is used
+        a = serial(huiw2.String, 'BaudRate', 115200); %The board may need to change if a different board is used
         fopen(a);
     catch
         errordlg('There was an error connecting to the Arduino. Please check the COM port.');
     end
     pause(2);
+
     fwrite(a,sprintf('%s,%s',huiw4.String, huiw5.String));
     pause(0.1);
-    nreps = fscanf(a,'%s\n');
+    nreps = str2double(fscanf(a,'%s\n'));
     repcycles = fscanf(a,'%s\n');
-    fprintf('nreps: %s, repcycles: %s\n',nreps,repcycles);
+    movement = cell(nreps,1);
+    times = cell(nreps,1);
+    fprintf('nreps: %d, repcycles: %s\n',nreps,repcycles);
     fprintf('Beginning acquisition\n');
-    pause(0.1);
-    for i=1:str2double(nreps)
-        rd = fscanf(uart);
-        fprintf(fi,'%s',rd);
-        fprintf('%s\n',rd);
-        rd = fscanf(a,'%s\n');
-        fprintf(fi,'t=%s\n',rd);
+    for i=1:nreps
+        movement{i} = fscanf(uart,'%s');
+        times{i} = fscanf(a,'%s');
+        fprintf('Done with iter %d\n',i);
     end
-    fclose(a);
-    delete(a);
-    fclose(fi);
-    fclose(uart);
-    delete(uart);
-    clear uart a
-end
-
-function callbackfn2(~,~)
-    global uart;
-    global a;
-    global fi;
+    for i=1:(nreps)
+        fprintf(fi,'%s,t=%s\n',movement{i},times{i});
+    end
     fclose(a);
     delete(a);
     fclose(fi);

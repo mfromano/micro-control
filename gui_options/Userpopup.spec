@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['Userpopup.py'],
-             pathex=['/fastdata/micro-control'],
+             pathex=['/fastdata/micro-control/gui_options'],
              binaries=[],
              datas=[],
              hiddenimports=[],

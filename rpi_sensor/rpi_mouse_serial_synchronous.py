@@ -5,7 +5,7 @@ import os
 import select
 
 
-os.nice(1)
+os.nice(-20)
 # Open serial port and mouse interfaces -> store mouse-data in dicts
 sr = Serial("/dev/ttyS0",baudrate=115200)
 GPIO.setmode(GPIO.BOARD) #for questions and/or BOARD layout see https://www.raspberrypi-spy.co.uk/2012/06/simple-guide-to-the-rpi-gpio-header-and-pins/
@@ -38,7 +38,7 @@ def send(t):
     devices['mouse2']['dy'] = 0
     lock.release()
     # Format and Transmit data as string, e.g. (12,-39) = '1x12y-39'
-    datastring = 'L,' + ',x,'+ str(dxL) + ',y,'+ str(dyL) + ',R,' + 'x,' + str(dxR) + ',y,'\
+    datastring = 'L,' + 'x,'+ str(dxL) + ',y,'+ str(dyL) + ',R,' + 'x,' + str(dxR) + ',y,'\
 	+ str(dyR) + ',T,' + str(t)
     sr.write(datastring+'\n')
 
@@ -87,5 +87,4 @@ while True:
     while GPIO.input(16): #pin 16 is high
         GPIO.wait_for_edge(15, GPIO.RISING)
         currt+=1
-	send(currt)
-        print(currt)
+        send(currt)
