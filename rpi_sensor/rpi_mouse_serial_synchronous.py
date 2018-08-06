@@ -49,7 +49,7 @@ def read(dev_file, mouseno):
         # https://johnroach.io/2011/02/16/getting-raw-data-from-a-usb-mouse-in-linux-using-python/
         #status, newdx, newdy = tuple(ord(c) for c in dev_file.read(3))
         #help from https://stackoverflow.com/questions/21429369/read-file-with-timeout-in-python as well
-        [r,a,b] = select.select([dev_file], [],[],0.0001)
+        [r,a,b] = select.select([dev_file], [],[])
         if (dev_file in r):
             status, newdx, newdy = tuple(ord(c) for c in os.read(dev_file,3))
         else:
@@ -89,6 +89,6 @@ while True:
         GPIO.wait_for_edge(15, GPIO.RISING)
         if not started:
             started = True
-            start = time.clock()
-        ctime = time.clock()
+            start = time.time()
+        ctime = time.time()
         send(ctime-start)
