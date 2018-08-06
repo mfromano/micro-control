@@ -80,7 +80,7 @@ while True:
     while not GPIO.input(16):
         pass
     started = False
-	start = None;
+    start = None;
     devices['mouse1']['dx'] = 0
     devices['mouse2']['dx'] = 0
     devices['mouse1']['dy'] = 0
