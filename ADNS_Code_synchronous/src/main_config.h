@@ -30,7 +30,7 @@ const int MODE_PIN = 3;
 const bool TRIGGER_ACTIVE_STATE = HIGH;
 
 // Pre-Compute semi-synchronous sample rates for navigation sensors and camera
-const int NAVSENSOR_FPS = 240;
+const int NAVSENSOR_FPS = 1000;
 
 // =============================================================================
 // Timing & Trigger-Output Settings and Implementation
