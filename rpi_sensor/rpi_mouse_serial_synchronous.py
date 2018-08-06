@@ -87,8 +87,8 @@ while True:
     devices['mouse2']['dx'] = 0
     while GPIO.input(16): #pin 16 is high
         GPIO.wait_for_edge(15, GPIO.RISING)
-		if not started:
+        if not started:
             started = True
-			start = time.clock()
-		ctime = time.clock()
-		send(ctime-start)
+            start = time.clock()
+        ctime = time.clock()
+        send(ctime-start)
