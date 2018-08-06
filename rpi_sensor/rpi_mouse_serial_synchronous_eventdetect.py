@@ -28,7 +28,6 @@ def to_signed(n):
 
 # SENDOUTPUTTHREAD - class for sending data over serial port, subclass of Thread class
 def send(pin):
-    lock.acquire()
     dxL = devices['mouse1']['dx']
     dyL = devices['mouse1']['dy']
     devices['mouse1']['dx'] = 0
@@ -37,42 +36,30 @@ def send(pin):
     dyR = devices['mouse2']['dy']
     devices['mouse2']['dx'] = 0
     devices['mouse2']['dy'] = 0
-    lock.release()
     # Format and Transmit data as string, e.g. (12,-39) = '1x12y-39'
     datastring = 'L,' + 'x,'+ str(dxL) + ',y,'+ str(dyL) + ',R,' + 'x,' + str(dxR) + ',y,'\
 	+ str(dyR) + ',T,' + str(time.time()-start)
     sr.write(datastring+'\n')
 
 def read(dev_file, mouseno):
-    while True:
-        newdx = newdy = 0
-        # Read raw values from mouse device file in linux filesystem
-        # https://johnroach.io/2011/02/16/getting-raw-data-from-a-usb-mouse-in-linux-using-python/
-        #status, newdx, newdy = tuple(ord(c) for c in dev_file.read(3))
-        #help from https://stackoverflow.com/questions/21429369/read-file-with-timeout-in-python as well
-        [r,a,b] = select.select([dev_file], [],[])
-        if (dev_file in r):
-            status, newdx, newdy = tuple(ord(c) for c in os.read(dev_file,3))
-        else:
-            status = 0
-        # Add accumulated readings
-        if status:
-            newdx = to_signed(newdx)
-            newdy = to_signed(newdy)
-        lock.acquire()
-        devices[mouseno]['dx'] += newdx
-        devices[mouseno]['dy'] += newdy
-        lock.release()
-
+    newdx = newdy = 0
+    # Read raw values from mouse device file in linux filesystem
+    # https://johnroach.io/2011/02/16/getting-raw-data-from-a-usb-mouse-in-linux-using-python/
+    #status, newdx, newdy  tuple(ord(c) for c in dev_file.read(3))
+    #help from https://stackoverflow.com/questions/21429369/read-file-with-timeout-in-python as well
+    [r,a,b] = select.select([dev_file],[],[])
+    if (dev_file in r):
+        status, newdx, newdy = tuple(ord(c) for c in os.read(dev_file,3))
+    else:
+        status = 0
+    if status:
+        newdx = to_signed(newdx) 
+        newdy = to_signed(newdy)
+    devices[mouseno]['dx'] += newdx
+    devices[mouseno]['dy'] += newdy
 
 f1 = os.open(devices['mouse1']['File'],os.O_RDONLY)
 f2 = os.open(devices['mouse2']['File'],os.O_RDONLY)
-
-thread1 = Thread(group=None, target=read, name='Thread1', args=(f1,'mouse1',))
-thread2 = Thread(group=None, target=read, name='Thread2', args=(f2,'mouse2',))
-
-thread1.start()
-thread2.start()
 
 GPIO.setup(16, GPIO.IN)
 GPIO.setup(15, GPIO.IN)
@@ -84,7 +71,8 @@ while True:
     devices['mouse1']['dx'] = 0
     devices['mouse2']['dx'] = 0
     devices['mouse1']['dy'] = 0
-    devices['mouse2']['dx'] = a0
+    devices['mouse2']['dx'] = 0
     GPIO.add_event_detect(15, GPIO.RISING, callback=send)
     while GPIO.input(16):
-        pass 
+        read(f1,'mouse1')
+        read(f2,'mouse2')
