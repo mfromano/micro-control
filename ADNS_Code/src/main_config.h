@@ -107,12 +107,10 @@ const String flatFieldNames[] = {
 // Task: INITIALIZE
 static inline bool initializeCommunication();
 static inline bool initializeSensors();
-static inline bool initializeClocks();
 static inline bool initializeTriggering();
 
 // Task: IDLE
-static inline void receiveCommand();
-static inline void beginAcquisition();
+static inline void beginAcquisition(char input[]);
 static inline void beginDataFrame();
 static inline void endDataFrame();
 static inline void endAcquisition();
@@ -123,7 +121,7 @@ static void captureDisplacement();
 
 // Task: DATA_TRANSFER
 static void sendHeader();
-static void sendData();
+static void sendData(sensor_sample_t sample);
 
 
 #endif

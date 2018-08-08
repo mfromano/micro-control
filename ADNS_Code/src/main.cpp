@@ -12,14 +12,8 @@ ADNS adnsA(CS_PIN_A);
 ADNS adnsB(CS_PIN_B);
 sensor_pair_t sensor = {adnsA, adnsB};
 
-// Create Timing Objects
-const int32_t samplePeriodMicros = 1000000L / (int32_t)NAVSENSOR_FPS;
-
 // Capture Task (on interrupt)
 IntervalTimer captureTimer;
-
-// Initialize sample buffer
-CircularBuffer<sensor_sample_t, 10> sensorSampleBuffer;
 
 // Counter and Timestamp Generator
 elapsedMicros microsSinceAcquisitionStart;
@@ -29,7 +23,7 @@ volatile int32_t sampleCountRemaining = 0;
 volatile time_t currentFrameTimestamp;
 volatile time_t currentFrameDuration;
 volatile uint32_t currentFrameCount;
-
+volatile uint32_t nreps = 0;
 volatile bool isRunning = false;
 
 // =============================================================================
@@ -49,9 +43,12 @@ void setup() {
 }
 
 void loop() {
-    if ((!isRunning) && (Serial.available() > 0) {
+    if ((!isRunning) && (Serial.available() > 0)) {
     char matlab_input[50];
     beginAcquisition(matlab_input);
+    while (currentFrameCount < nreps) {
+      ;
+    }
   }
   }
 
@@ -76,39 +73,24 @@ inline static bool initializeSensors() {
   delay(30);
   return true;
 };
-inline static bool initializeClocks() { return true; }
 inline static bool initializeTriggering() {
-  fastPinMode(POWER_PIN, INPUT);
-  // Set Sync Out Pin Modes
-  fastPinMode(MODE_PIN, INPUT);
+  fastPinMode(TRIGGER_PIN, OUTPUT);
   delay(1);
   // Setup Sync/Trigger-Output Timing
   // FrequencyTimer2::setPeriod(1e6 / DISPLACEMENT_SAMPLE_RATE)
   return true;
 };
 
-// =============================================================================
-// TASKS: IDLE
-// =============================================================================
-static inline void receiveCommand() {
-  // Read Serial to see if request for more frames has been sent
-  if (Serial.available()) {
-    // delayMicroseconds(1000);
-    int32_t moreSamplesCnt = Serial.parseInt();
-    sampleCountRemaining += moreSamplesCnt;
-  }
-}
-
 static inline void beginAcquisition(char input[]) {
     delay(0.5);
-    Serial.readBytes(matlab_input, sizeof(matlab_input));
+    Serial.readBytes(input, sizeof(input));
 
     //Parse input
-    char *trial_length_minutes = strtok(matlab_input,",");
+    char *trial_length_minutes = strtok(input,",");
     float trial_length_minutes_int = atof(trial_length_minutes);
     char *sampling_interval_ms = strtok(NULL,",");
     float sampling_interval_ms_int = atof(sampling_interval_ms);
-    long int nreps = floor(trial_length_minutes_int*60*1000/sampling_interval_ms_int);
+    nreps = floor(trial_length_minutes_int*60*1000/sampling_interval_ms_int);
 
     // Print units and Fieldnames (header)
     sendHeader();
@@ -123,19 +105,16 @@ static inline void beginAcquisition(char input[]) {
 
     // Change State
     isRunning = true;
-    currentFrameCount = 0;
 
     // Reset Elapsed Time Counter
     microsSinceAcquisitionStart = 0;
     // currentSampleTimestamp = microsSinceAcquisitionStart;
     microsSinceFrameStart = microsSinceAcquisitionStart;
     currentFrameDuration = microsSinceFrameStart;
-
-    // Call begin-data-frame function (sets trigger outputs)
-    beginDataFrame();
+    currentFrameCount = 0;
     // typedef void (*GeneralFunction) ();
     // GeneralFunction captureDisplacement();
-    IntervalTimer();
+    captureTimer.begin(captureDisplacement, sampling_interval_ms_int*1000);
 }
 
 static inline void beginDataFrame() {
@@ -143,7 +122,6 @@ static inline void beginDataFrame() {
   // Latch timestamp and designate/allocate current sample
   microsSinceFrameStart -= currentFrameDuration;
   currentFrameTimestamp = microsSinceAcquisitionStart;
-  currentFrameCount += 1;
 }
 static inline void endDataFrame() {
   // Latch Frame Duration and Send Data
@@ -153,13 +131,12 @@ static inline void endDataFrame() {
 static inline void endAcquisition() {
   if (isRunning) {
     // End IntervalTimer
-    detachInterrupt(POWER_PIN);
+    captureTimer.end();
     endDataFrame();
 
     // Trigger start using class methods in ADNS library
     sensor.left.triggerAcquisitionStop();
     sensor.right.triggerAcquisitionStop();
-    sensorSampleBuffer.clear();
 
     // Change state
     isRunning = false;
@@ -175,7 +152,7 @@ void captureDisplacement() {
 
   // Initialize container for combined & stamped sample
   sensor_sample_t currentSample;
-  currentSample.timestamp = currentFrameTimestamp;
+  currentSample.timestamp = currentFrameTimestamp; // maybe fix this time stamp issue?
 
   // Trigger capture from each sensor
   sensor.left.triggerSampleCapture();
@@ -183,21 +160,12 @@ void captureDisplacement() {
 
   // Store timestamp for next frame
   currentFrameTimestamp = microsSinceAcquisitionStart;
-
+  currentFrameCount += 1;
   currentSample.left = {'L', sensor.left.readDisplacement(units)};
   currentSample.right = {'R', sensor.right.readDisplacement(units)};
-  // todo: no units
-
-  // Push current sample into buffer for transmission
-  sensorSampleBuffer.push(currentSample);
-
-  // Decrement sample counter and time counter
-  if (sampleCountRemaining >= 0) {
-    sampleCountRemaining--;
-  }
 
   // Send Data
-  sendData();
+  sendData(currentSample);
 
   beginDataFrame();
 }
@@ -218,10 +186,7 @@ void sendHeader() {
       delimiter + flatFieldNames[5] + " [" + tunit + "]" + "\n"));
 }
 
-void sendData() {
-  // Print Velocity
-  while (!(sensorSampleBuffer.isEmpty())) {
-    sensor_sample_t sample = sensorSampleBuffer.shift();
+void sendData(sensor_sample_t sample) {
 
     // Convert to String class
     const String timestamp = String(sample.timestamp);
@@ -238,5 +203,4 @@ void sendData() {
     Serial.print(timestamp + delimiter + dxL + delimiter + dyL + delimiter +
                  dtL + delimiter + dxR + delimiter + dyR + delimiter + dtR +
                  endline);
-  }
 }
