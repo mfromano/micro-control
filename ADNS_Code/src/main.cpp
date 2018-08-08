@@ -23,7 +23,7 @@ volatile int32_t sampleCountRemaining = 0;
 volatile time_t currentFrameTimestamp;
 volatile time_t currentFrameDuration;
 volatile uint32_t currentFrameCount;
-volatile uint32_t nreps = 0;
+volatile long int nreps = 0;
 volatile bool isRunning = false;
 
 // =============================================================================
@@ -91,6 +91,8 @@ static inline void beginAcquisition(char input[]) {
     char *sampling_interval_ms = strtok(NULL,",");
     float sampling_interval_ms_int = atof(sampling_interval_ms);
     nreps = floor(trial_length_minutes_int*60*1000/sampling_interval_ms_int);
+    Serial.println(nreps);
+    Serial.println(sampling_interval_ms_int);
 
     // Print units and Fieldnames (header)
     sendHeader();
