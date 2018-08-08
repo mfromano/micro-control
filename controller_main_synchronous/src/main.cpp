@@ -10,6 +10,8 @@ char matlab_input[50];
 volatile double delay_time;
 double ms_time;
 double micro_time;
+void startExperiment(long int nreps, float sampling_interval_ms_int);
+
 void setup() {
   fastPinMode(movementmode, OUTPUT);
   fastPinMode(ttl, OUTPUT);
@@ -32,25 +34,29 @@ void loop() {
     //Print these functions to MATLAB
     Serial.println(nreps);
     Serial.println(sampling_interval_ms_int);
-    double start;
-    double fin;
     fastDigitalWrite(movementmode, HIGH);
     fastDigitalWrite(ttl, LOW);
     delay(500);
-    double experiment_start = micros();
-    delay(sampling_interval_ms_int);
-    start = micros();
-    for (int i=0; i<nreps; i++) {
-      fin = micros();
-      Serial.println(((float)(fin-experiment_start))/1000000.0, 10);
-      fastDigitalWrite(ttl, HIGH);
-      delayMicroseconds(1000);
-      fastDigitalWrite(ttl, LOW);
-      delay_time = sampling_interval_ms_int-(micros()-start)/1000.0;
-      delay(floor(delay_time));
-      delayMicroseconds(1000.0*(delay_time-floor(delay_time)));
-      start = micros();
-    }
+    startExperiment(nreps, sampling_interval_ms_int);
     fastDigitalWrite(movementmode, LOW);
+  }
+}
+
+void startExperiment(long int nreps,float sampling_interval_ms_int) {
+  double start;
+  double fin;
+  double experiment_start = micros();
+  delay(sampling_interval_ms_int);
+  start = micros();
+  for (int i=0; i<nreps; i++) {
+    fin = micros();
+    Serial.println(((float)(fin-experiment_start))/1000000.0, 10);
+    fastDigitalWrite(ttl, HIGH);
+    delayMicroseconds(1000);
+    fastDigitalWrite(ttl, LOW);
+    delay_time = sampling_interval_ms_int-(micros()-start)/1000.0;
+    delay(floor(delay_time));
+    delayMicroseconds(1000.0*(delay_time-floor(delay_time)));
+    start = micros();
   }
 }
