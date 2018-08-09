@@ -62,7 +62,7 @@ function callbackfn1(~,~)
         fprintf('%s\n',movement{i});
     end
     for i=1:(nreps)
-        fprintf(fi,'%s,t=%s\n',movement{i});
+        fprintf(fi,'%s\n',movement{i});
     end
     fclose(fi);
     fclose(uart);

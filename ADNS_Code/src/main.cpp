@@ -23,7 +23,7 @@ volatile int32_t sampleCountRemaining = 0;
 volatile time_t currentFrameTimestamp;
 volatile time_t currentFrameDuration;
 volatile uint32_t currentFrameCount;
-volatile long int nreps = 0;
+volatile int32_t nreps = 0;
 volatile bool isRunning = false;
 
 // =============================================================================
@@ -40,16 +40,21 @@ void setup() {
 
   initializeTriggering();
 
+  while (Serial.available()) {
+    Serial.read();
+  }
+
 }
 
 void loop() {
     if ((!isRunning) && (Serial.available() > 0)) {
-    char matlab_input[50];
-    beginAcquisition(matlab_input);
-    while (currentFrameCount < nreps) {
-      ;
-    }
-  }
+        char matlab_input[50];
+        beginAcquisition(matlab_input, 50);
+        while (currentFrameCount < nreps) {
+          ;
+        }
+        endAcquisition();
+      }
   }
 
 
@@ -81,16 +86,15 @@ inline static bool initializeTriggering() {
   return true;
 };
 
-static inline void beginAcquisition(char input[]) {
-    delay(0.5);
-    Serial.readBytes(input, sizeof(input));
-
+static inline void beginAcquisition(char input[], int8_t length) {
+    delay(500);
+    Serial.readBytes(input, length);
     //Parse input
     char *trial_length_minutes = strtok(input,",");
     float trial_length_minutes_int = atof(trial_length_minutes);
     char *sampling_interval_ms = strtok(NULL,",");
     float sampling_interval_ms_int = atof(sampling_interval_ms);
-    nreps = floor(trial_length_minutes_int*60*1000/sampling_interval_ms_int);
+    nreps = floor(trial_length_minutes_int*60.0*1000.0/sampling_interval_ms_int);
     Serial.println(nreps);
     Serial.println(sampling_interval_ms_int);
 
@@ -131,7 +135,6 @@ static inline void endDataFrame() {
 
 }
 static inline void endAcquisition() {
-  if (isRunning) {
     // End IntervalTimer
     captureTimer.end();
     endDataFrame();
@@ -142,7 +145,6 @@ static inline void endAcquisition() {
 
     // Change state
     isRunning = false;
-  }
 }
 
 // =============================================================================
