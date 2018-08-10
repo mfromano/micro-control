@@ -157,7 +157,7 @@ void captureDisplacement() {
   // Initialize container for combined & stamped sample
   sensor_sample_t currentSample;
   currentSample.timestamp = currentFrameTimestamp; // maybe fix this time stamp issue?
-
+  fastDigitalWrite(TRIGGER_PIN,HIGH);
   // Trigger capture from each sensor
   sensor.left.triggerSampleCapture();
   sensor.right.triggerSampleCapture();
@@ -170,7 +170,7 @@ void captureDisplacement() {
 
   // Send Data
   sendData(currentSample);
-
+  fastDigitalWrite(TRIGGER_PIN,LOW);
   beginDataFrame();
 }
 
