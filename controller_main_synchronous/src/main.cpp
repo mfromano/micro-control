@@ -59,4 +59,7 @@ void startExperiment(long int nreps,float sampling_interval_ms_int) {
     delayMicroseconds(1000.0*(delay_time-floor(delay_time)));
     start = micros();
   }
+fastDigitalWrite(ttl,HIGH);
+delay(1);
+fastDigitalWrite(ttl,LOW);
 }
