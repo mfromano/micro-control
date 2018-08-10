@@ -1,49 +1,41 @@
-#include <Arduino.h>
-#include <DigitalIO.h>
+#include <math.h> //this was included for the sine function
+#include <ctime.h>
+#include <Arduino.h> //this was included for the Serial.readbytes command
+#include <vector>
+char matlabdata[50];
 
-const int movementmode = 6;
-const int ttl = 4;
-char *trial_length_minutes;
-char *sampling_interval_ms;
-char matlab_input[50];
 
 void setup() {
-  fastPinMode(movementmode, OUTPUT);
-  fastPinMode(ttl, OUTPUT);
-  Serial.begin(115200);
+  samplefreq = 0;
+  loopfreq = 0;
+  static double pi = atan(1)*4;
+  std::vector<int> v;
+  fastPinMode(3,OUTPUT);
 }
 
-void loop() {
-  if(Serial.available() > 0){ //checking for input from matlab
-    delay(0.5);
-    // read input from MATLAB function Userpopup
-    Serial.readBytes(matlab_input, sizeof(matlab_input));
+/*Corresponding matlab code (needs to be put into the MATLAB file as new GUI text box)
+obj = serial(deviceCOMPort,'BaudRate',115200)
+f = fopen(obj);
+fwrite(f,sprintf('%s,%s',samplefrequency,loopfrequency));
+*/
 
-    //Parse input
-    trial_length_minutes = strtok(matlab_input,",");
-    float trial_length_minutes_int = atof(trial_length_minutes);
-    sampling_interval_ms = strtok(NULL,",");
-    float sampling_interval_ms_int = atof(sampling_interval_ms);
-    long int nreps = floor(trial_length_minutes_int*60*1000/sampling_interval_ms_int);
-
-    //Print these functions to MATLAB
-    Serial.println(nreps);
-    Serial.println(sampling_interval_ms_int);
-    double start;
-    double fin;
-    fastDigitalWrite(movementmode, HIGH);
-    fastDigitalWrite(ttl, LOW);
-    delay(500);
-    double experiment_start = micros();
-    for (int i=0; i<nreps; i++) {
-      start = micros();
-      fastDigitalWrite(ttl, HIGH);
-      delayMicroseconds(1000);
-      fastDigitalWrite(ttl, LOW);
-      fin = micros();
-      Serial.println(((float)fin-(float)experiment_start)/1000000, 10);
-      delay(sampling_interval_ms_int-(fin-start)/1000);
+void loop(){
+  clock_t t
+  Serial.readBytes(matlabdata, sizeof(matlabdata)); //used from controller_main_synchronous file
+  samplefreq = strtok(matlabdata,",");
+  float samplefreq = atof(samplefreq);
+  loopfreq = strtok(NULL,",");
+  float loopfreq = atof(loopfreq);
+  intervals = samplefreq*2*pi;
+  t = clock();
+  while (((float)(clock()-t))/CLOCKS_PER_SEC) > 0 && ((float)(clock()-t))/CLOCKS_PER_SEC) <= (2*pi)) {
+    sinewave = sin(t*loopfreq);
+    point = loopfreq/(2*pi*intervals); //tells how many points due to the sampling frequency
+    count = 1;
+    if (((float)(clock()-t))/CLOCKS_PER_SEC) == (point*count)) {
+      v.push_back(count) = sin(t*loopfreq); //this way, vector v will have all the values of the sine function corresponding to the sampling frequency
+      tone(3, v.push_back(count)); //this should have this particular tone play until the next tone comes along
+      count++
     }
-    fastDigitalWrite(movementmode, LOW);
   }
 }
