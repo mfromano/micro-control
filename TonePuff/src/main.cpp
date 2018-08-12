@@ -12,17 +12,17 @@ const float TRIAL_LENGTH = 30000; // ms
 const uint8_t NO_TRIALS = 10;
 
 const uint8_t PUFF_PIN = 3; // pin to use for PUFF
-const float PUFF_START = 12000; // ms
-const float PUFF_LENGTH = 1000; //in ms
+const float PUFF_START = 11700; // ms
+const float PUFF_LENGTH = 100.0; //in ms
 bool PUFF = false;
 
 const uint8_t TONE_PIN = 4;
-const float TONE_START = 10000; // ms
-const float TONE_LENGTH = 1000; //in ms
+const float TONE_START = 11100; // ms
+const float TONE_LENGTH = 350.0; //in ms
 bool TONE = false;
 
 const uint8_t CAMERA_PIN = 5;
-const uint8_t CAMERA_FQ = 50; // Hz
+const uint8_t CAMERA_FQ = 20; // Hz
 elapsedMillis experiment_t;
 elapsedMillis trial_t;
 IntervalTimer trial_timer;
