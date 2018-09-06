@@ -76,7 +76,7 @@ void loop(){
     float ntrials  = atof(ntrials_str);
     char *trial_length_str = strtok(NULL,",");
     float trial_length = atof(trial_length_str);
-    Serial.println(ntrials + ',' + trial_length);
+    Serial.println(String(ntrials) + ',' + String(trial_length));
     begin(ntrials, trial_length);
   }
 }
@@ -84,7 +84,7 @@ void loop(){
 void begin(float ntrials, float trial_length) {
     NO_TRIALS = uint8_t(ntrials);
     TRIAL_LENGTH = trial_length;
-    pinMode(AMP_PIN,OUTPUT); // add amplifier
+    fastPinMode(AMP_PIN,OUTPUT); // add amplifier
     fastDigitalWrite(AMP_PIN,HIGH);
     delay(10);
     experiment_t = 0;
@@ -96,6 +96,7 @@ void begin(float ntrials, float trial_length) {
 }
 void endCollection() {
   trial_timer.end();
+  fastDigitalWrite(AMP_PIN,LOW);
   isRunning = false;
   Serial.println("END\n");
 }
@@ -126,13 +127,15 @@ void capture() {
     fastDigitalWrite(PUFF_PIN, LOW);
   }
 
+  frame_data curr_frame = {frame_no, trial_t, experiment_t, trial_no, PUFF, TONE};
+  sendData(curr_frame);
+
   fastDigitalWrite(CAMERA_PIN,HIGH);
   delay(1);
   fastDigitalWrite(CAMERA_PIN,LOW);
 
   // create output struct
-  frame_data curr_frame = {frame_no, trial_t, experiment_t, trial_no, PUFF, TONE};
-  sendData(curr_frame);
+
 }
 
 void sendData(frame_data frame) {

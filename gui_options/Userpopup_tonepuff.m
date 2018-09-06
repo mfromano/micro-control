@@ -51,7 +51,8 @@ function callbackfn1(~,~)
 
     fwrite(uart,sprintf('%s,%s',huiw4.String, huiw5.String));
     pause(0.1);
-    x = fscanf(uart,'%s,%s');
+    x = fscanf(uart,'%s\n');
+    fprintf(x);
     movement = cell(0);
     fprintf('Beginning acquisition\n');
     while true
