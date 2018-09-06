@@ -35,19 +35,19 @@ bool TONE = false;
 
 const uint8_t CAMERA_PIN = 6;
 const uint8_t CAMERA_FQ = 20; // Hz
-elapsedMillis experiment_t;
-elapsedMillis trial_t;
+elapsedMicros experiment_t;
+elapsedMicros trial_t;
 IntervalTimer trial_timer;
 
 const uint8_t AMP_PIN = 5;
 
-int frame_no;
-int trial_no;
+uint16_t frame_no;
+uint8_t trial_no;
 
 typedef struct {
   uint16_t frame_in_trial = 0;
-  float trial_time = 0;
-  float experiment_time = 0;
+  uint32_t trial_time = 0;
+  uint32_t experiment_time = 0;
   uint8_t trial_number = 0;
   bool puff_on = false;
   bool tone_on = false;
@@ -103,7 +103,7 @@ void endCollection() {
 
 void capture() {
   frame_no++;
-  if (trial_t > TRIAL_LENGTH) {
+  if (trial_t/1000.0 > TRIAL_LENGTH) {
     trial_no++;
     if (trial_no > NO_TRIALS) {
       endCollection();
@@ -112,17 +112,17 @@ void capture() {
     trial_t = 0;
   }
   // update tone
-  if ((trial_t > TONE_START) && (trial_t < (TONE_START+TONE_LENGTH))) {
+  if ((trial_t/1000.0 > TONE_START) && (trial_t/1000.0 < (TONE_START+TONE_LENGTH))) {
     TONE = true;
     sine1.amplitude(1);
-  } else if ((trial_t > (TONE_START + TONE_LENGTH)) && TONE) {
+  } else if ((trial_t/1000.0 > (TONE_START + TONE_LENGTH)) && TONE) {
     TONE = false;
     sine1.amplitude(0);
   }
-  if ((trial_t > PUFF_START) && (trial_t < (PUFF_START+PUFF_LENGTH))) {
+  if ((trial_t/1000.0 > PUFF_START) && (trial_t/1000.0 < (PUFF_START+PUFF_LENGTH))) {
     PUFF = true;
     fastDigitalWrite(PUFF_PIN, HIGH);
-  } else if ((trial_t > (PUFF_START + PUFF_LENGTH)) && PUFF) {
+  } else if ((trial_t/1000.0 > (PUFF_START + PUFF_LENGTH)) && PUFF) {
     PUFF = false;
     fastDigitalWrite(PUFF_PIN, LOW);
   }
@@ -139,8 +139,8 @@ void capture() {
 }
 
 void sendData(frame_data frame) {
-  String exp_time = String(frame.experiment_time, decimals);
-  String tri_time = String(frame.trial_time, decimals);
+  String exp_time = String(frame.experiment_time);
+  String tri_time = String(frame.trial_time);
   String trial_no = String(frame.trial_number);
   String puff = String(frame.puff_on ? "true": "false");
   String tone = String(frame.tone_on ? "true": "false");
