@@ -62,8 +62,8 @@ void setup() {
   fastPinMode(PUFF_PIN, OUTPUT);
   fastPinMode(CAMERA_PIN, OUTPUT);
   Serial.begin(115200);
-  AudioMemory(20);
-  dac1.analogReference(EXTERNAL);
+  AudioMemory(128);
+  // dac1.analogReference(EXTERNAL);
   sine1.frequency(FQ);
   sine1.amplitude(0);
 }
@@ -114,7 +114,7 @@ void capture() {
   // update tone
   if ((trial_t/1000.0 > TONE_START) && (trial_t/1000.0 < (TONE_START+TONE_LENGTH))) {
     TONE = true;
-    sine1.amplitude(1);
+    sine1.amplitude(0.3);
   } else if ((trial_t/1000.0 > (TONE_START + TONE_LENGTH)) && TONE) {
     TONE = false;
     sine1.amplitude(0);
