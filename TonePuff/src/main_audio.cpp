@@ -27,7 +27,7 @@ uint8_t NO_TRIALS = 10;
 
 const uint8_t PUFF_PIN = 3; // pin to use for PUFF
 // const float PUFF_START = 11700; // ms
-const float PUFF_START = 14000; // ms
+const float PUFF_START = 11700; // ms
 const float PUFF_LENGTH = 100.0; //in ms
 bool PUFF = false;
 
