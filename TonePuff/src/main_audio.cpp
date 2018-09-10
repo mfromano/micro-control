@@ -14,6 +14,7 @@ AudioSynthWaveformSine   sine1;          //xy=189,176
 AudioEffectFade          fade1;          //xy=380,177
 AudioOutputAnalog        dac1;           //xy=552,179
 AudioConnection patchCord1(sine1,dac1);
+// end automatically generated code
 
 bool isRunning = false;
 
