@@ -29,6 +29,9 @@ const float PUFF_START = 11700; // ms
 const float PUFF_LENGTH = 100.0; //in ms
 bool PUFF = false;
 
+const uint8_t LED_PIN = 1; // pin to use for LED
+bool LED = false;
+
 const float TONE_START = 11100; // ms
 const float TONE_LENGTH = 350.0; //in ms
 bool TONE = false;
@@ -51,6 +54,7 @@ typedef struct {
   uint8_t trial_number = 0;
   bool puff_on = false;
   bool tone_on = false;
+  bool led_on  = false;
 
 } frame_data;
 
@@ -121,13 +125,17 @@ void capture() {
   }
   if ((trial_t/1000.0 > PUFF_START) && (trial_t/1000.0 < (PUFF_START+PUFF_LENGTH))) {
     PUFF = true;
+    LED = true;
     fastDigitalWrite(PUFF_PIN, HIGH);
+    fastDigitalWrite(LED_PIN, HIGH);
   } else if ((trial_t/1000.0 > (PUFF_START + PUFF_LENGTH)) && PUFF) {
     PUFF = false;
+    LED = false;
     fastDigitalWrite(PUFF_PIN, LOW);
+    fastDigitalWrite(LED_PIN, LOW);
   }
 
-  frame_data curr_frame = {frame_no, trial_t, experiment_t, trial_no, PUFF, TONE};
+  frame_data curr_frame = {frame_no, trial_t, experiment_t, trial_no, PUFF, TONE, LED};
   sendData(curr_frame);
 
   fastDigitalWrite(CAMERA_PIN,HIGH);
@@ -144,5 +152,6 @@ void sendData(frame_data frame) {
   String trial_no = String(frame.trial_number);
   String puff = String(frame.puff_on ? "true": "false");
   String tone = String(frame.tone_on ? "true": "false");
-  Serial.println( exp_time + delimiter + tri_time + delimiter + trial_no + delimiter + puff + delimiter + tone);
+  String led = String(frame.led_on ? "true": "false");
+  Serial.println( exp_time + delimiter + tri_time + delimiter + trial_no + delimiter + puff + delimiter + tone + delimiter + led);
 }
