@@ -17,7 +17,7 @@ AudioConnection patchCord1(sine1,dac1);
 
 bool isRunning = false;
 
-const uint16_t FQ = 10000;
+const uint16_t FQ = 9500;
 char matlabdata[50];
 char delimiter = ',';
 const uint8_t decimals = 10;
@@ -25,12 +25,17 @@ float TRIAL_LENGTH = 30000; // ms
 uint8_t NO_TRIALS = 10;
 
 const uint8_t PUFF_PIN = 3; // pin to use for PUFF
-const float PUFF_START = 11700; // ms
+// const float PUFF_START = 11700; // ms
+const float PUFF_START = 14000; // ms
 const float PUFF_LENGTH = 100.0; //in ms
 bool PUFF = false;
 
+
+
+
 const float TONE_START = 11100; // ms
-const float TONE_LENGTH = 350.0; //in ms
+// const float TONE_LENGTH = 350.0; //in ms
+const float TONE_LENGTH = 2000.0;
 bool TONE = false;
 
 const uint8_t CAMERA_PIN = 6;
@@ -114,7 +119,7 @@ void capture() {
   // update tone
   if ((trial_t/1000.0 > TONE_START) && (trial_t/1000.0 < (TONE_START+TONE_LENGTH))) {
     TONE = true;
-    sine1.amplitude(0.3);
+    sine1.amplitude(0.05);
   } else if ((trial_t/1000.0 > (TONE_START + TONE_LENGTH)) && TONE) {
     TONE = false;
     sine1.amplitude(0);
@@ -133,8 +138,6 @@ void capture() {
   fastDigitalWrite(CAMERA_PIN,HIGH);
   delay(1);
   fastDigitalWrite(CAMERA_PIN,LOW);
-
-  // create output struct
 
 }
 
