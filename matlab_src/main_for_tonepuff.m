@@ -17,8 +17,37 @@ end
 
 
 
-%%
+%% now extract data from tdt files
 
+
+d = 'micro-control-data/9-17-2018-TestRomanoTone-Puff/Block-1';
+data = TDTbin2mat(d);
+
+light = data.streams.Soun.data;
+puff = data.streams.Eyes.data;
+camera = data.streams.Puls.data;
+
+taxis = 0:1:length(light);
+taxis = taxis/data.streams.Soun.fs;
+%% get all camera frames
+
+camera_on = camera > 1;
+camera_start = find(~~[diff(camera_on) == 1],1,'first');
+
+light = light(camera_start:end);
+puff = puff(camera_start:end);
+camera = camera(camera_start:end);
+taxis = taxis(camera_start:end);
+taxis = taxis-taxis(1)+tbl.Time(1)/(10^6);
+
+%% now get all camera_on time points
+camera_takes = camera > 1;
+camera_on = [diff(camera_takes) == 1];
+pics_tdt = taxis(camera_on);
+timestamps_orig = tbl.Time/(10^6);
+mdl = fitlm(timestamps_orig, pics_tdt);
+
+%%
 figure;
 t = t/(10^6);
 plot(t,velocity_cms);
