@@ -8,7 +8,6 @@ end
 
 vars = {'Puff','Tone','LED'};
 for v=1:numel(vars)
-    
     % convert puff
     tbl.(vars{v}) = cellfun(@(x) strrep(x,'false','0'),tbl.(vars{v}),'uniformoutput',0);
     tbl.(vars{v}) = cellfun(@(x) strrep(x,'true','1'),tbl.(vars{v}),'uniformoutput',0);
