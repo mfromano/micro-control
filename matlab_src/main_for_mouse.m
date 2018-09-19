@@ -56,29 +56,31 @@ camera_on_times = taxis(~~camera_start); % find corresponding time points
 
 camera_on_times = camera_on_times(1:end-1)-camera_on_times(1); % set to t=0
 
+t_true = 1:1:length(camera_on_times);
+t_true = (t_true-t_true(1))*0.05;
 
-mdl = fitlm(t, camera_on_times);
+mdl = fitlm(t_true,camera_on_times);
 
 figure;
 
-jitter = rand(length(t),1)-.5;
+jitter = rand(length(t_true),1)-.5;
 
-plot(camera_on_times, t+jitter*5,'.k','MarkerSize',5);
+plot(t_true, camera_on_times(:)+jitter*5,'.k','MarkerSize',5);
 hold on;
-plot(camera_on_times,mdl.predict(camera_on_times(:)),'-g');
+plot(camera_on_times,mdl.predict(t_true(:)),'-g');
 hold off;
-xlabel('Measured time [s]');
-ylabel('Time on Teensy [s]');
+xlabel('Theoretical time [s]');
+ylabel('Measured time [s]');
 title('Camera times');
 print('figures/mouse_1753_timing.svg','-dsvg');
 
 %% now perhaps plot drift?
 figure;
-plot(t,camera_on_times(:)-t,'.k');
+plot(t_true,camera_on_times(:)-t_true(:),'.k');
 hold on;
-plot(t,zeros(size(t)),'g');
-mdl2 = fitlm(t,camera_on_times(:)-t);
+plot(t_true,zeros(size(t)),'g');
+mdl2 = fitlm(t_true(:),camera_on_times(:)-t_true(:));
 ylim([-.2 .2])
-xlabel('Time of experiment [s]');
-ylabel('Measured time - Teensy time [s]');
-printf('figures/difference_measured_minus_teensy.svg','-dsvg');     
+xlabel('Theoretical time[s]');
+ylabel('Measured time - theoretical time [s]');
+print('figures/difference_measured_minus_teensy.svg','-dsvg');     
