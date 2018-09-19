@@ -23,36 +23,37 @@ save('micro-control-data/tone_puff_table.mat','tbl');
 d = 'micro-control-data/9-17-2018-TestRomanoTone-Puff/Block-1';
 data = TDTbin2mat(d);
 
-light = data.streams.Soun.data;
-puff = data.streams.Eyes.data;
-camera = data.streams.Puls.data;
+light_tdt = data.streams.Soun.data;
+puff_tdt = data.streams.Eyes.data;
+camera_tdt = data.streams.Puls.data;
 
-taxis = 0:1:length(light);
-taxis = taxis/data.streams.Soun.fs;
+taxis_tdt = 0:1:length(light_tdt);
+taxis_tdt = taxis_tdt/data.streams.Soun.fs; % divide through by the sampling frequency
 %% get all camera frames
 
-camera_on = camera > 1;
-camera_start = find(~~[diff(camera_on) == 1],1,'first');
+camera_on_tdt = camera_tdt > 1;
+camera_start = find(~~[0 diff(camera_on_tdt) == 1],1,'first'); % find first time point above 1
 
-light = light(camera_start:end);
-puff = puff(camera_start:end);
-camera = camera(camera_start:end);
-taxis = taxis(camera_start:end);
-taxis = taxis-taxis(1)+tbl.Time(1)/(10^6);
+% truncate recordings by aligning to first pulse
+light_tdt = light_tdt(camera_start:end);
+puff_tdt = puff_tdt(camera_start:end);
+camera_tdt = camera_tdt(camera_start:end);
+taxis_tdt = taxis_tdt(camera_start:end);
+taxis_tdt = taxis_tdt-taxis_tdt(1)+tbl.Time(1)/(10^6); % set first time point equal to timing of first timestamp
 
 %% now get all camera_on time points
-camera_takes = camera > 1;
-camera_on = [diff(camera_takes) == 1];
-pics_tdt = taxis(camera_on);
+camera_takes_tdt = camera_tdt > 1; % with truncated time series, find all time points above 1
+camera_on_tdt = [~~1, diff(camera_takes_tdt) == 1]; % find first time points 
+timestamps_tdt = taxis_tdt(camera_on_tdt);
 timestamps_orig = tbl.Time/(10^6);
-mdl.camera = fitlm(timestamps_orig, pics_tdt);
+mdl.camera = fitlm(timestamps_orig, timestamps_tdt);
 figure;
 
 jitter = rand(length(timestamps_orig),1)-.5;
 
-plot(pics_tdt, timestamps_orig+jitter*5,'.k','MarkerSize',5);
+plot(timestamps_tdt, timestamps_orig+jitter*5,'.k','MarkerSize',5);
 hold on;
-plot(pics_tdt,mdl.camera.predict(pics_tdt(:)),'-g');
+plot(timestamps_tdt,mdl.camera.predict(timestamps_tdt(:)),'-g');
 hold off;
 xlabel('Measured time [s]');
 ylabel('Time on Teensy [s]');
@@ -60,16 +61,16 @@ title('Camera times');
 print('figures/tone_and_light_camera_timing.svg','-dsvg');
 %% now get timing of puff and light
 % times recorded on external device
-on_times.light = taxis(diff(light > 1) == 1);
-off_times.light = taxis(diff(light > 1) == -1);
+on_times.light = taxis_tdt([~~0, diff(light_tdt > 1) == 1]);
+off_times.light = taxis_tdt([~~0,diff(light_tdt > 1) == -1]);
 
 on_times_teensy.light = timestamps_orig([~~0; diff(tbl.LED) == 1]);
 off_times_teensy.light = timestamps_orig([~~0; diff(tbl.LED) == -1]);
 mdl.lighton = fitlm(on_times.light, on_times_teensy.light);
 mdl.lightoff = fitlm(off_times.light, off_times_teensy.light);
 %% repeat with puff
-on_times.puff = taxis(diff(puff > 1) == 1);
-off_times.puff = taxis(diff(puff > 1) == -1);
+on_times.puff = taxis_tdt([~~0, diff(puff_tdt > 1) == 1]);
+off_times.puff = taxis_tdt([diff(puff_tdt > 1) == -1]);
 
 on_times_teensy.puff = timestamps_orig([~~0; diff(tbl.Puff) == 1]);
 off_times_teensy.puff = timestamps_orig([~~0; diff(tbl.Puff) == -1]);

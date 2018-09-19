@@ -61,7 +61,7 @@ function callbackfn1(~,~)
         movement{i} = fscanf(uart,'%s');
         fprintf('%s\n',movement{i});
     end
-    for i=1:(nreps)
+    for i=1:(nreps+1)
         fprintf(fi,'%s\n',movement{i});
     end
     fclose(fi);
