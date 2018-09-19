@@ -39,23 +39,22 @@ data = TDTbin2mat(d);
 fs = data.streams.Puls.fs;
 data = data.streams.Puls.data;
 taxis = (1:1:(length(data)))/fs; % taxis in seconds;
-plot(taxis, data);
 
 % find all of the digital ones
 camera_on = data > 1;
 
 % now find first on index;
-camera_start = find(~~[diff(camera_on) == 1],1,'first');
+camera_start = find(~~[0 diff(camera_on) == 1],1,'first');
 
-taxis = taxis(camera_start:end);
-camera_on = camera_on(camera_start:end);
-camera_start = [0, diff(camera_on) == 1]; 
+taxis = taxis(camera_start:end); % realign taxis
+camera_on = camera_on(camera_start:end); % realign camera on time points
 
-camera_on_times = taxis(~~camera_start);
+camera_start = [1, diff(camera_on) == 1]; % get camera starts
 
-camera_on_times = camera_on_times(1:end-1)-camera_on_times(1);
+camera_on_times = taxis(~~camera_start); % find corresponding time points
 
-t = t/(10^6);
+camera_on_times = camera_on_times(1:end-1)-camera_on_times(1); % set to t=0
+
 
 mdl = fitlm(t, camera_on_times);
 
@@ -72,7 +71,7 @@ ylabel('Time on Teensy [s]');
 title('Camera times');
 print('figures/mouse_1753_timing.svg','-dsvg');
 
-% now perhaps plot drift?
+%% now perhaps plot drift?
 figure;
 plot(t,camera_on_times(:)-t,'.k');
 hold on;
