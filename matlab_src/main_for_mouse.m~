@@ -49,36 +49,5 @@ camera_start = find(~~[diff(camera_on) == 1],1,'first');
 
 taxis = taxis(camera_start:end);
 camera_on = camera_on(camera_start:end);
-camera_start = [0, diff(camera_on) == 1]; 
+taxis(find(camera_on) == 
 
-camera_on_times = taxis(~~camera_start);
-
-camera_on_times = camera_on_times(1:end-1)-camera_on_times(1);
-
-t = t/(10^6);
-
-mdl = fitlm(t, camera_on_times);
-
-figure;
-
-jitter = rand(length(t),1)-.5;
-
-plot(camera_on_times, t+jitter*5,'.k','MarkerSize',5);
-hold on;
-plot(camera_on_times,mdl.predict(camera_on_times(:)),'-g');
-hold off;
-xlabel('Measured time [s]');
-ylabel('Time on Teensy [s]');
-title('Camera times');
-print('figures/mouse_1753_timing.svg','-dsvg');
-
-% now perhaps plot drift?
-figure;
-plot(t,camera_on_times(:)-t,'.k');
-hold on;
-plot(t,zeros(size(t)),'g');
-mdl2 = fitlm(t,camera_on_times(:)-t);
-ylim([-.2 .2])
-xlabel('Time of experiment [s]');
-ylabel('Measured time - Teensy time [s]');
-printf('figures/difference_measured_minus_teensy.svg','-dsvg');     

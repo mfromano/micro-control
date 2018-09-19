@@ -45,42 +45,74 @@ camera_takes = camera > 1;
 camera_on = [diff(camera_takes) == 1];
 pics_tdt = taxis(camera_on);
 timestamps_orig = tbl.Time/(10^6);
-mdl = fitlm(timestamps_orig, pics_tdt);
-
-%%
+mdl.camera = fitlm(timestamps_orig, pics_tdt);
 figure;
-t = t/(10^6);
-plot(t,velocity_cms);
-xlabel('Time [s]');
-ylabel('Speed [cm/s]');
-xlim([180 260]);
-title('Example session');
-print(gcf,sprintf('figures/mouse_1753_speed_example.pdf'));
 
-st.mn = mean(velocity_cms);
-st.sd = std(velocity_cms);
+jitter = rand(length(timestamps_orig),1)-.5;
 
-%% now examine the timing of the digital pulses
+plot(pics_tdt, timestamps_orig+jitter*5,'.k','MarkerSize',5);
+hold on;
+plot(pics_tdt,mdl.camera.predict(pics_tdt(:)),'-g');
+hold off;
+xlabel('Measured time [s]');
+ylabel('Time on Teensy [s]');
+title('Camera times');
+print('figures/tone_and_light_camera_timing.svg','-dsvg');
+%% now get timing of puff and light
+% times recorded on external device
+on_times.light = taxis(diff(light > 1) == 1);
+off_times.light = taxis(diff(light > 1) == -1);
 
-d = 'micro-control-data/9-17-2018-Mike-1753-Virmen/Block-1';
-data = TDTbin2mat(d);
-fs = data.streams.Puls.fs;
-data = data.streams.Puls.data;
-taxis = (0:1:(length(data)-1))/fs; % taxis in seconds;
-plot(taxis, data);
+on_times_teensy.light = timestamps_orig([~~0; diff(tbl.LED) == 1]);
+off_times_teensy.light = timestamps_orig([~~0; diff(tbl.LED) == -1]);
+mdl.lighton = fitlm(on_times.light, on_times_teensy.light);
+mdl.lightoff = fitlm(off_times.light, off_times_teensy.light);
+%% repeat with puff
+on_times.puff = taxis(diff(puff > 1) == 1);
+off_times.puff = taxis(diff(puff > 1) == -1);
 
-% find all of the digital ones
-digital_on = data > 1;
+on_times_teensy.puff = timestamps_orig([~~0; diff(tbl.Puff) == 1]);
+off_times_teensy.puff = timestamps_orig([~~0; diff(tbl.Puff) == -1]);
 
-% now find indices turned on;
-change_inds = [0, diff(digital_on) == 1];
+mdl.puffon = fitlm(on_times.puff, on_times_teensy.puff);
+mdl.puffoff = fitlm(off_times.puff, off_times_teensy.puff);
+%% now plot puff and light
 
-% now find times
-chtimes = taxis(~~change_inds);
-chtimes = chtimes-chtimes(1);
+figure;
+subplot(2,2,1)
+plot(on_times.puff, on_times_teensy.puff,'.k','MarkerSize',10);
+hold on;
+plot(on_times.puff, mdl.puffon.predict(on_times.puff(:)),'-b');
+hold off
+xlabel('Measured time [s]');
+ylabel('Time on Teensy [s]');
+title('Puff On Times');
 
-hist(diff(chtimes))
-xlabel('Time [s]');
-ylabel('Count');
-title(sprintf('Mouse 1753, fs: %d, dt: %d',fs,1/fs));
-print(gcf,sprintf('figures/mouse_1753_delta_digitalon.pdf'),'-dpdf');
+subplot(2,2,2)
+plot(off_times.puff, off_times_teensy.puff,'.k','MarkerSize',10);
+hold on;
+plot(off_times.puff, mdl.puffoff.predict(off_times.puff(:)),'-b');
+hold off
+xlabel('Measured time [s]');
+ylabel('Time on Teensy [s]');
+title('Puff Off Times');
+
+subplot(2,2,3)
+plot(on_times.light, on_times_teensy.light,'.k','MarkerSize',10);
+hold on;
+plot(on_times.light, mdl.lighton.predict(on_times.light(:)),'-b');
+hold off
+xlabel('Measured time [s]');
+ylabel('Time on Teensy [s]');
+title('Light On Times');
+
+subplot(2,2,4)
+plot(off_times.light, off_times_teensy.light,'.k','MarkerSize',10);
+hold on;
+plot(off_times.light, mdl.lightoff.predict(off_times.light(:)),'-b');
+hold off
+xlabel('Measured time [s]');
+ylabel('Time on Teensy [s]');
+title('Light Off Times');
+
+print(gcf,'figures/tone_and_light_timing.svg','-dsvg');
