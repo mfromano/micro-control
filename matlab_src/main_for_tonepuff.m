@@ -15,7 +15,7 @@ for v=1:numel(vars)
     tbl.(vars{v}) = cellfun(@(x) num2str(x),tbl.(vars{v}));
 end
 
-
+save('micro-control-data/tone_puff_table.mat','tbl');
 
 %%
 

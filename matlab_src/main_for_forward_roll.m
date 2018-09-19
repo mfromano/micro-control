@@ -3,7 +3,7 @@ x = csvread('micro-control-data/motor_forwardroll_1.txt',1,0);
 
 yl = x(:,3);
 yr = x(:,6);
-sensorAngleDegrees = 75; % measured by kyle
+sensorAngleDegrees = 74; % measured by kyle
 sensorAngleRadians = (sensorAngleDegrees/360)*2*pi;
 
 yl = (yl-yr*cos(sensorAngleRadians))/cos(pi/2-sensorAngleRadians);
