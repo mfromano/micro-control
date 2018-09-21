@@ -65,9 +65,9 @@ figure;
 
 jitter = rand(length(t_true),1)-.5;
 
-plot(t_true, camera_on_times(:)+jitter*5,'.k','MarkerSize',5);
+plot(t_true, camera_on_times(:),'.k','MarkerSize',5);
 hold on;
-plot(camera_on_times,mdl.predict(t_true(:)),'-g');
+plot(t_true,mdl.predict(t_true(:)),'-g');
 hold off;
 xlabel('Theoretical time [s]');
 ylabel('Measured time [s]');
