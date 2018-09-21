@@ -47,9 +47,8 @@ timestamps_orig = 0.05*(0:1:(length(timestamps_tdt)-1));
 mdl.camera = fitlm(timestamps_orig, timestamps_tdt);
 figure;
 
-jitter = rand(length(timestamps_tdt),1)-.5;
 
-plot(timestamps_orig, timestamps_tdt(:)+jitter*5,'.k','MarkerSize',5);
+plot(timestamps_orig, timestamps_tdt(:),'.k','MarkerSize',5);
 hold on;
 plot(timestamps_orig,mdl.camera.predict(timestamps_orig(:)),'-g');
 hold off;
