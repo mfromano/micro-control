@@ -70,6 +70,7 @@ inline static bool initializeCommunication() {
   delay(10);
   return true;
 };
+
 inline static bool initializeSensors() {
   // Begin Sensors
   sensor.left.begin();
@@ -78,6 +79,7 @@ inline static bool initializeSensors() {
   delay(30);
   return true;
 };
+
 inline static bool initializeTriggering() {
   fastPinMode(TRIGGER_PIN, OUTPUT);
   delay(1);
@@ -115,17 +117,31 @@ static inline void beginAcquisition(char input[], int8_t length) {
     // Reset Elapsed Time Counter
     microsSinceAcquisitionStart = 0;
     // currentSampleTimestamp = microsSinceAcquisitionStart;
-    //microsSinceFrameStart = microsSinceAcquisitionStart;
-    //currentFrameDuration = microsSinceFrameStart;
+    microsSinceFrameStart = microsSinceAcquisitionStart;
+    currentFrameDuration = microsSinceFrameStart;
     currentFrameCount = 0;
+    beginDataFrame();
     // typedef void (*GeneralFunction) ();
     // GeneralFunction captureDisplacement();
     captureTimer.begin(captureDisplacement, sampling_interval_ms_int*1000);
 }
 
+static inline void beginDataFrame() {
+  fastDigitalWrite(TRIGGER_PIN,HIGH);
+  // Latch timestamp and designate/allocate current sample
+  microsSinceFrameStart -= currentFrameDuration;
+  currentFrameTimestamp = microsSinceAcquisitionStart;
+}
+static inline void endDataFrame() {
+  fastDigitalWrite(TRIGGER_PIN,LOW);
+  // Latch Frame Duration and Send Data
+  currentFrameDuration = microsSinceFrameStart;
+
+}
 static inline void endAcquisition() {
     // End IntervalTimer
     captureTimer.end();
+    endDataFrame();
 
     // Trigger start using class methods in ADNS library
     sensor.left.triggerAcquisitionStop();
@@ -139,23 +155,25 @@ static inline void endAcquisition() {
 // TASKS: TRIGGERED_ACQUISITION
 // =============================================================================
 void captureDisplacement() {
+  // // Unset Trigger Outputs
+  endDataFrame();
 
   // Initialize container for combined & stamped sample
   sensor_sample_t currentSample;
   currentSample.timestamp = currentFrameTimestamp; // maybe fix this time stamp issue?
-  fastDigitalWrite(TRIGGER_PIN,HIGH);
   // Trigger capture from each sensor
   sensor.left.triggerSampleCapture();
   sensor.right.triggerSampleCapture();
 
   // Store timestamp for next frame
+  currentFrameTimestamp = microsSinceAcquisitionStart;
   currentFrameCount += 1;
   currentSample.left = {'L', sensor.left.readDisplacement(units)};
   currentSample.right = {'R', sensor.right.readDisplacement(units)};
 
   // Send Data
   sendData(currentSample);
-  fastDigitalWrite(TRIGGER_PIN,LOW);
+  beginDataFrame();
 }
 
 // =============================================================================

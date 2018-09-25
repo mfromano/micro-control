@@ -111,6 +111,8 @@ static inline bool initializeTriggering();
 
 // Task: IDLE
 static inline void beginAcquisition(char input[],int8_t length);
+static inline void beginDataFrame();
+static inline void endDataFrame();
 static inline void endAcquisition();
 
 // Task: TRIGGERED_ACQUISITION
