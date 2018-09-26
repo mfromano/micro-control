@@ -153,7 +153,6 @@ void captureDisplacement() {
   currentFrameCount += 1;
   currentSample.left = {'L', sensor.left.readDisplacement(units)};
   currentSample.right = {'R', sensor.right.readDisplacement(units)};
-
   // Send Data
   sendData(currentSample);
   currentFrameTimestamp = microsSinceAcquisitionStart;
