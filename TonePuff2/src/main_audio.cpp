@@ -111,7 +111,8 @@ void endCollection() {
 
 void capture() {
   frame_no++;
-  if ((trial_t/1000.0 > TRIAL_LENGTH) || (trial_no == 0)) {
+  curr_t = trial_t;
+  if ((curr_t/1000.0 > TRIAL_LENGTH) || (trial_no == 0)) {
     trial_no++;
     if (trial_no > NO_TRIALS) {
       endCollection();
@@ -120,7 +121,7 @@ void capture() {
     trial_t = 0;
   }
   // update tone
-  if ((trial_t/1000.0 > TONE_START) && (trial_t/1000.0 < (TONE_START+TONE_LENGTH))) {
+  if ((curr_t/1000.0 > TONE_START) && (curr_t/1000.0 < (TONE_START+TONE_LENGTH))) {
     TONE = true;
     LED = true;
     sine1.amplitude(0.05);
@@ -132,7 +133,7 @@ void capture() {
     fastDigitalWrite(LED_PIN, LOW);
 
   }
-  if ((trial_t/1000.0 > PUFF_START) && (trial_t/1000.0 < (PUFF_START+PUFF_LENGTH))) {
+  if ((curr_t/1000.0 > PUFF_START) && (curr_t/1000.0 < (PUFF_START+PUFF_LENGTH))) {
     PUFF = true;
     fastDigitalWrite(PUFF_PIN, HIGH);
   } else if ((trial_t/1000.0 > (PUFF_START + PUFF_LENGTH)) && PUFF) {
@@ -140,13 +141,12 @@ void capture() {
     fastDigitalWrite(PUFF_PIN, LOW);
   }
 
-  frame_data curr_frame = {frame_no, trial_t, experiment_t, trial_no, PUFF, TONE, LED};
-  sendData(curr_frame);
-
+  frame_data curr_frame = {frame_no, curr_t, experiment_t, trial_no, PUFF, TONE, LED};
   fastDigitalWrite(CAMERA_PIN,HIGH);
   delay(1);
   fastDigitalWrite(CAMERA_PIN,LOW);
-
+  
+  sendData(curr_frame);
 }
 
 void sendData(frame_data frame) {
