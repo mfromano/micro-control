@@ -115,21 +115,26 @@ void endCollection() {
 }
 
 void capture() {
+  curr_t = trial_t;
+  exp_t = experiment_t;
   if (trial_no == 0) {
     trial_no++;
     trial_t = 0;
     experiment_t = 0;
+    curr_t = trial_t;
+    exp_t = experiment_t;
   }
   frame_no++;
-  curr_t = trial_t;
-  exp_t = experiment_t;
-  
-  if ((curr_t/1000.0 > TRIAL_LENGTH)) {
+
+
+  if ((curr_t/1000.0+ jitter > TRIAL_LENGTH)) {
     trial_no++;
     if (trial_no > NO_TRIALS) {
       endCollection();
       return;
     }
+    trial_t = 0;
+    curr_t = trial_t;
   }
   // update tone
   if ((curr_t/1000.0 + jitter > TONE_START) && (curr_t/1000.0+jitter < (TONE_START+TONE_LENGTH))) {
