@@ -27,7 +27,7 @@ uint8_t NO_TRIALS = 10;
 
 const uint8_t PUFF_PIN = 3; // pin to use for PUFF
 // const float PUFF_START = 11700; // ms
-const float PUFF_START = 11700; // ms
+const float PUFF_START = 12050; // ms
 const float PUFF_LENGTH = 100.0; //in ms
 bool PUFF = false;
 
@@ -36,7 +36,7 @@ bool LED = false;
 
 const float TONE_START = 11100; // ms
 // const float TONE_LENGTH = 350.0; //in ms
-const float TONE_LENGTH = 350.0;
+const float TONE_LENGTH = 700.0;
 bool TONE = false;
 
 const uint8_t CAMERA_PIN = 6;

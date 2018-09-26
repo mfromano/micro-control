@@ -27,7 +27,7 @@ uint8_t NO_TRIALS = 10;
 
 const uint8_t PUFF_PIN = 3; // pin to use for PUFF
 // const float PUFF_START = 11700; // ms
-const float PUFF_START = 11700; // ms
+const float PUFF_START = 12050; // ms
 const float PUFF_LENGTH = 100.0; //in ms
 bool PUFF = false;
 
@@ -36,11 +36,16 @@ bool LED = false;
 
 const float TONE_START = 11100; // ms
 // const float TONE_LENGTH = 350.0; //in ms
-const float TONE_LENGTH = 350.0;
+const float TONE_LENGTH = 700.0;
 bool TONE = false;
 
 const uint8_t CAMERA_PIN = 6;
 const uint8_t CAMERA_FQ = 20; // Hz
+const float jitter = 1000.0/float(CAMERA_FQ)/2.0;
+
+volatile time_t curr_t;
+volatile time_t exp_t;
+
 elapsedMicros experiment_t;
 elapsedMicros trial_t;
 IntervalTimer trial_timer;
@@ -110,51 +115,62 @@ void endCollection() {
 }
 
 void capture() {
+  curr_t = trial_t;
+  exp_t = experiment_t;
+  if (trial_no == 0) {
+    trial_no++;
+    trial_t = 0;
+    experiment_t = 0;
+    curr_t = trial_t;
+    exp_t = experiment_t;
+  }
   frame_no++;
-  if ((trial_t/1000.0 > TRIAL_LENGTH) || (trial_no == 0)) {
+
+
+  if ((curr_t/1000.0+ jitter > TRIAL_LENGTH)) {
     trial_no++;
     if (trial_no > NO_TRIALS) {
       endCollection();
       return;
     }
     trial_t = 0;
+    curr_t = trial_t;
   }
   // update tone
-  if ((trial_t/1000.0 > TONE_START) && (trial_t/1000.0 < (TONE_START+TONE_LENGTH))) {
+  if ((curr_t/1000.0 + jitter > TONE_START) && (curr_t/1000.0+jitter < (TONE_START+TONE_LENGTH))) {
     TONE = true;
     LED = true;
     sine1.amplitude(0.05);
     fastDigitalWrite(LED_PIN, HIGH);
-  } else if ((trial_t/1000.0 > (TONE_START + TONE_LENGTH)) && TONE) {
+  } else if ((curr_t/1000.0 + jitter > (TONE_START + TONE_LENGTH)) && TONE) {
     TONE = false;
     LED = false;
     sine1.amplitude(0);
     fastDigitalWrite(LED_PIN, LOW);
 
   }
-  if ((trial_t/1000.0 > PUFF_START) && (trial_t/1000.0 < (PUFF_START+PUFF_LENGTH))) {
+  if ((curr_t/1000.0 +jitter > PUFF_START) && (curr_t/1000.0 +jitter < (PUFF_START+PUFF_LENGTH))) {
     PUFF = true;
     fastDigitalWrite(PUFF_PIN, HIGH);
-  } else if ((trial_t/1000.0 > (PUFF_START + PUFF_LENGTH)) && PUFF) {
+  } else if ((curr_t/1000.0 + jitter > (PUFF_START + PUFF_LENGTH)) && PUFF) {
     PUFF = false;
     fastDigitalWrite(PUFF_PIN, LOW);
   }
 
-  frame_data curr_frame = {frame_no, trial_t, experiment_t, trial_no, PUFF, TONE, LED};
-  sendData(curr_frame);
-
+  frame_data curr_frame = {frame_no, curr_t, exp_t, trial_no, PUFF, TONE, LED};
   fastDigitalWrite(CAMERA_PIN,HIGH);
   delay(1);
   fastDigitalWrite(CAMERA_PIN,LOW);
 
+  sendData(curr_frame);
 }
 
 void sendData(frame_data frame) {
   String exp_time = String(frame.experiment_time);
   String tri_time = String(frame.trial_time);
   String trial_no = String(frame.trial_number);
-  String puff = String(frame.puff_on ? "true": "false");
-  String tone = String(frame.tone_on ? "true": "false");
-  String led = String(frame.led_on ? "true": "false");
+  String puff = String(frame.puff_on ? "1": "0");
+  String tone = String(frame.tone_on ? "1": "0");
+  String led = String(frame.led_on ? "1": "0");
   Serial.println( exp_time + delimiter + tri_time + delimiter + trial_no + delimiter + puff + delimiter + tone + delimiter + led);
 }
