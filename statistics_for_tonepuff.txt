@@ -1,0 +1,4 @@
+mean led start: 11.099993080 +/- 0.000000900 sec
+mean led length: 0.700046530 +/- 0.000005814 sec
+mean intermission length: 0.249999371 +/- 0.000020703 sec
+mean puff length: 0.100031681 +/- 0.000015879 sec
