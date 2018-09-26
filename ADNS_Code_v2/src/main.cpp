@@ -117,31 +117,16 @@ static inline void beginAcquisition(char input[], int8_t length) {
     // Reset Elapsed Time Counter
     microsSinceAcquisitionStart = 0;
     // currentSampleTimestamp = microsSinceAcquisitionStart;
-    microsSinceFrameStart = microsSinceAcquisitionStart;
-    currentFrameDuration = microsSinceFrameStart;
+    currentFrameTimestamp = microsSinceAcquisitionStart;
     currentFrameCount = 0;
-    beginDataFrame();
-    // typedef void (*GeneralFunction) ();
-    // GeneralFunction captureDisplacement();
+    fastDigitalWrite(TRIGGER_PIN,HIGH);
     captureTimer.begin(captureDisplacement, sampling_interval_ms_int*1000);
 }
 
-static inline void beginDataFrame() {
-  fastDigitalWrite(TRIGGER_PIN,HIGH);
-  // Latch timestamp and designate/allocate current sample
-  microsSinceFrameStart -= currentFrameDuration;
-  currentFrameTimestamp = microsSinceAcquisitionStart;
-}
-static inline void endDataFrame() {
-  fastDigitalWrite(TRIGGER_PIN,LOW);
-  // Latch Frame Duration and Send Data
-  currentFrameDuration = microsSinceFrameStart;
-
-}
 static inline void endAcquisition() {
     // End IntervalTimer
     captureTimer.end();
-    endDataFrame();
+    fastDigitalWrite(TRIGGER_PIN,LOW);
 
     // Trigger start using class methods in ADNS library
     sensor.left.triggerAcquisitionStop();
@@ -156,8 +141,7 @@ static inline void endAcquisition() {
 // =============================================================================
 void captureDisplacement() {
   // // Unset Trigger Outputs
-  endDataFrame();
-
+  fastDigitalWrite(TRIGGER_PIN,LOW);
   // Initialize container for combined & stamped sample
   sensor_sample_t currentSample;
   currentSample.timestamp = currentFrameTimestamp; // maybe fix this time stamp issue?
@@ -166,14 +150,14 @@ void captureDisplacement() {
   sensor.right.triggerSampleCapture();
 
   // Store timestamp for next frame
-  currentFrameTimestamp = microsSinceAcquisitionStart;
   currentFrameCount += 1;
   currentSample.left = {'L', sensor.left.readDisplacement(units)};
   currentSample.right = {'R', sensor.right.readDisplacement(units)};
 
   // Send Data
   sendData(currentSample);
-  beginDataFrame();
+  currentFrameTimestamp = microsSinceAcquisitionStart;
+  fastDigitalWrite(TRIGGER_PIN,HIGH);
 }
 
 // =============================================================================
