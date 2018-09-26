@@ -57,7 +57,7 @@ function callbackfn1(~,~)
     movement = cell(nreps,1);
     fprintf('nreps: %d, repcycles: %s\n',nreps,repcycles);
     fprintf('Beginning acquisition\n');
-    for i=1:nreps
+    for i=1:(nreps+1)
         movement{i} = fscanf(uart,'%s');
         fprintf('%s\n',movement{i});
     end
