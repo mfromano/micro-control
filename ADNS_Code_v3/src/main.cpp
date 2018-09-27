@@ -118,6 +118,7 @@ static inline void beginAcquisition(char input[], int8_t length) {
     microsSinceAcquisitionStart = 0;
     // currentSampleTimestamp = microsSinceAcquisitionStart;
     currentFrameTimestamp = microsSinceAcquisitionStart;
+
     currentFrameCount = 0;
     fastDigitalWrite(TRIGGER_PIN,HIGH);
     captureTimer.begin(captureDisplacement, sampling_interval_ms_int*1000);
@@ -145,6 +146,7 @@ void captureDisplacement() {
   // Initialize container for combined & stamped sample
   sensor_sample_t currentSample;
   currentSample.timestamp = currentFrameTimestamp; // maybe fix this time stamp issue?
+
   // Trigger capture from each sensor
   sensor.left.triggerSampleCapture();
   sensor.right.triggerSampleCapture();
@@ -157,8 +159,9 @@ void captureDisplacement() {
   // Send Data
   sendData(currentSample);
   currentFrameTimestamp = microsSinceAcquisitionStart;
+
   fastDigitalWrite(TRIGGER_PIN,HIGH);
-  delay(0.1);
+  delay(1);
   fastDigitalWrite(TRIGGER_PIN,LOW);
 }
 
