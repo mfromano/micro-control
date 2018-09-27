@@ -166,8 +166,6 @@ void captureDisplacement() {
 
   if (movementFrameCount % round(sampling_interval_ms_int) == 0) {
     fastDigitalWrite(TRIGGER_PIN,HIGH);
-    delay(1);
-    fastDigitalWrite(TRIGGER_PIN,LOW);
     currentFrameCount += 1;
     camera_on = true;
 }
