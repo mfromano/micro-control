@@ -122,6 +122,7 @@ static inline void beginAcquisition(char input[], int8_t length) {
     currentFrameTimestamp = microsSinceAcquisitionStart;
     movementFrameCount = 0;
     currentFrameCount = 0;
+
     camera_on = true;
     fastDigitalWrite(TRIGGER_PIN,HIGH);
     captureTimer.begin(captureDisplacement, movementRate);
