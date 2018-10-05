@@ -82,6 +82,7 @@ inline static bool initializeSensors() {
 
 inline static bool initializeTriggering() {
   fastPinMode(TRIGGER_PIN, OUTPUT);
+  fastDigitalWrite(TRIGGER_PIN, LOW);
   delay(1);
   // Setup Sync/Trigger-Output Timing
   // FrequencyTimer2::setPeriod(1e6 / DISPLACEMENT_SAMPLE_RATE)

@@ -141,6 +141,7 @@ void capture() {
     TONE = true;
     LED = true;
     sine1.amplitude(0.05);
+    //sine1.amplitude(1);
     fastDigitalWrite(LED_PIN, HIGH);
   } else if ((curr_t/1000.0 + jitter > (TONE_START + TONE_LENGTH)) && TONE) {
     TONE = false;
