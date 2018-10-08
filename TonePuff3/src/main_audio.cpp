@@ -48,6 +48,7 @@ volatile time_t exp_t;
 
 elapsedMicros experiment_t;
 elapsedMicros trial_t;
+elapsedMicros camera_on;
 IntervalTimer trial_timer;
 
 const uint8_t AMP_PIN = 5;
@@ -160,7 +161,10 @@ void capture() {
 
   frame_data curr_frame = {frame_no, curr_t, exp_t, trial_no, PUFF, TONE, LED};
   fastDigitalWrite(CAMERA_PIN,HIGH);
-  delay(1);
+  camera_on = 0;
+  while (camera_on < 1000) {
+    ;
+  }
   fastDigitalWrite(CAMERA_PIN,LOW);
 
   sendData(curr_frame);
