@@ -34,9 +34,9 @@ sound_data(invalid_inds) = [];
 bp = filtfilt(b,a,double(sound_data'));
 amp = abs(hilbert(bp));
 
-sound_inds = [0, amp >0.005]; % then repeat this for every trial, hopefully it works!
-sound_on = [0, diff(sound_inds) == 1];
-sound_off = [diff(sound_inds) == -1];
+sound_inds = [0; amp >0.005]; % then repeat this for every trial, hopefully it works!
+sound_on = find([0; diff(sound_inds) == 1]);
+sound_off = find([diff(sound_inds) == -1]);
 
 %%
 
