@@ -30,7 +30,7 @@ taxis = taxis-taxis(1);
 sound_data(invalid_inds) = [];
 
 % [b,a] = butter(6,[9000 10000]/(data.streams.Soun.fs/2),'bandpass');
-    [b,a] = butter(6,[1000]/(data.streams.Soun.fs/2),'high');
+[b,a] = butter(6,[1000]/(data.streams.Soun.fs/2),'high');
 bp = filtfilt(b,a,double(sound_data'));
 amp = abs(hilbert(bp));
 
