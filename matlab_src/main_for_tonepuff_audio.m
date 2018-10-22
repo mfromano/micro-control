@@ -1,4 +1,3 @@
-
 %%
 fi = fopen('micro-control-data/tonepuff_practice_10-06-18/mike_tone_tonepuff2_10-06-18_v0.txt'); 
 x = textscan(fi,'%s','delimiter','\n');

@@ -81,11 +81,13 @@ theoretical = 0.05*(0:1:(length(st.frames)-1));
 mdl = fitlm(theoretical, st.frames);
 fprintf('%0.9f\n',mdl.Coefficients.Estimate(2));
 figure;
-plot(theoretical, st.frames,'.k');
+
+theoretical = theoretical(1:200:end);
+plot(theoretical, st.frames(1:200:end),'.k','MarkerSize',15);
 hold on;
-plot(theoretical(:), mdl.predict(theoretical(:)),'g');
+plot(theoretical(:), mdl.predict(theoretical(:)),'-g','LineWidth',2);
 xlabel('Theoretical time [s]');
 ylabel('Measured time [s]');
-legend('Data','Model fit','location','northwest');
+% legend('Data','Model fitlocation','northwest');
 print(gcf,'figures/tone_puff_model_fit.pdf','-dpdf');
 

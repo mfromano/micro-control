@@ -48,10 +48,10 @@ t_true = (t_true-t_true(1))*0.05;
 mdl = fitlm(t_true,camera_on_times);
 
 figure;
-
-plot(t_true, camera_on_times(:),'.k','MarkerSize',5);
+subsampleinds = (1:200:length(t_true))';
+plot(t_true(subsampleinds), camera_on_times(subsampleinds)','.k','MarkerSize',15);
 hold on;
-plot(t_true,mdl.predict(t_true(:)),'-g');
+plot(t_true(subsampleinds),mdl.predict(t_true(subsampleinds)'),'-g','LineWidth',2);
 hold off;
 xlabel('Theoretical time [s]');
 ylabel('Measured time [s]');
@@ -67,4 +67,4 @@ mdl2 = fitlm(t_true(:),camera_on_times(:)-t_true(:));
 ylim([-.2 .2])
 xlabel('Theoretical time[s]');
 ylabel('Measured time - theoretical time [s]');
-print('figures/difference_measured_minus_teensy_v4.svg','-dsvg');     
+print('figures/difference_measured_minus_teensy_v3.svg','-dsvg');     
