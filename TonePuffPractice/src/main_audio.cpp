@@ -26,6 +26,7 @@ const uint8_t CAMERA_PIN = 6;
 const uint8_t CAMERA_FQ = 20; // Hz
 
 elapsedMicros trial_t;
+elapsedMillis interpulseinterval;
 IntervalTimer trial_timer;
 
 const uint8_t AMP_PIN = 5;
@@ -72,6 +73,9 @@ void capture() {
     endCollection();
  }
   fastDigitalWrite(CAMERA_PIN,HIGH);
-  delay(40);
+  interpulseinterval = 0;
+  while (interpulseinterval < 40) {
+    ;
+  }
   fastDigitalWrite(CAMERA_PIN,LOW);
 }
