@@ -23,7 +23,7 @@ const uint8_t decimals = 10;
 float TRIAL_LENGTH = 60000000; // ms
 
 const uint8_t CAMERA_PIN = 6;
-const uint8_t CAMERA_FQ = 20; // Hz
+const uint8_t CAMERA_FQ = 10; // Hz
 
 elapsedMicros trial_t;
 elapsedMillis interpulseinterval;
@@ -39,7 +39,7 @@ void capture();
 
 void setup() {
   fastPinMode(CAMERA_PIN, OUTPUT);
-  AudioMemory(4);
+  AudioMemory(128);
   // dac1.analogReference(EXTERNAL);
   sine1.frequency(FQ);
   sine1.amplitude(.5);
@@ -74,7 +74,7 @@ void capture() {
  }
   fastDigitalWrite(CAMERA_PIN,HIGH);
   interpulseinterval = 0;
-  while (interpulseinterval < 40) {
+  while (interpulseinterval < 3) {
     ;
   }
   fastDigitalWrite(CAMERA_PIN,LOW);
