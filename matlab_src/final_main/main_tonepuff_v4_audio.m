@@ -35,7 +35,6 @@ print(gcf,'figures/tone_puff_model_fit.pdf','-dpdf');
 %% get puff statistics
 st.puff_length = data.epocs.Eval.offset-data.epocs.Eval.onset;
 st.puff_length = st.puff_length(1:2:end);
-
 % now get puff starts
 st.puff_start = data.epocs.Eval.onset(1:2:end) - st.frames(trial_frame_starts)-data.epocs.Valu.onset(1);
 
@@ -70,9 +69,11 @@ bp = filtfilt(b,a,double(sound_tdt'));
 amp = abs(hilbert(bp));
 
 sound_inds = [amp >0.005]; % then repeat this for every trial, hopefully it works!
-sound_on = [0; diff(sound_inds) == 1];
-sound_off = [diff(sound_inds) == -1];
+sound_on = find([0; diff(sound_inds) == 1]);
+sound_off = find([diff(sound_inds) == -1]);
 
+st.sound_start = taxis_sound_tdt(sound_on)' - st.frames(trial_frame_starts);
+st.sound_length = taxis_sound_tdt(sound_off)-taxis_sound_tdt(sound_on);
 %%
 
 
