@@ -2,7 +2,7 @@
 fi = fopen('micro-control-data/tonepuff_v4_102618/mike_elapsedmicros_102618_audio4.txt');
 x = textscan(fi,'%s','delimiter','\n');
 x2 = cellfun(@(x) textscan(x,'%s','delimiter',','),x{1});
-tbl = table([],[],[],[],{},{},'variablenames',{'Time','ExpTime','ExpNo','Puff','Tone','LED'});
+tbl = table([],[],[],[],[],[],'variablenames',{'Time','ExpTime','ExpNo','Puff','Tone','LED'});
 for i=1:numel(x2)
     tbl = cat(1,tbl,table(str2double(x2{i}{1}), str2double(x2{i}{2}), str2double(x2{i}{3}), ...
         str2double(x2{i}(4)), str2double(x2{i}(5)),str2double(x2{i}(6)),'variablenames',{'Time','ExpTime','ExpNo','Puff','Tone','LED'}));
@@ -14,6 +14,8 @@ save('micro-control-data/tone_puff_table_102618.mat','tbl');
 d = 'micro-control-data/tonepuff_v4_102618/mike_audio_puff4_102618/Block-3';
 data = TDTbin2mat(d);
 trial_frame_starts = find([1; diff(tbl.ExpNo) == 1]);
+tone_starts = find([0; diff(tbl.Tone) == 1]);
+puff_starts = find([0; diff(tbl.Puff) == 1]);
 
 %% create figure for camera pulses
 st.frames = data.epocs.Valu.onset(1:2:end);
@@ -35,9 +37,8 @@ print(gcf,'figures/tone_puff_model_fit.pdf','-dpdf');
 %% get puff statistics
 st.puff_length = data.epocs.Eval.offset-data.epocs.Eval.onset;
 st.puff_length = st.puff_length(1:2:end);
-
 % now get puff starts
-st.puff_start = data.epocs.Eval.onset(1:2:end) - st.frames(trial_frame_starts)-data.epocs.Valu.onset(1);
+st.puff_start = data.epocs.Eval.onset(1:2:end) - st.frames(puff_starts)-data.epocs.Valu.onset(1);
 
 %% now get timing for Sound channel and pulse channel
 sound_tdt = data.streams.Soun.data;
@@ -70,16 +71,33 @@ bp = filtfilt(b,a,double(sound_tdt'));
 amp = abs(hilbert(bp));
 
 sound_inds = [amp >0.005]; % then repeat this for every trial, hopefully it works!
-sound_on = [0; diff(sound_inds) == 1];
-sound_off = [diff(sound_inds) == -1];
+sound_on = find([0; diff(sound_inds) == 1]);
+sound_off = find([diff(sound_inds) == -1]);
+
+st.sound_start = taxis_sound_tdt(sound_on)' - st.frames(tone_starts);
+st.sound_length = taxis_sound_tdt(sound_off)-taxis_sound_tdt(sound_on);
 
 %%
 
+subplot(2,2,1)
+plot(1:50,st.sound_start,'.','MarkerSize',5);
+ylim([0.005 0.010]);
+ylabel('Tone latency [s]');
+xlabel('Trial');
+xlim([0 51])
 
+subplot(2,2,2);
+plot(1:50,st.sound_length,'.','MarkerSize',5);
+ylim([0.698 0.704]);
+ylabel('Tone length [s]');
+xlabel('Trial');
 
-%%
-
-
+subplot(2,2,3);
+plot(1:50,st.puff_start,'.','MarkerSize',5);
+ylim([-0.001 0.001]);
+ylabel('Puff latency [s]');
+xlabel('Trial');
+xlim([0 51])
 
 subplot(2,2,4);
 plot(1:50,st.puff_length,'.','MarkerSize',5);
@@ -87,3 +105,5 @@ ylim([0.099 0.101]);
 ylabel('Puff length [s]');
 xlabel('Trial');
 xlim([0 51])
+
+print(gcf,'figures/mouse_tonepuff_v4_timing.svg','-dsvg');
