@@ -107,13 +107,14 @@ void begin(float ntrials, float trial_length) {
     frame_t = 0;
     isRunning = true;
 
-while (isRunning) {
-    while ((frame_t < 1000000.0/(float)CAMERA_FQ)) {
-      ;
-    }
-    frame_t = 0;
-    capture();
-  }
+    while (isRunning) {
+        float micr = 1000000.0/(float)CAMERA_FQ;
+        while ((frame_t < micr)) {
+          ;
+        }
+        frame_t = 0;
+        capture();
+      }
 }
 void endCollection() {
   trial_timer.end();
