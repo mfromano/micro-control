@@ -10,6 +10,7 @@ end
 save('micro-control-data/tone_puff_table_102618.mat','tbl');
 
 %% now extract data from tdt files
+load('micro-control-data/tone_puff_table_102618.mat');
 
 d = 'micro-control-data/tonepuff_v4_102618/mike_audio_puff4_102618/Block-3';
 data = TDTbin2mat(d);
@@ -18,17 +19,16 @@ tone_starts = find([0; diff(tbl.Tone) == 1]);
 puff_starts = find([0; diff(tbl.Puff) == 1]);
 
 %% create figure for camera pulses
-st.frames = data.epocs.Valu.onset(1:2:end);
-st.frames = st.frames-st.frames(1);
-theoretical = 0.05*(0:1:(length(st.frames)-1));
-mdl = fitlm(theoretical, st.frames);
+tdt_camera_times = data.epocs.Valu.onset(1:2:end);
+theoretical_camera_times = 0.05*(0:1:(length(tdt_camera_times)-1));
+mdl = fitlm(theoretical_camera_times, tdt_camera_times-tdt_camera_times(1));
 fprintf('%0.9f\n',mdl.Coefficients.Estimate(2));
 figure;
 
-theoretical = theoretical(1:200:end);
-plot(theoretical, st.frames(1:200:end),'.k','MarkerSize',15);
+theoretical_camera_times = theoretical_camera_times(1:200:end);
+plot(theoretical_camera_times, tdt_camera_times(1:200:end)-tdt_camera_times(1),'.k','MarkerSize',15);
 hold on;
-plot(theoretical(:), mdl.predict(theoretical(:)),'-g','LineWidth',2);
+plot(theoretical_camera_times(:), mdl.predict(theoretical_camera_times(:)),'-g','LineWidth',2);
 xlabel('Theoretical time [s]');
 ylabel('Measured time [s]');
 % legend('Data','Model fitlocation','northwest');
@@ -38,7 +38,7 @@ print(gcf,'figures/tone_puff_v4_model_fit.pdf','-dpdf');
 st.puff_length = data.epocs.Eval.offset-data.epocs.Eval.onset;
 st.puff_length = st.puff_length(1:2:end);
 % now get puff starts
-st.puff_start = data.epocs.Eval.onset(1:2:end) - st.frames(puff_starts)-data.epocs.Valu.onset(1);
+st.puff_start = data.epocs.Eval.onset(1:2:end) - tdt_camera_times(puff_starts);
 
 %% now get timing for Sound channel and pulse channel
 sound_tdt = data.streams.Soun.data;
@@ -56,6 +56,7 @@ camera_start = find(~~[0 diff(camera_on_tdt) == 1],1,'first'); % find first time
 % 
 %% truncate recordings by aligning to first pulse
 
+camera_on_tdt = camera_on_tdt(camera_start:end);
 taxis_tdt = taxis_tdt(camera_start:end);
 sound_inds = (taxis_sound_tdt >= taxis_tdt(1)) & (taxis_sound_tdt <= taxis_tdt(end));
 
@@ -75,9 +76,15 @@ sound_inds = [amp >0.005]; % then repeat this for every trial, hopefully it work
 sound_on = find([0; diff(sound_inds) == 1]);
 sound_off = find([diff(sound_inds) == -1]);
 
-st.sound_start = taxis_sound_tdt(sound_on)' - st.frames(tone_starts) -data.epocs.Valu.onset(1);
-st.sound_length = taxis_sound_tdt(sound_off)-taxis_sound_tdt(sound_on);
+st.sound_start = taxis_sound_tdt(sound_on)' - (tdt_camera_times(tone_starts) -tdt_camera_times(1));
+st.sound_length = taxis_sound_tdt(sound_off+1)-taxis_sound_tdt(sound_on);
 
+%% figure
+plot(taxis_sound_tdt,amp);
+yyaxis right;
+plot(taxis_tdt,camera_on_tdt);
+xlim([11.08 11.150])
+xlabel('Time [s]');
 %%
 
 subplot(2,2,1)
