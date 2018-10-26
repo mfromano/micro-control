@@ -58,6 +58,7 @@ camera_start = find(~~[0 diff(camera_on_tdt) == 1],1,'first'); % find first time
 
 taxis_tdt = taxis_tdt(camera_start:end);
 sound_inds = (taxis_sound_tdt >= taxis_tdt(1)) & (taxis_sound_tdt <= taxis_tdt(end));
+
 taxis_sound_tdt = taxis_sound_tdt(sound_inds);
 sound_tdt = sound_tdt(sound_inds);
 
@@ -74,7 +75,7 @@ sound_inds = [amp >0.005]; % then repeat this for every trial, hopefully it work
 sound_on = find([0; diff(sound_inds) == 1]);
 sound_off = find([diff(sound_inds) == -1]);
 
-st.sound_start = taxis_sound_tdt(sound_on)' - st.frames(tone_starts);
+st.sound_start = taxis_sound_tdt(sound_on)' - st.frames(tone_starts) -data.epocs.Valu.onset(1);
 st.sound_length = taxis_sound_tdt(sound_off)-taxis_sound_tdt(sound_on);
 
 %%
