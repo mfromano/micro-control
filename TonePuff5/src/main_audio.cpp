@@ -37,10 +37,12 @@ const float TONE_START = 11100; // ms
 // const float TONE_LENGTH = 350.0; //in ms
 const float TONE_LENGTH = 700.0;
 bool TONE = false;
+const uint32_t CAMERA_PULSE_MIN_MICROS = 1000;
 
 const uint8_t CAMERA_PIN = 6;
 const uint8_t CAMERA_FQ = 20; // Hz
 const float jitter = 1000.0/float(CAMERA_FQ)/2.0;
+const bool CAMERA_ON_STATE = true;
 
 volatile time_t curr_t;
 volatile time_t exp_t;
@@ -72,6 +74,7 @@ void capture();
 void setup() {
   fastPinMode(PUFF_PIN, OUTPUT);
   fastPinMode(CAMERA_PIN, OUTPUT);
+  fastDigitalWrite(CAMERA_PIN, !CAMERA_ON_STATE);
   fastPinMode(LED_PIN, OUTPUT);
   Serial.begin(115200);
   AudioMemory(128);
@@ -88,8 +91,11 @@ void loop(){
     float ntrials  = atof(ntrials_str);
     char *trial_length_str = strtok(NULL,",");
     float trial_length = atof(trial_length_str);
+
     Serial.println(String(ntrials) + ',' + String(trial_length));
     begin(ntrials, trial_length);
+
+    fastDigitalWrite(CAMERA_PIN, !CAMERA_ON_STATE);
   }
 }
 
@@ -105,6 +111,7 @@ void begin(float ntrials, float trial_length) {
     frame_no = 0;
     frame_t = 0;
     isRunning = true;
+    fastDigitalWrite(CAMERA_PIN, CAMERA_ON_STATE);
     float interval_t = 1000000.0/(float)CAMERA_FQ;
 
     while (isRunning) {
@@ -123,6 +130,10 @@ void endCollection() {
 }
 
 void capture() {
+
+  fastDigitalWrite(CAMERA_PIN, CAMERA_ON_STATE);
+  elapsedMicros campulse_t = 0;
+
   curr_t = trial_t;
   exp_t = experiment_t;
   if (trial_no == 0) {
@@ -141,7 +152,7 @@ void capture() {
       endCollection();
       return;
     }
-    trial_t = 0;
+    . = 0;
     curr_t = trial_t;
   }
   // update tone
@@ -167,9 +178,9 @@ void capture() {
   }
 
   frame_data curr_frame = {frame_no, curr_t, exp_t, trial_no, PUFF, TONE, LED};
-  fastDigitalWrite(CAMERA_PIN,HIGH);
-  delay(1);
-  fastDigitalWrite(CAMERA_PIN,LOW);
+
+  while (campulse_t < CAMERA_PULSE_MIN_MICROS){;}
+  fastDigitalWrite(CAMERA_PIN, !CAMERA_ON_STATE);
 
   sendData(curr_frame);
 }
