@@ -16,6 +16,7 @@ load('micro-control-data/tone_puff_table_tone_10-06-18.mat','tbl');
 timestamps_orig = tbl.Time;
 trial_timestamps = [1; find([0; diff(tbl.ExpNo) == 1]); length(tbl.ExpNo)+1];
 
+toneinds = [0; diff(tbl.Tone) == 1];
 d = 'micro-control-data/tonepuff_practice_10-06-18/Block-1';
 data = TDTbin2mat(d);
 
