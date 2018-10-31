@@ -44,7 +44,8 @@ function [err] = motion_correct_mike_v2(filename, suffix, timespan, pref)
     % meet certain requirements
     test_file_frames_for_step_size_2(file_frames, nframes_in_files, step_size);
     
-    
+    folder = ['/hdd2/microcontrol/' suffix ' /'];
+    mkdir(folder);
     %% for each output file, get necessary input frames, process, and save
     for n=1:size(file_frames,1)
         % get data and info for current 2000 frame chunk
@@ -62,8 +63,8 @@ function [err] = motion_correct_mike_v2(filename, suffix, timespan, pref)
         data_m = apply_correctMotion_huaan(data,procstart_m_f.prealign);
         
         %mike added this piece
-        save_filename = ['m_',suffix,'_',pref];
-        save(['procstartdata' suffix '_' pref '_' num2str(n) '.mat'],'procstart_m_f');
+        save_filename = [folder 'm_',suffix,'_',pref];
+        save([ folder 'procstartdata' suffix '_' pref '_' num2str(n) '.mat'],'procstart_m_f');
         matrix2tiff(data_m, currinfo, [save_filename '_' num2str(n)], 'w');
         
         
@@ -74,8 +75,8 @@ function [err] = motion_correct_mike_v2(filename, suffix, timespan, pref)
         end
         
         %mike added this piece
-        save_filename = ['m_n2_',suffix,'_',pref];
-        save(['procstartdata' suffix '_' pref '_' num2str(n) '.mat'],'procstart_m_f');
+        save_filename = [ folder 'm_n2_',suffix,'_',pref];
+        save([folder 'procstartdata' suffix '_' pref '_' num2str(n) '.mat'],'procstart_m_f');
         matrix2tiff(data_mn, currinfo, [save_filename '_' num2str(n)], 'w');
         
         clear data_mn data_m data
@@ -101,7 +102,7 @@ end
 
 
 function matrix2tiff(f_matrix, info, filename, method)
-
+        
     if isempty(strfind(filename,'.tif'))
         filename = [filename,'.tif'];
     end
