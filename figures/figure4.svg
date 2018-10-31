@@ -50,9 +50,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.1649824"
-     inkscape:cx="560.70811"
-     inkscape:cy="553.24698"
+     inkscape:zoom="2.0149341"
+     inkscape:cx="756.27188"
+     inkscape:cy="488.6318"
      inkscape:document-units="mm"
      inkscape:current-layer="g6457"
      showgrid="true"
@@ -105,6 +105,52 @@
            id="tspan150603-6"
            x="528.1723"
            y="40.230465">B</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:26.66666794px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         x="585.77252"
+         y="45.563797"
+         id="text150605-3-3"><tspan
+           sodipodi:role="line"
+           id="tspan150603-6-6"
+           x="585.77252"
+           y="45.563797"
+           style="font-size:18.66666794px">i</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:26.66666794px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         x="809.77252"
+         y="45.563797"
+         id="text150605-3-3-7"><tspan
+           sodipodi:role="line"
+           id="tspan150603-6-6-5"
+           x="809.77252"
+           y="45.563797"
+           style="font-size:18.66666794px">ii</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:26.66666794px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="574.84412"
+         y="257.39297"
+         id="text5083"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan5085"
+           x="574.84412"
+           y="257.39297"
+           style="font-size:18.66666794px">iii</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:26.66666794px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="809.5108"
+         y="258.45966"
+         id="text5083-3"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan5085-5"
+           x="809.5108"
+           y="258.45966"
+           style="font-size:18.66666794px">iv</tspan></text>
     </g>
     <g
        id="g96530"
@@ -1784,587 +1830,554 @@
              xml:space="preserve"
              y="-4"
              style="stroke:none"
-             id="text6631">Tone latency [s]</text>
-        </g>
-        <g
-           transform="translate(98,28)"
-           style="font-size:13.33329964px;font-family:mwb_cmsy10;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-           id="g6633">
-          <text
-             x="0"
-             xml:space="preserve"
-             y="0"
-             style="stroke:none"
-             id="text6635">x</text>
-        </g>
-        <g
-           transform="translate(109,28)"
-           style="font-size:13.33329964px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-           id="g6637">
-          <text
-             x="0"
-             xml:space="preserve"
-             y="0"
-             style="stroke:none"
-             id="text6639">10</text>
-        </g>
-        <g
-           transform="translate(126,22)"
-           style="font-size:10.66670036px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-           id="g6641">
-          <text
-             x="0"
-             xml:space="preserve"
-             y="0"
-             style="stroke:none"
-             id="text6643">-3</text>
+             id="text6631">Tone latency [ms]</text>
         </g>
         <g
            transform="translate(101.1765,68.0749)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6645">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6647" />
         </g>
         <g
            transform="translate(104.3529,98.3783)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6649">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6651" />
         </g>
         <g
            transform="translate(107.5294,129.7987)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6653">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6655" />
         </g>
         <g
            transform="translate(110.7059,79.2961)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6657">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6659" />
         </g>
         <g
            transform="translate(113.8824,110.723)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6661">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6663" />
         </g>
         <g
            transform="translate(117.0588,60.2205)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6665">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6667" />
         </g>
         <g
            transform="translate(120.2353,91.6409)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6669">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6671" />
         </g>
         <g
            transform="translate(123.4118,120.8219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6673">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6675" />
         </g>
         <g
            transform="translate(126.5882,72.5653)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6677">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6679" />
         </g>
         <g
            transform="translate(129.7647,102.8634)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6681">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6683" />
         </g>
         <g
            transform="translate(132.9412,133.1667)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6685">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6687" />
         </g>
         <g
            transform="translate(136.1176,83.7877)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6689">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6691" />
         </g>
         <g
            transform="translate(139.2941,115.2134)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6693">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6695" />
         </g>
         <g
            transform="translate(142.4706,65.8279)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6697">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6699" />
         </g>
         <g
            transform="translate(145.6471,96.1312)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6701">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6703" />
         </g>
         <g
            transform="translate(148.8235,126.4359)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6705">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6707" />
         </g>
         <g
            transform="translate(152,77.0556)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6709">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6711" />
         </g>
         <g
            transform="translate(155.1765,107.3537)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6713">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6715" />
         </g>
         <g
            transform="translate(158.3529,138.7806)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6717">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6719" />
         </g>
         <g
            transform="translate(161.5294,89.4004)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6721">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6723" />
         </g>
         <g
            transform="translate(164.7059,119.6985)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6725">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6727" />
         </g>
         <g
            transform="translate(167.8824,70.3182)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6729">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6731" />
         </g>
         <g
            transform="translate(171.0588,100.6228)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6733">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6735" />
         </g>
         <g
            transform="translate(174.2353,129.8039)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6737">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6739" />
         </g>
         <g
            transform="translate(177.4118,81.5407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6741">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6743" />
         </g>
         <g
            transform="translate(180.5882,111.8453)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6745">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6747" />
         </g>
         <g
            transform="translate(183.7647,62.4651)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6749">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6751" />
         </g>
         <g
            transform="translate(186.9412,93.8855)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6753">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6755" />
         </g>
         <g
            transform="translate(190.1176,124.1888)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6757">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6759" />
         </g>
         <g
            transform="translate(193.2941,74.8099)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6761">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6763" />
         </g>
         <g
            transform="translate(196.4706,105.1132)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6765">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6767" />
         </g>
         <g
            transform="translate(199.6471,136.5336)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6769">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6771" />
         </g>
         <g
            transform="translate(202.8235,87.1546)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6773">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6775" />
         </g>
         <g
            transform="translate(206,117.458)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6777">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6779" />
         </g>
         <g
            transform="translate(209.1765,68.0725)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6781">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6783" />
         </g>
         <g
            transform="translate(212.3529,98.3758)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6785">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6787" />
         </g>
         <g
            transform="translate(215.5294,128.6805)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6789">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6791" />
         </g>
         <g
            transform="translate(218.7059,79.3002)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6793">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6795" />
         </g>
         <g
            transform="translate(221.8824,109.5983)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6797">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6799" />
         </g>
         <g
            transform="translate(225.0588,61.3416)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6801">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6803" />
         </g>
         <g
            transform="translate(228.2353,90.5227)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6805">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6807" />
         </g>
         <g
            transform="translate(231.4118,121.9431)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6809">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6811" />
         </g>
         <g
            transform="translate(234.5882,71.4405)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6813">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6815" />
         </g>
         <g
            transform="translate(237.7647,103.9898)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6817">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6819" />
         </g>
         <g
            transform="translate(240.9412,133.1708)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6821">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6823" />
         </g>
         <g
            transform="translate(244.1176,84.9076)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6825">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6827" />
         </g>
         <g
            transform="translate(247.2941,114.0886)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6829">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6831" />
         </g>
         <g
            transform="translate(250.4706,65.832)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6833">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6835" />
         </g>
         <g
            transform="translate(253.6471,96.1301)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6837">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6839" />
         </g>
         <g
            transform="translate(256.8235,126.4334)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6841">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6843" />
@@ -2586,7 +2599,7 @@
              id="line6913" />
         </g>
         <g
-           transform="translate(338.6667,168.9997)"
+           transform="translate(354.6667,168.9997)"
            style="font-size:13.33329964px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
            id="g6915">
           <text
@@ -2594,21 +2607,21 @@
              xml:space="preserve"
              y="4.5"
              style="stroke:none"
-             id="text6917">0.698</text>
+             id="text6917">698</text>
         </g>
         <g
-           transform="translate(338.6667,123.3336)"
+           transform="translate(340.6667,123.3336)"
            style="font-size:13.33329964px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
            id="g6919">
           <text
-             x="-22"
+             x="-24"
              xml:space="preserve"
              y="4.5"
              style="stroke:none"
-             id="text6921">0.7</text>
+             id="text6921">700</text>
         </g>
         <g
-           transform="translate(338.6667,77.6662)"
+           transform="translate(354.6667,77.6662)"
            style="font-size:13.33329964px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
            id="g6923">
           <text
@@ -2616,18 +2629,18 @@
              xml:space="preserve"
              y="4.5"
              style="stroke:none"
-             id="text6925">0.702</text>
+             id="text6925">702</text>
         </g>
         <g
            transform="translate(338.6667,32.0001)"
            style="font-size:13.33329964px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
            id="g6927">
           <text
-             x="-39"
+             x="-23"
              xml:space="preserve"
              y="4.5"
              style="stroke:none"
-             id="text6929">0.704</text>
+             id="text6929">704</text>
         </g>
         <g
            transform="matrix(0,-1,1,0,295.6667,100.4992)"
@@ -2638,554 +2651,554 @@
              xml:space="preserve"
              y="-4"
              style="stroke:none"
-             id="text6933">Tone length [s]</text>
+             id="text6933">Tone length [ms]</text>
         </g>
         <g
            transform="translate(346.7167,140.9568)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6935">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6937" />
         </g>
         <g
            transform="translate(349.4333,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6939">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6941" />
         </g>
         <g
            transform="translate(352.15,73.6186)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6943">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6945" />
         </g>
         <g
            transform="translate(354.8667,140.9568)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6947">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6949" />
         </g>
         <g
            transform="translate(357.5833,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6951">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6953" />
         </g>
         <g
            transform="translate(360.3,140.9568)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6955">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6957" />
         </g>
         <g
            transform="translate(363.0167,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6959">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6961" />
         </g>
         <g
            transform="translate(365.7333,74.5536)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6963">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6965" />
         </g>
         <g
            transform="translate(368.45,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6967">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6969" />
         </g>
         <g
            transform="translate(371.1667,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6971">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6973" />
         </g>
         <g
            transform="translate(373.8833,73.6186)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6975">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6977" />
         </g>
         <g
            transform="translate(376.6,140.9568)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6979">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6981" />
         </g>
         <g
            transform="translate(379.3167,139.0869)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6983">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6985" />
         </g>
         <g
            transform="translate(382.0333,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6987">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6989" />
         </g>
         <g
            transform="translate(384.75,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6991">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6993" />
         </g>
         <g
            transform="translate(387.4667,74.5536)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6995">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle6997" />
         </g>
         <g
            transform="translate(390.1833,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g6999">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7001" />
         </g>
         <g
            transform="translate(392.9,140.9568)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7003">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7005" />
         </g>
         <g
            transform="translate(395.6167,74.5536)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7007">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7009" />
         </g>
         <g
            transform="translate(398.3333,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7011">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7013" />
         </g>
         <g
            transform="translate(401.05,74.5536)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7015">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7017" />
         </g>
         <g
            transform="translate(403.7667,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7019">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7021" />
         </g>
         <g
            transform="translate(406.4833,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7023">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7025" />
         </g>
         <g
            transform="translate(409.2,74.5536)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7027">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7029" />
         </g>
         <g
            transform="translate(411.9167,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7031">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7033" />
         </g>
         <g
            transform="translate(414.6333,140.9568)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7035">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7037" />
         </g>
         <g
            transform="translate(417.35,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7039">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7041" />
         </g>
         <g
            transform="translate(420.0667,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7043">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7045" />
         </g>
         <g
            transform="translate(422.7833,73.6186)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7047">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7049" />
         </g>
         <g
            transform="translate(425.5,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7051">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7053" />
         </g>
         <g
            transform="translate(428.2167,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7055">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7057" />
         </g>
         <g
            transform="translate(430.9333,73.6186)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7059">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7061" />
         </g>
         <g
            transform="translate(433.65,140.9568)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7063">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7065" />
         </g>
         <g
            transform="translate(436.3667,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7067">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7069" />
         </g>
         <g
            transform="translate(439.0833,140.9568)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7071">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7073" />
         </g>
         <g
            transform="translate(441.8,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7075">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7077" />
         </g>
         <g
            transform="translate(444.5167,74.5536)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7079">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7081" />
         </g>
         <g
            transform="translate(447.2333,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7083">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7085" />
         </g>
         <g
            transform="translate(449.95,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7087">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7089" />
         </g>
         <g
            transform="translate(452.6667,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7091">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7093" />
         </g>
         <g
            transform="translate(455.3833,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7095">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7097" />
         </g>
         <g
            transform="translate(458.1,73.6186)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7099">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7101" />
         </g>
         <g
            transform="translate(460.8167,140.9568)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7103">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7105" />
         </g>
         <g
            transform="translate(463.5333,139.0869)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7107">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7109" />
         </g>
         <g
            transform="translate(466.25,73.6186)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7111">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7113" />
         </g>
         <g
            transform="translate(468.9667,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7115">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7117" />
         </g>
         <g
            transform="translate(471.6833,140.9568)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7119">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7121" />
         </g>
         <g
            transform="translate(474.4,140.0219)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7123">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7125" />
         </g>
         <g
            transform="translate(477.1167,140.9568)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7127">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7129" />
         </g>
         <g
            transform="translate(479.8333,74.5536)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;fill-opacity:1"
            id="g7131">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:none;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7133" />
@@ -3459,587 +3472,554 @@
              xml:space="preserve"
              y="-4"
              style="stroke:none"
-             id="text7223">Puff latency [s]</text>
-        </g>
-        <g
-           transform="translate(98,227)"
-           style="font-size:13.33329964px;font-family:mwb_cmsy10;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-           id="g7225">
-          <text
-             x="0"
-             xml:space="preserve"
-             y="0"
-             style="stroke:none"
-             id="text7227">x</text>
-        </g>
-        <g
-           transform="translate(109,227)"
-           style="font-size:13.33329964px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-           id="g7229">
-          <text
-             x="0"
-             xml:space="preserve"
-             y="0"
-             style="stroke:none"
-             id="text7231">10</text>
-        </g>
-        <g
-           transform="translate(126,221)"
-           style="font-size:10.66670036px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-           id="g7233">
-          <text
-             x="0"
-             xml:space="preserve"
-             y="0"
-             style="stroke:none"
-             id="text7235">-3</text>
+             id="text7223">Puff latency [ms]</text>
         </g>
         <g
            transform="translate(101.1765,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7237">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7239" />
         </g>
         <g
            transform="translate(104.3529,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7241">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7243" />
         </g>
         <g
            transform="translate(107.5294,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7245">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7247" />
         </g>
         <g
            transform="translate(110.7059,302.3091)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7249">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7251" />
         </g>
         <g
            transform="translate(113.8824,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7253">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7255" />
         </g>
         <g
            transform="translate(117.0588,302.3091)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7257">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7259" />
         </g>
         <g
            transform="translate(120.2353,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7261">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7263" />
         </g>
         <g
            transform="translate(123.4118,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7265">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7267" />
         </g>
         <g
            transform="translate(126.5882,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7269">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7271" />
         </g>
         <g
            transform="translate(129.7647,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7273">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7275" />
         </g>
         <g
            transform="translate(132.9412,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7277">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7279" />
         </g>
         <g
            transform="translate(136.1176,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7281">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7283" />
         </g>
         <g
            transform="translate(139.2941,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7285">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7287" />
         </g>
         <g
            transform="translate(142.4706,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7289">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7291" />
         </g>
         <g
            transform="translate(145.6471,302.3091)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7293">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7295" />
         </g>
         <g
            transform="translate(148.8235,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7297">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7299" />
         </g>
         <g
            transform="translate(152,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7301">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7303" />
         </g>
         <g
            transform="translate(155.1765,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7305">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7307" />
         </g>
         <g
            transform="translate(158.3529,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7309">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7311" />
         </g>
         <g
            transform="translate(161.5294,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7313">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7315" />
         </g>
         <g
            transform="translate(164.7059,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7317">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7319" />
         </g>
         <g
            transform="translate(167.8824,302.3091)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7321">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7323" />
         </g>
         <g
            transform="translate(171.0588,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7325">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7327" />
         </g>
         <g
            transform="translate(174.2353,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7329">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7331" />
         </g>
         <g
            transform="translate(177.4118,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7333">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7335" />
         </g>
         <g
            transform="translate(180.5882,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7337">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7339" />
         </g>
         <g
            transform="translate(183.7647,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7341">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7343" />
         </g>
         <g
            transform="translate(186.9412,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7345">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7347" />
         </g>
         <g
            transform="translate(190.1176,302.3091)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7349">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7351" />
         </g>
         <g
            transform="translate(193.2941,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7353">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7355" />
         </g>
         <g
            transform="translate(196.4706,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7357">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7359" />
         </g>
         <g
            transform="translate(199.6471,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7361">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7363" />
         </g>
         <g
            transform="translate(202.8235,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7365">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7367" />
         </g>
         <g
            transform="translate(206,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7369">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7371" />
         </g>
         <g
            transform="translate(209.1765,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7373">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7375" />
         </g>
         <g
            transform="translate(212.3529,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7377">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7379" />
         </g>
         <g
            transform="translate(215.5294,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7381">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7383" />
         </g>
         <g
            transform="translate(218.7059,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7385">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7387" />
         </g>
         <g
            transform="translate(221.8824,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7389">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7391" />
         </g>
         <g
            transform="translate(225.0588,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7393">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7395" />
         </g>
         <g
            transform="translate(228.2353,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7397">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7399" />
         </g>
         <g
            transform="translate(231.4118,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7401">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7403" />
         </g>
         <g
            transform="translate(234.5882,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7405">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7407" />
         </g>
         <g
            transform="translate(237.7647,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7409">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7411" />
         </g>
         <g
            transform="translate(240.9412,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7413">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7415" />
         </g>
         <g
            transform="translate(244.1176,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7417">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7419" />
         </g>
         <g
            transform="translate(247.2941,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7421">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7423" />
         </g>
         <g
            transform="translate(250.4706,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7425">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7427" />
         </g>
         <g
            transform="translate(253.6471,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7429">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7431" />
         </g>
         <g
            transform="translate(256.8235,299.5)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7433">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7435" />
@@ -4250,7 +4230,7 @@
              id="line7501" />
         </g>
         <g
-           transform="translate(338.6667,368)"
+           transform="translate(360.6667,368)"
            style="font-size:13.33329964px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
            id="g7503">
           <text
@@ -4258,18 +4238,18 @@
              xml:space="preserve"
              y="4.5"
              style="stroke:none"
-             id="text7505">0.099</text>
+             id="text7505">99</text>
         </g>
         <g
            transform="translate(338.6667,333.75)"
            style="font-size:13.33329964px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
            id="g7507">
           <text
-             x="-47"
+             x="-27"
              xml:space="preserve"
              y="4.5"
              style="stroke:none"
-             id="text7509">0.0995</text>
+             id="text7509">99.5</text>
         </g>
         <g
            transform="translate(338.6667,299.4999)"
@@ -4280,10 +4260,10 @@
              xml:space="preserve"
              y="4.5"
              style="stroke:none"
-             id="text7513">0.1</text>
+             id="text7513">100</text>
         </g>
         <g
-           transform="translate(338.6667,265.2498)"
+           transform="translate(350.6667,265.2498)"
            style="font-size:13.33329964px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
            id="g7515">
           <text
@@ -4291,10 +4271,10 @@
              xml:space="preserve"
              y="4.5"
              style="stroke:none"
-             id="text7517">0.1005</text>
+             id="text7517">100.5</text>
         </g>
         <g
-           transform="translate(338.6667,230.9998)"
+           transform="translate(354.6667,230.9998)"
            style="font-size:13.33329964px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
            id="g7519">
           <text
@@ -4302,7 +4282,7 @@
              xml:space="preserve"
              y="4.5"
              style="stroke:none"
-             id="text7521">0.101</text>
+             id="text7521">101</text>
         </g>
         <g
            transform="matrix(0,-1,1,0,287.6667,299.4999)"
@@ -4313,554 +4293,554 @@
              xml:space="preserve"
              y="-4"
              style="stroke:none"
-             id="text7525">Puff length [s]</text>
+             id="text7525">Puff length [ms]</text>
         </g>
         <g
            transform="translate(347.1961,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7527">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7529" />
         </g>
         <g
            transform="translate(350.3922,295.0316)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7531">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7533" />
         </g>
         <g
            transform="translate(353.5882,297.8244)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7535">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7537" />
         </g>
         <g
            transform="translate(356.7843,295.0316)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7539">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7541" />
         </g>
         <g
            transform="translate(359.9804,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7543">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7545" />
         </g>
         <g
            transform="translate(363.1765,295.0153)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7547">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7549" />
         </g>
         <g
            transform="translate(366.3726,297.8244)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7551">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7553" />
         </g>
         <g
            transform="translate(369.5686,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7555">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7557" />
         </g>
         <g
            transform="translate(372.7647,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7559">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7561" />
         </g>
         <g
            transform="translate(375.9608,297.8244)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7563">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7565" />
         </g>
         <g
            transform="translate(379.1569,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7567">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7569" />
         </g>
         <g
            transform="translate(382.3529,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7571">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7573" />
         </g>
         <g
            transform="translate(385.549,295.0153)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7575">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7577" />
         </g>
         <g
            transform="translate(388.7451,297.8244)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7579">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7581" />
         </g>
         <g
            transform="translate(391.9412,295.0316)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7583">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7585" />
         </g>
         <g
            transform="translate(395.1373,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7587">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7589" />
         </g>
         <g
            transform="translate(398.3333,297.8244)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7591">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7593" />
         </g>
         <g
            transform="translate(401.5294,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7595">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7597" />
         </g>
         <g
            transform="translate(404.7255,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7599">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7601" />
         </g>
         <g
            transform="translate(407.9216,295.0153)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7603">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7605" />
         </g>
         <g
            transform="translate(411.1176,297.8244)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7607">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7609" />
         </g>
         <g
            transform="translate(414.3137,295.0316)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7611">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7613" />
         </g>
         <g
            transform="translate(417.5098,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7615">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7617" />
         </g>
         <g
            transform="translate(420.7059,297.8244)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7619">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7621" />
         </g>
         <g
            transform="translate(423.9019,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7623">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7625" />
         </g>
         <g
            transform="translate(427.0981,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7627">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7629" />
         </g>
         <g
            transform="translate(430.2941,297.8244)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7631">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7633" />
         </g>
         <g
            transform="translate(433.4902,297.8244)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7635">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7637" />
         </g>
         <g
            transform="translate(436.6863,295.0316)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7639">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7641" />
         </g>
         <g
            transform="translate(439.8824,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7643">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7645" />
         </g>
         <g
            transform="translate(443.0784,297.8244)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7647">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7649" />
         </g>
         <g
            transform="translate(446.2745,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7651">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7653" />
         </g>
         <g
            transform="translate(449.4706,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7655">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7657" />
         </g>
         <g
            transform="translate(452.6667,295.0316)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7659">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7661" />
         </g>
         <g
            transform="translate(455.8627,297.8244)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7663">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7665" />
         </g>
         <g
            transform="translate(459.0588,295.0316)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7667">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7669" />
         </g>
         <g
            transform="translate(462.2549,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7671">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7673" />
         </g>
         <g
            transform="translate(465.451,297.8244)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7675">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7677" />
         </g>
         <g
            transform="translate(468.6471,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7679">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7681" />
         </g>
         <g
            transform="translate(471.8431,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7683">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7685" />
         </g>
         <g
            transform="translate(475.0392,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7687">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7689" />
         </g>
         <g
            transform="translate(478.2353,297.8244)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7691">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7693" />
         </g>
         <g
            transform="translate(481.4314,295.0316)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7695">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7697" />
         </g>
         <g
            transform="translate(484.6274,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7699">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7701" />
         </g>
         <g
            transform="translate(487.8235,297.8244)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7703">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7705" />
         </g>
         <g
            transform="translate(491.0196,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7707">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7709" />
         </g>
         <g
            transform="translate(494.2157,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7711">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7713" />
         </g>
         <g
            transform="translate(497.4118,297.8407)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7715">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7717" />
         </g>
         <g
            transform="translate(500.6078,297.8244)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7719">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7721" />
         </g>
         <g
            transform="translate(503.8039,295.0316)"
-           style="color-interpolation:linearRGB;fill:#0072bd;stroke:#0072bd;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
+           style="color-interpolation:linearRGB;fill:#000000;stroke:#000000;stroke-width:0.66670001;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision;stroke-opacity:1;fill-opacity:1"
            id="g7723">
           <circle
              r="1.1111"
-             style="stroke:none"
+             style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
              cx="0"
              cy="0"
              id="circle7725" />
