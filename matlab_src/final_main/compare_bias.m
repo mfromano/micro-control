@@ -49,3 +49,5 @@ bias50 = mdl50.Coefficients.Estimate(2)-1;
 bias100 = mdl100.Coefficients.Estimate(2)-1;
 
 % timing bias is similar for all of these
+
+%% actual frequencies
