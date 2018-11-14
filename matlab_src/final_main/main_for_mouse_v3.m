@@ -14,6 +14,7 @@ yr = yr./tr;
 
 sensorAngleDegrees = 75; % measured by kyle
 sensorAngleRadians = (sensorAngleDegrees/360)*2*pi;
+velocity2 = sqrt((yr.^2+yl.^2-2*yl.*yr.*cos(sensorAngleRadians))/sin(sensorAngleRadians).^2)*100;
 
 % yl = (yl-yr*cos(sensorAngleRadians))/cos(pi/2-sensorAngleRadians);
 yl = (yl-yr*cos(sensorAngleRadians))/sin(sensorAngleRadians);
