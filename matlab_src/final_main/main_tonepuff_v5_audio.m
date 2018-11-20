@@ -70,7 +70,6 @@ taxis_sound_tdt = taxis_sound_tdt-taxis_sound_tdt(1);
 % times recorded on external device
 [b,a] = butter(2,[9000/(data.streams.Soun.fs/2) 10000/(data.streams.Soun.fs/2)],'bandpass');
 
-
 bp2 = filtfilt(b,a,double(sound_tdt'));
 amp = abs(hilbert(bp2));
 
