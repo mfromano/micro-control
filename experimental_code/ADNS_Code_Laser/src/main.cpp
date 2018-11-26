@@ -196,7 +196,7 @@ void captureDisplacement() {
     fastDigitalWrite(WATER_PIN,HIGH);
     waterPinON == true;
   }
-  else if (currentFrameCount == (waterFrames[waterIndex]+1)) {
+  else if (currentFrameCount == (waterFrames[waterIndex]+2)) {
       fastDigitalWrite(WATER_PIN,LOW);
       waterIndex++;
       waterPinON == false;
