@@ -38,7 +38,7 @@ st.sd = std(velocity_cms);
 d = 'micro-control-data/MikePractice_motor_50_10/Block-3';
 data = TDTbin2mat(d);
 
-camera_on_times = data.epocs.Valu
+camera_on_times = data.epocs.Valu.onset;
 
 
 t_true = 1:1:length(camera_on_times);

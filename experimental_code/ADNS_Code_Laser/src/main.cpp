@@ -5,6 +5,7 @@
 */
 // Include Config-file (moved for code clarity)
 #include "main_config.h"
+#include "vector"
 const String fileVersion = __TIMESTAMP__;
 
 // Create Sensor Objects with Specified Slave-Select Pins
@@ -19,13 +20,17 @@ IntervalTimer captureTimer;
 elapsedMicros microsSinceAcquisitionStart;
 elapsedMicros microsSinceFrameStart;
 // volatile time_t currentSampleTimestamp;
-volatile int32_t sampleCountRemaining = 0;
 volatile time_t currentFrameTimestamp;
 volatile time_t currentFrameDuration;
 volatile uint32_t currentFrameCount;
-volatile int32_t nreps = 0;
 volatile bool isRunning = false;
 
+//added the next 5 lines for water pin
+std::vector<int> waterFrames;
+volatile uint32_t waterIndex;
+static int[] range_in_seconds = {20, 20};
+volatile int32_t nreps = 0;
+volatile bool waterPinON = false;
 // =============================================================================
 //   SETUP & LOOP
 // =============================================================================
@@ -99,11 +104,18 @@ static inline void beginAcquisition(char input[], int8_t length) {
     float trial_length_minutes_int = atof(trial_length_minutes);
     char *sampling_interval_ms = strtok(NULL,",");
     float sampling_interval_ms_int = atof(sampling_interval_ms);
-    nreps = floor(trial_length_minutes_int*60.0*1000.0/sampling_interval_ms_int);
-    Serial.println(nreps);
-    Serial.println(sampling_interval_ms_int);
 
-    uint32_t waterFrames = getRandomFrames(floor(sampling_interval_ms_int), range_in_seconds);
+    nreps = floor(trial_length_minutes_int*60.0*1000.0/sampling_interval_ms_int);
+    Serial.println(int(nreps));
+    Serial.println(int(sampling_interval_ms_int));
+
+    //get random frames for
+    waterFrames = getRandomFrames(int(sampling_interval_ms_int),
+                              range_in_seconds, int(nreps));
+    Serial.println(waterFrames[waterFrames.size()-1]);
+
+    waterIndex = 0;
+
     // Print units and Fieldnames (header)
     sendHeader();
 
@@ -120,17 +132,39 @@ static inline void beginAcquisition(char input[], int8_t length) {
 
     // Reset Elapsed Time Counter
     microsSinceAcquisitionStart = 0;
+
     // currentSampleTimestamp = microsSinceAcquisitionStart;
     currentFrameTimestamp = microsSinceAcquisitionStart;
 
     currentFrameCount = 0;
+
     fastDigitalWrite(TRIGGER_PIN,HIGH);
+
     captureTimer.begin(captureDisplacement, sampling_interval_ms_int*1000);
+}
+
+void getRandomFrames(int samp_interval_ms_int, int *range_secs, int nreps)
+{
+  int range_frames[2];
+  for (int j=0; j < 2; j++)
+  {
+    range_frames[j] = ((*range_secs)*1000/samp_interval_ms_int);
+    range_secs++;
+  }
+  waterFrames.push_back(rand() % range_frames[0] + range_frames[1]);
+  int element = 1;
+  while (waterFrames[element-1] < nreps)
+  {
+    waterFrames.push_back(waterFrames[element-1] + rand() % range_frames[0] + range_frames[1]);
+    element++;
+  }
 }
 
 static inline void endAcquisition() {
     // End IntervalTimer
     captureTimer.end();
+    waterFrames.clear();
+    waterPinON = false;
     fastDigitalWrite(TRIGGER_PIN, LOW);
     fastDigitalWrite(WATER_PIN, LOW);
     // Trigger start using class methods in ADNS library
@@ -158,15 +192,22 @@ void captureDisplacement() {
   // Store timestamp for next frame
   currentFrameCount += 1;
 
-  if (currentFrameCount == waterFrames[0]) {
-
+  if (currentFrameCount == waterFrames[waterIndex]) {
+    fastDigitalWrite(WATER_PIN,HIGH);
+    waterPinON == true;
+  }
+  else if (currentFrameCount == (waterFrames[waterIndex]+1)) {
+      fastDigitalWrite(WATER_PIN,LOW);
+      waterIndex++;
+      waterPinON == false;
+    }
   }
 
   currentSample.left = {'L', sensor.left.readDisplacement(units)};
   currentSample.right = {'R', sensor.right.readDisplacement(units)};
 
   // Send Data
-  sendData(currentSample);
+  sendData(currentSample,waterPinON);
   currentFrameTimestamp = microsSinceAcquisitionStart;
 
   fastDigitalWrite(TRIGGER_PIN,HIGH);
@@ -200,7 +241,7 @@ void sendData(sensor_sample_t sample, bool waterPin) {
     const String dxR = String(sample.right.p.dx, decimalPlaces);
     const String dyR = String(sample.right.p.dy, decimalPlaces);
     const String dtR = String(sample.right.p.dt, decimalPlaces);
-    const String watPin = (waterPin) ? '1' : '0';
+    const String waterPin = (waterPin) ? '1' : '0';
     const String endline = String("\n");
 
     // Serial.availableForWrite

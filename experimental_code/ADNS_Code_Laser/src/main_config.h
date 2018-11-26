@@ -115,7 +115,8 @@ static inline void beginAcquisition(char input[],int8_t length);
 static inline void beginDataFrame();
 static inline void endDataFrame();
 static inline void endAcquisition();
-static inline uint32_t getRandomFrames(uint32_t samplingInterval, uint8_t jitterRange[]);
+static inline uint32_t getRandomFrames(int samplingInterval,
+  float jitterRange[], int nreps);
 // Task: TRIGGERED_ACQUISITION
 // (capture/acquire/read-loop)
 static void captureDisplacement();
