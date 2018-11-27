@@ -91,27 +91,28 @@ subplot(2,2,1)
 plot(1:50,st.sound_start,'.','MarkerSize',5);
 ylim([0.005 0.010]);
 ylabel('Tone latency [s]');
-xlabel('Trial');
+xlabel('Trial number');
 xlim([0 51])
 
 subplot(2,2,2);
 plot(1:50,st.sound_length,'.','MarkerSize',5);
 ylim([0.698 0.704]);
 ylabel('Tone length [s]');
-xlabel('Trial');
+xlabel('Trial number');
+xlim([0 51])
 
 subplot(2,2,3);
 plot(1:50,st.puff_start,'.','MarkerSize',5);
 ylim([-0.001 0.001]);
 ylabel('Puff latency [s]');
-xlabel('Trial');
+xlabel('Trial number');
 xlim([0 51])
 
 subplot(2,2,4);
 plot(1:50,st.puff_length,'.','MarkerSize',5);
 ylim([0.099 0.101]);
 ylabel('Puff length [s]');
-xlabel('Trial');
+xlabel('Trial number');
 xlim([0 51])
 
 print(gcf,'figures/tone_puff_v4_timing.svg','-dsvg');
