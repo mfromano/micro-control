@@ -18,16 +18,16 @@ elapsedMillis experimentTime;
 
 void setup() {
   fastPinMode(PUFF_PIN, OUTPUT);
-  fastPinMode(DAC_PIN, OUTPUT);
+  analogWriteResolution(12);
   AudioMemory(128);
   EXPERIMENT_ON = 0;
 }
 
 void loop(){
-  while(EXPERIMENT_ON < 200) {
+  while(EXPERIMENT_ON < 50) {
     fastDigitalWrite(PUFF_PIN,HIGH);
-    analogWrite(DAC_PIN, 2000);
-    delay(50)
+    analogWrite(DAC_PIN, 4050);
+    delay(50);
     fastDigitalWrite(PUFF_PIN,LOW);
     analogWrite(DAC_PIN,0);
     delay(1000);
