@@ -1,0 +1,56 @@
+{
+    "description": "Arduino circular buffer library", 
+    "repository": {
+        "url": "https://github.com/rlogiacco/CircularBuffer", 
+        "type": "git"
+    }, 
+    "platforms": [
+        "atmelavr", 
+        "atmelsam", 
+        "espressif32", 
+        "espressif8266", 
+        "intel_arc32", 
+        "microchippic32", 
+        "nordicnrf51", 
+        "nordicnrf52", 
+        "ststm32", 
+        "teensy", 
+        "timsp430"
+    ], 
+    "export": {
+        "exclude": [
+            "extras", 
+            "docs", 
+            "tests", 
+            "test", 
+            "*.doxyfile", 
+            "*.pdf"
+        ], 
+        "include": null
+    }, 
+    "authors": [
+        {
+            "maintainer": false, 
+            "name": "AgileWare", 
+            "url": null, 
+            "email": null
+        }, 
+        {
+            "maintainer": true, 
+            "name": "Roberto Lo Giacco", 
+            "url": null, 
+            "email": "rlogiacco@gmail.com"
+        }
+    ], 
+    "keywords": [
+        "storage", 
+        "data"
+    ], 
+    "id": 1796, 
+    "name": "CircularBuffer", 
+    "frameworks": [
+        "arduino"
+    ], 
+    "version": "1.2.0", 
+    "homepage": null
+}
