@@ -12,26 +12,23 @@
 
 const uint8_t PUFF_PIN = 3; // pin to use for PUFF
 const uint8_t DAC_PIN = A14;
- uint32_t EXPERIMENT_ON;
-
-elapsedMillis experimentTime;
-
+bool DONE = false;
 void setup() {
   fastPinMode(PUFF_PIN, OUTPUT);
   analogWriteResolution(12);
   AudioMemory(128);
-  EXPERIMENT_ON = 0;
 }
 
 void loop(){
-  while(EXPERIMENT_ON < 50) {
-    fastDigitalWrite(PUFF_PIN,HIGH);
-    analogWrite(DAC_PIN, 4050);
-    delay(50);
-    fastDigitalWrite(PUFF_PIN,LOW);
-    analogWrite(DAC_PIN,0);
-    delay(1000);
-    EXPERIMENT_ON++;
-  }
-
+  if (!DONE) {
+    for (int i=0; i < 50; i++) {
+      fastDigitalWrite(PUFF_PIN,HIGH);
+      analogWrite(DAC_PIN, 4050);
+      delay(50);
+      fastDigitalWrite(PUFF_PIN,LOW);
+      analogWrite(DAC_PIN,0);
+      delay(1000);
+    }
+    DONE = true;
+}
 }
