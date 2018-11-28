@@ -105,7 +105,6 @@ void begin(float ntrials, float trial_length) {
     frame_no = 0;
     frame_t = 0;
     isRunning = true;
-<<<<<<< HEAD:TonePuff4/src/main_audio.cpp
     float interval_t = 1000000.0/(float)CAMERA_FQ;
 
     while (isRunning) {
@@ -113,15 +112,6 @@ void begin(float ntrials, float trial_length) {
           ;
         }
         frame_t -= interval_t;
-=======
-
-    while (isRunning) {
-        float micr = 1000000.0/(float)CAMERA_FQ;
-        while ((frame_t < micr)) {
-          ;
-        }
-        frame_t = 0;
->>>>>>> aaa5663b82fd62c5d9058d4a064f99d95e1a0460:experimental_code/TonePuff4/src/main_audio.cpp
         capture();
       }
 }
