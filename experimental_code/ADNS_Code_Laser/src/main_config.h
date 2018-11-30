@@ -26,7 +26,7 @@
 const int CS_PIN_A = 20;
 const int CS_PIN_B = 21;
 const int TRIGGER_PIN = 4;
-const int WATER_PIN = 6;
+const int WATER_PIN = 7;
 
 const bool TRIGGER_ACTIVE_STATE = HIGH;
 
@@ -115,15 +115,15 @@ static inline void beginAcquisition(char input[],int8_t length);
 static inline void beginDataFrame();
 static inline void endDataFrame();
 static inline void endAcquisition();
-static inline uint32_t getRandomFrames(int samplingInterval,
-  float jitterRange[], int nreps);
+void getRandomFrames(int samplingInterval,
+  int jitterRange[], int nreps);
 // Task: TRIGGERED_ACQUISITION
 // (capture/acquire/read-loop)
 static void captureDisplacement();
 
 // Task: DATA_TRANSFER
 static void sendHeader();
-static void sendData(sensor_sample_t sample);
+static void sendData(sensor_sample_t sample, bool waterOn);
 
 
 #endif

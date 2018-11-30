@@ -28,8 +28,9 @@ volatile bool isRunning = false;
 //added the next 5 lines for water pin
 std::vector<int> waterFrames;
 volatile uint32_t waterIndex;
-static int[] range_in_seconds = {20, 20};
-volatile int32_t nreps = 0;
+int range_in_seconds[] = {20, 20};
+volatile uint16_t waterLength;
+volatile uint32_t nreps = 0;
 volatile bool waterPinON = false;
 // =============================================================================
 //   SETUP & LOOP
@@ -110,9 +111,8 @@ static inline void beginAcquisition(char input[], int8_t length) {
     Serial.println(int(sampling_interval_ms_int));
 
     //get random frames for
-    waterFrames = getRandomFrames(int(sampling_interval_ms_int),
-                              range_in_seconds, int(nreps));
-    Serial.println(waterFrames[waterFrames.size()-1]);
+    getRandomFrames(int(sampling_interval_ms_int), range_in_seconds, int(nreps));
+    waterLength = 100/int(sampling_interval_ms_int);
 
     waterIndex = 0;
 
@@ -145,6 +145,7 @@ static inline void beginAcquisition(char input[], int8_t length) {
 
 void getRandomFrames(int samp_interval_ms_int, int *range_secs, int nreps)
 {
+  waterFrames.clear();
   int range_frames[2];
   for (int j=0; j < 2; j++)
   {
@@ -190,18 +191,18 @@ void captureDisplacement() {
   sensor.right.triggerSampleCapture();
 
   // Store timestamp for next frame
-  currentFrameCount += 1;
 
   if (currentFrameCount == waterFrames[waterIndex]) {
     fastDigitalWrite(WATER_PIN,HIGH);
-    waterPinON == true;
+    waterPinON = true;
   }
-  else if (currentFrameCount == (waterFrames[waterIndex]+2)) {
+  else if (currentFrameCount == (waterFrames[waterIndex]+waterLength)) {
       fastDigitalWrite(WATER_PIN,LOW);
       waterIndex++;
-      waterPinON == false;
+      waterPinON = false;
     }
-  }
+
+  currentFrameCount += 1;
 
   currentSample.left = {'L', sensor.left.readDisplacement(units)};
   currentSample.right = {'R', sensor.right.readDisplacement(units)};
@@ -241,12 +242,12 @@ void sendData(sensor_sample_t sample, bool waterPin) {
     const String dxR = String(sample.right.p.dx, decimalPlaces);
     const String dyR = String(sample.right.p.dy, decimalPlaces);
     const String dtR = String(sample.right.p.dt, decimalPlaces);
-    const String waterPin = (waterPin) ? '1' : '0';
+    const String waterPinVal = (waterPin ? "1" : "0");
     const String endline = String("\n");
 
     // Serial.availableForWrite
     // Print ASCII Strings
     Serial.print(timestamp + delimiter + dxL + delimiter + dyL + delimiter +
-                 dtL + delimiter + dxR + delimiter + dyR + delimiter + dtR + delimiter + watPin +
+                 dtL + delimiter + dxR + delimiter + dyR + delimiter + dtR + delimiter + waterPinVal +
                  endline);
 }
