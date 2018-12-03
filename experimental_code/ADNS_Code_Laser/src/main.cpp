@@ -28,7 +28,7 @@ volatile bool isRunning = false;
 //added the next 5 lines for water pin
 std::vector<int> waterFrames;
 volatile uint32_t waterIndex;
-int range_in_seconds[] = {20, 20};
+int range_in_seconds[2];
 volatile uint16_t waterLength;
 volatile uint32_t nreps = 0;
 volatile bool waterPinON = false;
@@ -105,10 +105,20 @@ static inline void beginAcquisition(char input[], int8_t length) {
     float trial_length_minutes_int = atof(trial_length_minutes);
     char *sampling_interval_ms = strtok(NULL,",");
     float sampling_interval_ms_int = atof(sampling_interval_ms);
+    char *water_spacing_s = strtok(NULL,",");
+    float water_spacing_s_int = atof(water_spacing_s);
+    char *water_jitter_s = strtok(NULL,",");
+    float water_jitter_s_int = atof(water_jitter_s);
+
 
     nreps = floor(trial_length_minutes_int*60.0*1000.0/sampling_interval_ms_int);
-    Serial.println(int(nreps));
-    Serial.println(int(sampling_interval_ms_int));
+    Serial.println((nreps));
+    Serial.println((sampling_interval_ms_int));
+    Serial.println(water_jitter_s_int);
+    Serial.println(water_spacing_s_int);
+
+    range_in_seconds[0] = water_spacing_s_int-water_jitter_s_int;
+    range_in_seconds[1] = water_jitter_s_int+water_jitter_s_int;
 
     //get random frames for
     getRandomFrames(int(sampling_interval_ms_int), range_in_seconds, int(nreps));
