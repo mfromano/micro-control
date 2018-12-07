@@ -91,6 +91,8 @@ inline static bool initializeTriggering() {
   fastDigitalWrite(TRIGGER_PIN, LOW);
   fastPinMode(WATER_PIN, OUTPUT);
   fastDigitalWrite(WATER_PIN, LOW);
+  fastPinMode(LED_PIN, OUTPUT);
+  fastDigitalWrite(LED_PIN, LOW);
   delay(1);
   // Setup Sync/Trigger-Output Timing
   // FrequencyTimer2::setPeriod(1e6 / DISPLACEMENT_SAMPLE_RATE)
@@ -178,6 +180,7 @@ static inline void endAcquisition() {
     waterPinON = false;
     fastDigitalWrite(TRIGGER_PIN, LOW);
     fastDigitalWrite(WATER_PIN, LOW);
+    fastDigitalWrite(LED_PIN, LOW);
     // Trigger start using class methods in ADNS library
     sensor.left.triggerAcquisitionStop();
     sensor.right.triggerAcquisitionStop();
@@ -204,10 +207,12 @@ void captureDisplacement() {
 
   if (currentFrameCount == waterFrames[waterIndex]) {
     fastDigitalWrite(WATER_PIN,HIGH);
+    fastDigitalWrite(LED_PIN, HIGH);
     waterPinON = true;
   }
   else if (currentFrameCount == (waterFrames[waterIndex]+waterLength)) {
       fastDigitalWrite(WATER_PIN,LOW);
+      fastDigitalWrite(LED_PIN, LOW);
       waterIndex++;
       waterPinON = false;
     }

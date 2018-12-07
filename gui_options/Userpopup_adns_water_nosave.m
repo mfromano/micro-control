@@ -44,6 +44,14 @@ set(f, 'Visible','on');
 
 
 function callbackfn1(~,~)
+
+%     s = instrfind;
+%     if ~isempty(s)
+%         fclose(s);
+%         delete(s);
+%         clear s;
+%     end
+    
     global huiw1;
     global huiw3;
     global huiw4;
@@ -55,12 +63,9 @@ function callbackfn1(~,~)
     global fi;
     global movement;
     
-    try
-        uart = serial(huiw1.String, 'BaudRate', 115200);
-        fopen(uart);
-    catch
-        errordlg('There was an error connecting to the USB to Teensy. Please check the COM port.');
-    end
+    uart = serial(huiw1.String, 'BaudRate', 115200);
+    fopen(uart);
+
     pause(2);
 
     fwrite(uart,sprintf('%s,%s,%s,%s',huiw4.String, huiw5.String, huiw6.String, huiw7.String));
