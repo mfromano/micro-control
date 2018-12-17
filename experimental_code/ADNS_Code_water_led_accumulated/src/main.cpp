@@ -219,8 +219,8 @@ void captureDisplacement() {
 
   currentFrameCount += 1;
 
-  currentSample.left = {'L', sensor.left.readDisplacement(units)};
-  currentSample.right = {'R', sensor.right.readDisplacement(units)};
+  currentSample.left = {'L', sensor.left.readPosition(units)};
+  currentSample.right = {'R', sensor.right.readPosition(units)};
 
   // Send Data
   sendData(currentSample,waterPinON);
@@ -253,16 +253,16 @@ void sendData(sensor_sample_t sample, bool waterPin) {
     const String timestamp = String(sample.timestamp);
     const String xL = String(sample.left.p.x, decimalPlaces);
     const String yL = String(sample.left.p.y, decimalPlaces);
-    const String dtL = String(sample.left.p.dt, decimalPlaces);
+    const String tL = String(sample.left.p.t, decimalPlaces);
     const String xR = String(sample.right.p.x, decimalPlaces);
     const String yR = String(sample.right.p.y, decimalPlaces);
-    const String dtR = String(sample.right.p.dt, decimalPlaces);
+    const String tR = String(sample.right.p.t, decimalPlaces);
     const String waterPinVal = (waterPin ? "1" : "0");
     const String endline = String("\n");
 
     // Serial.availableForWrite
     // Print ASCII Strings
     Serial.print(timestamp + delimiter + xL + delimiter + yL + delimiter +
-                 dtL + delimiter + xR + delimiter + yR + delimiter + dtR + delimiter + waterPinVal +
+                 tL + delimiter + xR + delimiter + yR + delimiter + tR + delimiter + waterPinVal +
                  endline);
 }

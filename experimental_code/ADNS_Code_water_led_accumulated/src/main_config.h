@@ -73,7 +73,7 @@ typedef struct {
 // Define data structure for a sample from a single sensor
 typedef struct {
   char id = 'L';
-  displacement_t p;  // todo: use generic point_t or vec2
+  position_t p;  // todo: use generic point_t or vec2
 } labeled_sample_t;
 
 // Define Left-Right Sensor Pair Structure

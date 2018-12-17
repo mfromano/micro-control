@@ -227,7 +227,7 @@ void captureDisplacement() {
   currentFrameTimestamp = millisSinceAcquisitionStart;
 
   fastDigitalWrite(TRIGGER_PIN,HIGH);
-  delayMicroseconds(500);
+  delay(1);
   fastDigitalWrite(TRIGGER_PIN,LOW);
 }
 
