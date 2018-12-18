@@ -441,7 +441,7 @@ void ADNS::initialize() {
     setMaxSamplePeriodUs(_maxSamplePeriodUs);
     getMinSamplePeriodUs();  // todo update period and resolution in single fcn
     delaySleepTimeout();
-    setMaxLiftDetectionThreshold();
+    // setMaxLiftDetectionThreshold();
     _configuredFlag = true;
   }
   _initializedFlag = true;
