@@ -242,10 +242,10 @@ void sendHeader() {
   Serial.print(String(
       String("timestamp [ms]") + delimiter + flatFieldNames[0] + " [" + dunit +
       "]" + delimiter + flatFieldNames[1] + " [" + dunit + "]" + delimiter +
-      flatFieldNames[2] + " [" + tunit + "]" + delimiter + flatFieldNames[3] +
-      + delimiter + flatFieldNames[4] + " [" + dunit + "]" +
+      flatFieldNames[2] + " [" + tunit + "]" + delimiter + "minL" +
+      + delimiter + "maxL" + flatFieldNames[4] + " [" + dunit + "]" +
       delimiter + flatFieldNames[5] + " [" + dunit + "]" + delimiter + flatFieldNames[6] + " [" + tunit + "]" +
-      delimiter + flatFieldNames[7] + delimiter + " waterPin " "\n"));
+      delimiter + "minR" + delimiter + "maxR" + delimiter + " waterPin " "\n"));
 }
 
 void sendData(sensor_sample_t sample, bool waterPin) {
@@ -255,17 +255,19 @@ void sendData(sensor_sample_t sample, bool waterPin) {
     const String dxL = String(sample.left.p.dx, decimalPlaces);
     const String dyL = String(sample.left.p.dy, decimalPlaces);
     const String dtL = String(sample.left.p.dt, decimalPlaces);
-    const String sqL = String(sample.left.p.sq);
+    const String minL = String(sample.left.p.min);
+    const String maxL = String(sample.left.p.max);
     const String dxR = String(sample.right.p.dx, decimalPlaces);
     const String dyR = String(sample.right.p.dy, decimalPlaces);
     const String dtR = String(sample.right.p.dt, decimalPlaces);
-    const String sqR = String(sample.right.p.sq, decimalPlaces);
     const String waterPinVal = (waterPin ? "1" : "0");
     const String endline = String("\n");
+    const String minR = String(sample.right.p.min);
+    const String maxR = String(sample.right.p.max);
 
     // Serial.availableForWrite
     // Print ASCII Strings
     Serial.print(timestamp + delimiter + dxL + delimiter + dyL + delimiter +
-                 dtL + delimiter + sqL + delimiter + dxR + delimiter + dyR + delimiter + dtR + delimiter + sqR + delimiter + waterPinVal +
+                 dtL + delimiter + minL + delimiter + maxL +delimiter + dxR + delimiter + dyR + delimiter + dtR + delimiter + minR + delimiter + maxR + delimiter + waterPinVal +
                  endline);
 }

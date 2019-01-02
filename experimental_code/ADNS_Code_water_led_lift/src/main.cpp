@@ -242,9 +242,9 @@ void sendHeader() {
   Serial.print(String(
       String("timestamp [ms]") + delimiter + flatFieldNames[0] + " [" + dunit +
       "]" + delimiter + flatFieldNames[1] + " [" + dunit + "]" + delimiter +
-      flatFieldNames[2] + " [" + tunit + "]" + delimiter + "left shutter" + delimiter + flatFieldNames[4] + " [" + dunit + "]" +
+      flatFieldNames[2] + " [" + tunit + "]" + delimiter + "left pixelsum" + delimiter + flatFieldNames[4] + " [" + dunit + "]" +
       delimiter + flatFieldNames[5] + " [" + dunit + "]" + delimiter + flatFieldNames[6] + " [" + tunit + "]" +
-      delimiter + "right shutter" + delimiter + " waterPin " "\n"));
+      delimiter + "right pixelsum" + delimiter + " waterPin " "\n"));
 }
 
 void sendData(sensor_sample_t sample, bool waterPin) {
@@ -254,11 +254,11 @@ void sendData(sensor_sample_t sample, bool waterPin) {
     const String dxL = String(sample.left.p.dx, decimalPlaces);
     const String dyL = String(sample.left.p.dy, decimalPlaces);
     const String dtL = String(sample.left.p.dt, decimalPlaces);
-    const String motionL = String(sample.left.p.shutter);
+    const String motionL = String(sample.left.p.pixelsum);
     const String dxR = String(sample.right.p.dx, decimalPlaces);
     const String dyR = String(sample.right.p.dy, decimalPlaces);
     const String dtR = String(sample.right.p.dt, decimalPlaces);
-    const String motionR = String(sample.right.p.shutter);
+    const String motionR = String(sample.right.p.pixelsum);
     const String waterPinVal = (waterPin ? "1" : "0");
     const String endline = String("\n");
 

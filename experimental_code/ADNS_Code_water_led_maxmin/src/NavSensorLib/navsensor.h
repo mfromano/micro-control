@@ -53,7 +53,8 @@ typedef struct {
   float dx;
   float dy;
   float dt;  // todo change to duration_t
-  float sq;
+  uint8_t max;
+  uint8_t min;
 } displacement_t;
 
 typedef vec2_cartesian<float> velocity_cartesian_t;

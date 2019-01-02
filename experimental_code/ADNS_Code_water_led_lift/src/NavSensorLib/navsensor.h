@@ -53,7 +53,7 @@ typedef struct {
   float dx;
   float dy;
   float dt;  // todo change to duration_t
-  uint16_t shutter;
+  uint8_t pixelsum;
 } displacement_t;
 
 typedef vec2_cartesian<float> velocity_cartesian_t;

@@ -54,7 +54,8 @@ typedef struct {
   int16_t dx;          // counts
   int16_t dy;          // counts
   adns_duration_t dt;  // microseconds
-  uint8_t sq;
+  uint8_t max;
+  uint8_t min;
 } adns_displacement_t;
 
 typedef struct {

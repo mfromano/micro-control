@@ -54,7 +54,7 @@ typedef struct {
   int16_t dx;          // counts
   int16_t dy;          // counts
   adns_duration_t dt;  // microseconds
-  uint16_t shutter;
+  uint8_t pixelsum;
 } adns_displacement_t;
 
 typedef struct {

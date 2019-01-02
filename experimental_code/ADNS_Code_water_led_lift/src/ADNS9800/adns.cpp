@@ -99,7 +99,7 @@ void ADNS::triggerSampleCapture() {
   _sample.displacement.dy =
       ((int16_t)(_readout.dyL) | ((int16_t)(_readout.dyH) << 8));
   _sample.displacement.dt = dtLatch;  //((capture.endTime - capture.startTime));
-  _sample.displacement.shutter = makeWord(_readout.shutterPeriodH, _readout.shutterPeriodL);
+  _sample.displacement.pixelsum = _readout.pixelSum;
   // Update Current Position Data
   _position.x += _sample.displacement.dx;
   _position.y += _sample.displacement.dy;
@@ -129,7 +129,7 @@ displacement_t ADNS::readDisplacement(const unit_specification_t unit) const {
   u.dx = (float)_sample.displacement.dx * distancePerCount;
   u.dy = (float)_sample.displacement.dy * distancePerCount;
   u.dt = (float)_sample.displacement.dt * timePerCount;
-  u.shutter = _sample.displacement.shutter;
+  u.pixelsum = _sample.displacement.pixelsum;
   return u;
 }
 
