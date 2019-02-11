@@ -25,7 +25,6 @@ float TRIAL_LENGTH = 30000; // ms
 uint8_t NO_TRIALS = 10;
 
 const uint8_t PUFF_PIN = 3; // pin to use for PUFF
-// const float PUFF_START = 11700; // ms
 const float PUFF_START = 12050; // ms
 const float PUFF_LENGTH = 100.0; //in ms
 bool PUFF = false;
@@ -34,7 +33,6 @@ const uint8_t LED_PIN = 1; // pin to use for LED
 bool LED = false;
 
 const float TONE_START = 11100; // ms
-// const float TONE_LENGTH = 350.0; //in ms
 const float TONE_LENGTH = 700.0;
 bool TONE = false;
 const uint32_t CAMERA_PULSE_MIN_MICROS = 1000;
@@ -78,7 +76,6 @@ void setup() {
   fastPinMode(LED_PIN, OUTPUT);
   Serial.begin(115200);
   AudioMemory(128);
-  // dac1.analogReference(EXTERNAL);
   sine1.frequency(FQ);
   sine1.amplitude(0);
 }
@@ -87,6 +84,7 @@ void loop(){
  if (!isRunning && (Serial.available() > 0)) {
     // add in Serial comprehension/parsing here once we find out what the user might want
     Serial.readBytes(matlabdata, sizeof(matlabdata)); //used from controller_main_synchronous file
+    Serial.flush();
     char *ntrials_str = strtok(matlabdata,",");
     float ntrials  = atof(ntrials_str);
     char *trial_length_str = strtok(NULL,",");
@@ -111,6 +109,7 @@ void begin(float ntrials, float trial_length) {
     frame_no = 0;
     frame_t = 0;
     isRunning = true;
+    char stopTrial[50];
     fastDigitalWrite(CAMERA_PIN, CAMERA_ON_STATE);
     float interval_t = 1000000.0/(float)CAMERA_FQ;
 
@@ -120,6 +119,13 @@ void begin(float ntrials, float trial_length) {
         }
         frame_t -= interval_t;
         capture();
+        if (Serial.available() > 0) {
+          Serial.readBytes(stopTrial,sizeof(stopTrial));
+          Serial.flush();
+          if strcmp(stopTrial,"STOP") {
+            isRunning = 0;
+          }
+        }
       }
 }
 void endCollection() {
@@ -152,7 +158,7 @@ void capture() {
       endCollection();
       return;
     }
-    trial_t = 0;
+    . = 0;
     curr_t = trial_t;
   }
   // update tone
