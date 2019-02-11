@@ -45,12 +45,12 @@ set(f, 'Visible','on');
 
 function callbackfn1(~,~)
 
-%     s = instrfind;
-%     if ~isempty(s)
-%         fclose(s);
-%         delete(s);
-%         clear s;
-%     end
+    s = instrfind;
+    if ~isempty(s)
+        fclose(s);
+        delete(s);
+        clear s;
+    end
     
     global huiw1;
     global huiw3;

@@ -60,8 +60,9 @@ class ADNS {
   void setMaxSamplePeriodUs(const uint16_t us);
   uint16_t getMaxSamplePeriodUs();
   void setMinSamplePeriodUs(const uint16_t us);
+  void setMaxShutterPeriodUs(const uint16_t us);
   uint16_t getMinSamplePeriodUs();
-
+  uint16_t getMaxShutterPeriodUs();
   // Sensor Status
   uint16_t getSamplePeriodUs();
   uint16_t getSampleRateHz();
@@ -86,6 +87,7 @@ class ADNS {
   void delaySleepTimeout();
   void disableSleepTimeout();
   void setMaxLiftDetectionThreshold();
+  void setManualSamplePeriod();
 
   // Status Flags
   bool _configuredFlag = false;

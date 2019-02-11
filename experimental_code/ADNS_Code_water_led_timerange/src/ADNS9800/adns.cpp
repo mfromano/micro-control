@@ -344,6 +344,25 @@ void ADNS::setMinSamplePeriodUs(const uint16_t us) {
   getMinSamplePeriodUs();
 }
 
+uint16_t ADNS::getMaxShutterPeriodUs() {
+  uint8_t dataL, dataH;
+  dataH = readRegister(RegisterAddress::Shutter_Max_Bound_Lower);
+  dataL = readRegister(RegisterAddress::Shutter_Max_Bound_Upper);
+  uint16_t us = makeWord(dataH, dataL) / ADNS_CHIP_FREQ_MHZ;
+  return us;
+}
+
+void ADNS::setMaxShutterPeriodUs(const uint16_t us) {
+  // todo ensure frameperiod_maxbound >= frameperiod_minbound + shutter_maxbound
+  uint8_t dataL, dataH;
+  uint16_t delayNumCyles = us * ADNS_CHIP_FREQ_MHZ;
+  dataL = lowByte(delayNumCyles);
+  dataH = highByte(delayNumCyles);
+  writeRegister(RegisterAddress::Shutter_Max_Bound_Lower, dataL);
+  writeRegister(RegisterAddress::Shutter_Max_Bound_Upper, dataH);
+}
+
+
 uint16_t ADNS::getMinSamplePeriodUs() {
   uint8_t dataL, dataH;
   dataH = readRegister(RegisterAddress::Frame_Period_Min_Bound_Upper);
@@ -441,13 +460,22 @@ void ADNS::initialize() {
     // Power-Up Sensor & Set/Confirm Settings on Sensor Device
     powerUpSensor();
     setResolutionCountsPerInch(_resolutionCountsPerInch);
+    //mike adding this line: set fixed sampling rate and exposure time
     setMaxSamplePeriodUs(_maxSamplePeriodUs);
-    getMinSamplePeriodUs();  // todo update period and resolution in single fcn
+    // uint16_t pd = getMaxShutterPeriodUs();
+    // setMaxShutterPeriodUs(pd);
+    // setManualSamplePeriod();
+    getMinSamplePeriodUs();
     delaySleepTimeout();
     setMaxLiftDetectionThreshold();
     _configuredFlag = true;
   }
   _initializedFlag = true;
+}
+
+void ADNS::setManualSamplePeriod() {
+   uint8_t config_ii = readRegister(RegisterAddress::Configuration_II);
+    writeRegister(RegisterAddress::Configuration_II, (config_ii | 0x18));
 }
 
 void ADNS::powerUpSensor() {
