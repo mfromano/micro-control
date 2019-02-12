@@ -17,7 +17,7 @@ f = figure('Visible','off','Units','Normalized',...
     'Position', [0.1 0.1 0.4 0.4], 'Color', [0 0.7 0.7],...
     'name', 'Mouseball Setup');
 huipusha = uicontrol('Style','pushbutton', 'Units', 'Normalized', ...
-    'Position', [0.3 0.5 0.4 0.1],'string','Start', 'Callback', @callbackfn1,...
+    'Position', [0.1 0.5 0.35 0.1],'string','Start', 'Callback', @callbackfn1,...
     'FontName', 'Wawati SC', 'FontSize', 14,'interruptible','on');
 
 huiw1 = uicontrol('Style','edit', 'Units', 'Normalized', ...
@@ -33,7 +33,7 @@ huiw5 = uicontrol('Style','edit', 'Units', 'Normalized', ...
     'Position', [0.35 0.19 0.33 0.05],'string','Sampling interval? [ms]',...
     'FontName','Wawati SC', 'FontSize',9);
 huiw6 = uicontrol('Style','pushbutton', 'Units', 'Normalized', ...
-    'Position', [0.3 0.5 0.4 0.1],'string','Stop', 'Callback', @callbackfn2,...
+    'Position', [0.55 0.5 0.35 0.1],'string','Stop', 'Callback', @callbackfn2,...
     'FontName', 'Wawati SC', 'FontSize', 14,'interruptible','on');
 set(huiw6,'enable','off');
 
@@ -66,7 +66,7 @@ function callbackfn1(~,~)
     nreps = str2double(fscanf(uart,'%s\n'));
     repcycles = fscanf(uart,'%s\n');
     set(huiw6,'enable','on');
-    movement = cell(nreps,1);
+    movement = cell(0);
     fprintf('nreps: %d, repcycles: %s\n',nreps,repcycles);
     fprintf('Beginning acquisition\n');
     pause(0.5);
@@ -78,9 +78,10 @@ function callbackfn1(~,~)
             break;
         end
     end
-    for i=1:(nreps+1)
+    for i=1:numel(movement)
         fprintf(fi,'%s\n',movement{i});
     end
+    set(huiw6,'enable','off');
     fclose(fi);
     fclose(uart);
     delete(uart);
