@@ -30,7 +30,7 @@ f = figure('Visible','off','Units','Normalized',...
     'name', 'Mouseball Setup');
 huipusha = uicontrol('Style','pushbutton', 'Units', 'Normalized', ...
     'Position', [0.2 0.5 0.3 0.1],'string','Start', 'Callback', @callbackfn1,...
-    'FontName', 'Wawati SC', 'FontSize', 14);
+    'FontName', 'Wawati SC', 'FontSize', 14,'interruptible','on');
 
 text_input = @(position, text) uicontrol('Style','edit', 'Units', 'Normalized', ...
     'Position', position,'string',text,...
@@ -53,7 +53,7 @@ huiw11 = text_input([0.5 0.07 0.33 0.05],'Tone 2 Length [us]?');
 
 huiw6 = uicontrol('Style','pushbutton', 'Units', 'Normalized', ...
     'Position', [0.5 0.5 0.3 0.1],'string','Stop','CallBack',@callbackfn2,...
-    'FontName','Wawati SC', 'FontSize',9);
+    'FontName','Wawati SC', 'FontSize',9,'interruptible','on');
 set(huiw6,'enable','off');
 set(f, 'Visible','on');
 
@@ -99,16 +99,18 @@ function callbackfn1(~,~)
     
     pause(0.1);
     x = fscanf(uart,'%s\n');
+    set(huiw6,'enable','on');
+    drawnow
     fprintf(x);
     movement = cell(0);
-    fprintf('Beginning acquisition\n');
-    set(huiw6,'enable','on');
+    fprintf('\nBeginning acquisition\n');
     while true
         movement{end+1} = fscanf(uart,'%s');
         if strcmp(movement{end},'END')
             break;
         end
         fprintf('%s\n',movement{end});
+        pause(0.0001);
     end
     for i=1:numel(movement)
         fprintf(fi,'%s\n',movement{i});

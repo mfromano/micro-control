@@ -62,8 +62,8 @@ void begin(float ntrials, float trial_length) {
         capture();
         if (Serial.available() > 0) {
           Serial.readBytes(stopTrial,sizeof(stopTrial));
-          Serial.flush();
           if (strcmp(stopTrial,"STOP")) {
+            Serial.flush();
             endCollection();
           }
         }
@@ -84,9 +84,9 @@ void updateParams() {
   FQ1 = strtol(FQ_1_char,NULL,0);
 
   char *TONE2_START_char = strtok(NULL,",");
-  TONE1_START = atof(TONE2_START_char);
+  TONE2_START = atof(TONE2_START_char);
   char *TONE2_LENGTH_char = strtok(NULL,",");
-  TONE1_LENGTH = atof(TONE2_LENGTH_char);
+  TONE2_LENGTH = atof(TONE2_LENGTH_char);
   char *FQ_2_char = strtok(NULL,",");
   FQ2 = strtol(FQ_2_char,NULL,0);
 }
