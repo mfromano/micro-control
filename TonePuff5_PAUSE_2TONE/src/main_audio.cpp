@@ -10,44 +10,6 @@
 #include <SerialFlash.h>
 #include <main_conf.h>
 
-// GUItool: begin automatically generated code
-AudioSynthWaveformSine   sine1;          //xy=189,176
-AudioOutputAnalog        dac1;           //xy=552,179
-AudioConnection patchCord1(sine1,dac1);
-// end automatically generated code
-
-
-
-volatile time_t curr_t;
-volatile time_t exp_t;
-elapsedMicros frame_t;
-elapsedMicros experiment_t;
-elapsedMicros trial_t;
-IntervalTimer trial_timer;
-
-
-uint16_t frame_no;
-uint8_t trial_no;
-
-typedef struct {
-  uint16_t frame_in_trial = 0;
-  uint32_t trial_time = 0;
-  uint32_t experiment_time = 0;
-  uint8_t trial_number = 0;
-  bool puff_on = false;
-  bool tone1_on = false;
-  bool tone2_on = false;
-  bool led_on  = false;
-
-} frame_data;
-
-void sendData(frame_data frame);
-void begin(float ntrials, float trial_length);
-void capture();
-void updateParams();
-void initializeExpParams();
-void togglePUFF(time_t t);
-void toggleTONE(time_t t, float TONE_START, float TONE_LENGTH);
 
 void setup() {
   fastPinMode(PUFF_PIN, OUTPUT);
@@ -70,12 +32,12 @@ void loop(){
     char *trial_length_str = strtok(NULL,",");
     float trial_length = atof(trial_length_str);
 
-    updateExpParams();
+    updateParams();
 
     Serial.println(String(ntrials) + ',' + String(trial_length) + ',' + String(PUFF_START) +
-      ',' + String(PUFF_LENGTH) + ',' String(TONE1_START) + ',' + String(TONE1_LENGTH) + ',' +
-      String(FQ1) +',' + String(TONE2_START) + ',' + String(TONE2_LENGTH) + ',' + String(FQ2));
-  );
+      ',' + String(PUFF_LENGTH) + ',' + String(TONE1_START) + ',' + String(TONE1_LENGTH) + ',' +
+      String(FQ1) + ',' + String(TONE2_START) + ',' + String(TONE2_LENGTH) + ',' + String(FQ2));
+
     begin(ntrials, trial_length);
     fastDigitalWrite(CAMERA_PIN, !CAMERA_ON_STATE);
   }
@@ -119,15 +81,14 @@ void updateParams() {
   char *TONE1_LENGTH_char = strtok(NULL,",");
   TONE1_LENGTH = atof(TONE1_LENGTH_char);
   char *FQ_1_char = strtok(NULL,",");
-  FQ1 = strtol(FQ_1_char);
+  FQ1 = strtol(FQ_1_char,NULL,0);
 
   char *TONE2_START_char = strtok(NULL,",");
-  TONE1_START = atof(TONE1_START_char);
+  TONE1_START = atof(TONE2_START_char);
   char *TONE2_LENGTH_char = strtok(NULL,",");
-  TONE1_LENGTH = atof(TONE1_LENGTH_char);
+  TONE1_LENGTH = atof(TONE2_LENGTH_char);
   char *FQ_2_char = strtok(NULL,",");
-  FQ2 = strtol(FQ_2_char);
-
+  FQ2 = strtol(FQ_2_char,NULL,0);
 }
 
 void initializeExpParams() {
@@ -199,7 +160,7 @@ void togglePUFF(time_t t) {
 void toggleTONE(time_t t, float TONE_START, float TONE_LENGTH, long fq, uint8_t tone_no){
   // update tone
   if ((t/1000.0 + jitter > TONE_START) && (t/1000.0+jitter < (TONE_START+TONE_LENGTH))) {
-    if (uint8_t == 1) {
+    if (tone_no == 1) {
         TONE1 = true;
     }
     else {
@@ -210,7 +171,7 @@ void toggleTONE(time_t t, float TONE_START, float TONE_LENGTH, long fq, uint8_t 
     sine1.amplitude(0.05);
     fastDigitalWrite(LED_PIN, HIGH);
 
-  } else if ((t/1000.0 + jitter > (TONE_START + TONE_LENGTH)) && TONE) {
+  } else if ((t/1000.0 + jitter > (TONE_START + TONE_LENGTH)) && (TONE1 || TONE2)) {
     TONE1 = false;
     TONE2 = false;
     LED = false;
