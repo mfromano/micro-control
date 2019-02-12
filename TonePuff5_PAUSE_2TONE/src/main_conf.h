@@ -39,4 +39,42 @@ const bool CAMERA_ON_STATE = true;
 
 const uint8_t AMP_PIN = 5;
 
+// GUItool: begin automatically generated code
+AudioSynthWaveformSine   sine1;          //xy=189,176
+AudioOutputAnalog        dac1;           //xy=552,179
+AudioConnection patchCord1(sine1,dac1);
+// end automatically generated code
+
+volatile time_t curr_t;
+volatile time_t exp_t;
+elapsedMicros frame_t;
+elapsedMicros experiment_t;
+elapsedMicros trial_t;
+IntervalTimer trial_timer;
+
+uint16_t frame_no;
+uint8_t trial_no;
+
+typedef struct {
+  uint16_t frame_in_trial = 0;
+  uint32_t trial_time = 0;
+  uint32_t experiment_time = 0;
+  uint8_t trial_number = 0;
+  bool puff_on = false;
+  bool tone1_on = false;
+  bool tone2_on = false;
+  bool led_on  = false;
+
+} frame_data;
+
+void sendData(frame_data frame);
+void begin(float ntrials, float trial_length);
+void capture();
+void updateParams();
+void initializeExpParams();
+void togglePUFF(time_t t);
+void toggleTONE(time_t t, float TONE_START, float TONE_LENGTH, long fq, uint8_t tone_no);
+void endCollection();
+
+
 #endif
