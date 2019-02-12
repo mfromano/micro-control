@@ -36,14 +36,14 @@ text_input = @(position, text) uicontrol('Style','edit', 'Units', 'Normalized', 
     'Position', position,'string',text,...
     'FontName', 'Wawati SC', 'FontSize', 9);
 
-huiw1 = text_input([0.17 0.43 0.33 0.05],'Enter the Teensy Serial Port (i.e COM1)');
+huiw1 = text_input([0.17 0.38 0.33 0.05],'Enter the Teensy Serial Port (i.e COM1)');
 huiw3 = text_input([0.17 0.31 0.33 0.05],'Experiment output file name');
 huiw4 = text_input([0.17 0.25 0.33 0.05],'Number of trials?');
 huiw5 = text_input([0.17 0.19 0.33 0.05],'Length of trials? [us]');
 huiw13 = text_input([0.17 0.13 0.33 0.05],'Puff Start [us]');
 huiw14 = text_input([0.17 0.07 0.33 0.05],'Puff Length [us]');
 
-huiw9 = text_input([0.5 0.43 0.33 0.05],'Tone 1 FQ?');
+huiw9 = text_input([0.5 0.38 0.33 0.05],'Tone 1 FQ?');
 huiw7 = text_input([0.5 0.31 0.33 0.05],'Tone 1 Start [us]?');
 huiw8 = text_input([0.5 0.25 0.33 0.05],'Tone 1 Length [us]?');
 
