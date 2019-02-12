@@ -8,6 +8,7 @@
 #include <SPI.h>
 #include <SD.h>
 #include <SerialFlash.h>
+#include <main_conf.h>
 
 // GUItool: begin automatically generated code
 AudioSynthWaveformSine   sine1;          //xy=189,176
@@ -71,7 +72,10 @@ void loop(){
 
     updateExpParams();
 
-    Serial.println(String(ntrials) + ',' + String(trial_length));
+    Serial.println(String(ntrials) + ',' + String(trial_length) + ',' + String(PUFF_START) +
+      ',' + String(PUFF_LENGTH) + ',' String(TONE1_START) + ',' + String(TONE1_LENGTH) + ',' +
+      String(FQ1) +',' + String(TONE2_START) + ',' + String(TONE2_LENGTH) + ',' + String(FQ2));
+  );
     begin(ntrials, trial_length);
     fastDigitalWrite(CAMERA_PIN, !CAMERA_ON_STATE);
   }
@@ -97,12 +101,12 @@ void begin(float ntrials, float trial_length) {
         if (Serial.available() > 0) {
           Serial.readBytes(stopTrial,sizeof(stopTrial));
           Serial.flush();
-          if strcmp(stopTrial,"STOP") {
+          if (strcmp(stopTrial,"STOP")) {
             endCollection();
           }
         }
       }
-}
+    }
 
 void updateParams() {
   char *PUFF_START_char = strtok(NULL,",");

@@ -78,9 +78,11 @@ function callbackfn1(~,~)
     global movement;
     
     tone1end =  (str2double(huiw7.String)+str2double(huiw8.String));
-    puffend =   (str2double(huiw13.String) + str2double(huiw14.String));
+    puffend =   (str2double(huiw13.String)+str2double(huiw14.String));
     tone2end =  (str2double(huiw10.String)+str2double(huiw11.String));
-    
+    assert(tone1end < str2double(huiw10.String));
+    assert(str2double(huiw13.String) > tone2end);
+    assert((puffend < str2double(huiw5.String)));
     
     fi = fopen(huiw3.String,'w');
     uart = serial(huiw1.String, 'BaudRate', 115200);
