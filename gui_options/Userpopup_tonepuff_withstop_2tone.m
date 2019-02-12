@@ -9,6 +9,15 @@ global huiw1;
 global huiw3;
 global huiw4;
 global huiw5;
+global huiw6;
+global huiw7;
+global huiw8;
+global huiw9;
+global huiw10;
+global huiw11;
+global huiw12;
+global huiw13;
+global huiw14;
 global movement;
 global fi;
 
@@ -64,18 +73,21 @@ function callbackfn1(~,~)
     global huiw13;
     global huiw14;
     
-    
-    
     global uart;
     global fi;
     global movement;
+    
+    tone1end =  (str2double(huiw7.String)+str2double(huiw8.String));
+    puffend =   (str2double(huiw13.String) + str2double(huiw14.String));
+    tone2end =  (str2double(huiw10.String)+str2double(huiw11.String));
+    
     
     fi = fopen(huiw3.String,'w');
     uart = serial(huiw1.String, 'BaudRate', 115200);
     fopen(uart);
 
     pause(2);
-
+    
     fwrite(uart,sprintf('%s,%s,%s,%s,%s,%s,%s,%s,%s,%s',...
         huiw4.String, huiw5.String, ... % add in trials/trial length
         huiw13.String, huiw14.String,... % add in puff/puff length;
