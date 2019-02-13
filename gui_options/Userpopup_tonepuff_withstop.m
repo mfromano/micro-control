@@ -9,6 +9,7 @@ global huiw1;
 global huiw3;
 global huiw4;
 global huiw5;
+global huiw6;
 global movement;
 global fi;
 
@@ -38,7 +39,7 @@ huiw5 = uicontrol('Style','edit', 'Units', 'Normalized', ...
 huiw6 = uicontrol('Style','pushbutton', 'Units', 'Normalized', ...
     'Position', [0.35 0.13 0.33 0.05],'string','Stop','CallBack',@callbackfn2,...
     'FontName','Wawati SC', 'FontSize',9);
-set(f.huiw6,'enable','off');
+set(huiw6,'enable','off');
 set(f, 'Visible','on');
 
 
@@ -47,9 +48,10 @@ function callbackfn1(~,~)
     global huiw3;
     global huiw4;
     global huiw5;
+    global huiw6;
+    global huipusha;
     global uart;
     global fi;
-    global f;
     global movement;
     
     fi = fopen(huiw3.String,'w');
@@ -64,19 +66,23 @@ function callbackfn1(~,~)
     fprintf(x);
     movement = cell(0);
     fprintf('Beginning acquisition\n');
-    set(f.huiw6,'enable','on');
+    set(huiw6,'enable','on');
+    set(huipusha,'enable','on');
+
     while true
         movement{end+1} = fscanf(uart,'%s');
         if strcmp(movement{end},'END')
             break;
         end
         fprintf('%s\n',movement{end});
+        pause(0.001);
     end
     for i=1:numel(movement)
         fprintf(fi,'%s\n',movement{i});
     end
     fclose(fi);
-    set(f.huiw6,'enable','off');
+    set(huiw6,'enable','off');
+    set(huipusha,'enable','on');
     fclose(uart);
     delete(uart);
     movement = cell(0);
