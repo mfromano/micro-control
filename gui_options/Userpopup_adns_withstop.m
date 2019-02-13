@@ -11,6 +11,7 @@ global huiw4;
 global huiw5;
 global huiw6;
 global stop;
+global huipusha;
 stop = false;
 
 f = figure('Visible','off','Units','Normalized',...
@@ -47,6 +48,7 @@ function callbackfn1(~,~)
     global huiw4;
     global huiw5;
     global huiw6;
+    global huipusha;
     global uart;
     global stop;
     global a;
@@ -66,6 +68,7 @@ function callbackfn1(~,~)
     nreps = str2double(fscanf(uart,'%s\n'));
     repcycles = fscanf(uart,'%s\n');
     set(huiw6,'enable','on');
+    set(huipusha,'enable','off');
     movement = cell(0);
     fprintf('nreps: %d, repcycles: %s\n',nreps,repcycles);
     fprintf('Beginning acquisition\n');
@@ -82,6 +85,7 @@ function callbackfn1(~,~)
         fprintf(fi,'%s\n',movement{i});
     end
     set(huiw6,'enable','off');
+    set(huipusha,'enable','on');
     fclose(fi);
     fclose(uart);
     delete(uart);

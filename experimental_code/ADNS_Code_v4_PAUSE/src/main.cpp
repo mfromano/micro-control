@@ -53,11 +53,9 @@ void loop() {
         beginAcquisition(matlab_input, 50);
         while (currentFrameCount < nreps) {
           if (Serial.available() > 0) {
-            Serial.readBytes(stopTrial,sizeof(stopTrial));
-            if (strcmp(stopTrial,"STOP")) {
               endAcquisition();
+              Serial.readBytes(stopTrial,sizeof(stopTrial));
               break;
-            }
           }
         }
         endAcquisition();
