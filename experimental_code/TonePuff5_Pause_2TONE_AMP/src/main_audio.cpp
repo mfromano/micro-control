@@ -102,11 +102,27 @@ void initializeExpParams() {
   frame_no = 0;
   frame_t = 0;
   isRunning = true;
+  fastDigitalWrite(LED_PIN, LOW);
+  fastDigitalWrite(PUFF_PIN, LOW);
+  fastDigitalWrite(CAMERA_PIN, !CAMERA_ON_STATE);
+  TONE1 = false;
+  TONE2 = false;
+  LED = false;
+  PUFF = false;
+  sine1.amplitude(0);
 }
 
 void endCollection() {
   trial_timer.end();
   fastDigitalWrite(AMP_PIN,LOW);
+  fastDigitalWrite(LED_PIN, LOW);
+  fastDigitalWrite(PUFF_PIN, LOW);
+  fastDigitalWrite(CAMERA_PIN, !CAMERA_ON_STATE);
+  TONE1 = false;
+  TONE2 = false;
+  LED = false;
+  PUFF = false;
+  sine1.amplitude(0);
   isRunning = false;
   Serial.println("END\n");
 }
