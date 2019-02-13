@@ -54,8 +54,8 @@ void loop() {
         while (currentFrameCount < nreps) {
           if (Serial.available() > 0) {
             Serial.readBytes(stopTrial,sizeof(stopTrial));
-            Serial.flush();
             if (strcmp(stopTrial,"STOP")) {
+              endAcquisition();
               break;
             }
           }
@@ -63,7 +63,6 @@ void loop() {
         endAcquisition();
       }
   }
-
 
 // =============================================================================
 //   TASKS: INITIALIZE
