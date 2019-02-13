@@ -90,7 +90,9 @@ function callbackfn1(~,~)
     assert(str2double(huiw13.String) > tone2end);
     assert((puffend < str2double(huiw5.String)));
     
-    fi = fopen(huiw3.String,'w');
+    fname = [huiw3.String '_' huiw9.String 'Hz1_' huiw15.String 'amp1_' huiw12.String 'Hz2_' huiw16.String 'amp2.txt'];
+    
+    fi = fopen(fname,'w');
     uart = serial(huiw1.String, 'BaudRate', 115200);
     fopen(uart);
 
