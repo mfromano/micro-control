@@ -51,60 +51,57 @@ taxis_sound_tdt = taxis_sound_tdt-taxis_sound_tdt(1);
 [b,a] = butter(6,[1000/(data.streams.Soun.fs/2) 3000/(data.streams.Soun.fs/2)],'bandpass');
 
 bp2 = filtfilt(b,a,double(sound_tdt'));
-amp = abs(hilbert(bp2));
+amp1 = abs(hilbert(bp2));
 
-sound_inds = [amp >0.025]; % then repeat this for every trial, hopefully it works!
+sound_inds = [amp1 >0.025]; % then repeat this for every trial, hopefully it works!
 sound_on = find([0; diff(sound_inds) == 1]);
 sound_off = find([diff(sound_inds) == -1]);
-
-figure;
-plot((1:1:length(sound_tdt))/data.streams.Soun.fs, bp2,'r');
-hold on;
-plot((1:1:length(sound_tdt))/data.streams.Soun.fs,amp,'b');
-hold off;
-xlabel('Time [s]');
-ylabel('Amplitude [mV]');
-title('Low frequency [2000 Hz]');
-xlim([4.0565    4.0609])
-print('figures/low_frequency_example_zoomed.svg','-dsvg');
 
 st.sound_start1 = taxis_sound_tdt(sound_on)' - (tdt_camera_times(tone_starts1)-tdt_camera_times(1));
 st.sound_length1 = taxis_sound_tdt(sound_off+1)-taxis_sound_tdt(sound_on);
 
-figure;
-plot(1:10,st.sound_start1,'.','MarkerSize',10);
-xlabel('Trial Number');
-ylabel('Tone Latency');
-xlim([0 11]);
-print('figures/low_frequency_delay.svg','-dsvg');
 %% now get timing of sound and associated statistics
 % times recorded on external device
 [b,a] = butter(6,[7000/(data.streams.Soun.fs/2) 9000/(data.streams.Soun.fs/2)],'bandpass');
 
 bp2 = filtfilt(b,a,double(sound_tdt'));
-amp = abs(hilbert(bp2));
+amp2 = abs(hilbert(bp2));
 
-sound_inds = [amp >0.05]; % then repeat this for every trial, hopefully it works!
+sound_inds = [amp2 >0.05]; % then repeat this for every trial, hopefully it works!
 sound_on = find([0; diff(sound_inds) == 1]);
 sound_off = find([diff(sound_inds) == -1]);
 
-figure;
-plot((1:1:length(sound_tdt))/data.streams.Soun.fs, bp2,'r');
+
+figure; 
+plot((1:1:length(sound_tdt))/data.streams.Soun.fs,double(sound_tdt'));
+
+
+%%
+figure; 
+plot((1:1:length(sound_tdt))/data.streams.Soun.fs,amp1,'b');
 hold on;
-plot((1:1:length(sound_tdt))/data.streams.Soun.fs,amp,'b');
+plot((1:1:length(sound_tdt))/data.streams.Soun.fs,amp2,'r');
+xlim([0 10])
 hold off;
 xlabel('Time [s]');
 ylabel('Amplitude [mV]');
-xlim([6.0563    6.0587]);
-title('Low frequency [8000 Hz]');
-print('figures/high_frequency_example.svg','-dsvg');
+title('');
+print('figures/amplitude_examples.svg','-dsvg');
 
+%%
 st.sound_start2 = taxis_sound_tdt(sound_on)' - (tdt_camera_times(tone_starts2)-tdt_camera_times(1));
 st.sound_length2 = taxis_sound_tdt(sound_off+1)-taxis_sound_tdt(sound_on);
 
-figure;
-plot(1:10,st.sound_start2,'.','MarkerSize',10);
-xlabel('Trial Number');
-ylabel('Tone Latency');
-xlim([0 11]);
-print('figures/high_frequency_delay.svg','-dsvg');
+% figure;
+% plot(1:10,st.sound_start1,'.','MarkerSize',10);
+% xlabel('Trial Number');
+% ylabel('Tone Latency');
+% xlim([0 11]);
+% print('figures/low_frequency_delay.svg','-dsvg');
+% 
+% figure;
+% plot(1:10,st.sound_start2,'.','MarkerSize',10);
+% xlabel('Trial Number');
+% ylabel('Tone Latency');
+% xlim([0 11]);
+% print('figures/high_frequency_delay.svg','-dsvg');
