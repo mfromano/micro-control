@@ -50,8 +50,8 @@ taxis_sound_tdt = taxis_sound_tdt-taxis_sound_tdt(1);
 % times recorded on external device
 [b,a] = butter(6,[1000/(data.streams.Soun.fs/2) 3000/(data.streams.Soun.fs/2)],'bandpass');
 
-bp2 = filtfilt(b,a,double(sound_tdt'));
-amp1 = abs(hilbert(bp2));
+bp1 = filtfilt(b,a,double(sound_tdt'));
+amp1 = abs(hilbert(bp1));
 
 sound_inds = [amp1 >0.025]; % then repeat this for every trial, hopefully it works!
 sound_on = find([0; diff(sound_inds) == 1]);
@@ -74,19 +74,54 @@ sound_off = find([diff(sound_inds) == -1]);
 
 figure; 
 plot((1:1:length(sound_tdt))/data.streams.Soun.fs,double(sound_tdt'));
-
+xlabel('Time [s]');
+xlim([0 202.6488]);
+ylabel('Amplitude [mV]');
+print('figures/two_sounds_all.svg','-dsvg');
 
 %%
 figure; 
-plot((1:1:length(sound_tdt))/data.streams.Soun.fs,amp1,'b');
+plt1 = plot((1:1:length(sound_tdt))/data.streams.Soun.fs,amp1,'b');
+plt1.Color(4) = .5;
 hold on;
-plot((1:1:length(sound_tdt))/data.streams.Soun.fs,amp2,'r');
+plt2 = plot((1:1:length(sound_tdt))/data.streams.Soun.fs,amp2,'r');
+plt2.Color(4) = .5;
 xlim([0 10])
 hold off;
 xlabel('Time [s]');
 ylabel('Amplitude [mV]');
-title('');
+legend('2000 Hz','8000 Hz');
 print('figures/amplitude_examples.svg','-dsvg');
+
+
+%% now plot individual wave forms
+figure; 
+plt1 = plot((1:1:length(sound_tdt))/data.streams.Soun.fs,bp1,'b');
+plt1.Color(4) = .5;
+hold on;
+plt2 = plot((1:1:length(sound_tdt))/data.streams.Soun.fs,bp2,'r');
+plt2.Color(4) = .5;
+xlim([4.0563    4.0732]);
+hold off;
+xlabel('Time [s]');
+ylabel('Amplitude [mV]');
+legend('2000 Hz','8000 Hz');
+print('figures/lowfq_examples.svg','-dsvg');
+ 
+%%
+figure; 
+plt1 = plot((1:1:length(sound_tdt))/data.streams.Soun.fs,bp1,'b');
+plt1.Color(4) = .5;
+hold on;
+plt2 = plot((1:1:length(sound_tdt))/data.streams.Soun.fs,bp2,'r');
+plt2.Color(4) = .5;
+xlim([6.0553    6.0596]);
+hold off;
+xlabel('Time [s]');
+ylabel('Amplitude [mV]');
+legend('2000 Hz','8000 Hz');
+print('figures/highfq_examples.svg','-dsvg');
+
 
 %%
 st.sound_start2 = taxis_sound_tdt(sound_on)' - (tdt_camera_times(tone_starts2)-tdt_camera_times(1));
