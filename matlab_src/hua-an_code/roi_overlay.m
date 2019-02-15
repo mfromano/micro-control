@@ -1,13 +1,13 @@
 function roi_overlay(roi_list, video_matrix)
 % Hua-an Tseng, huaantseng at gmail
 
-    if isempty(roi_list)
-        [roi_file,roi_filedir] = uigetfile(['*.mat'],'MultiSelect','off');
-        load(fullfile(roi_filedir,roi_file));
-        if exist('roi_list','var')
-            roi_list = r_out;
-        end
-    end
+%     if isempty(roi_list)
+%         [roi_file,roi_filedir] = uigetfile(['*.mat'],'MultiSelect','off');
+%         load(fullfile(roi_filedir,roi_file));
+%         if exist('roi_list','var')
+%             roi_list = r_out;
+%         end
+%     end
     
     if isempty(video_matrix)
         [video_file_list_temp,video_filedir] = uigetfile(['*.tif'],'MultiSelect','on');

@@ -75,6 +75,8 @@ sound_off = find([diff(sound_inds) == -1]);
 figure; 
 plot((1:1:length(sound_tdt))/data.streams.Soun.fs,double(sound_tdt'));
 
+%%
+[b,a] = butter(6,[1000/(data.streams.Soun.fs/2)],'high');
 
 %%
 figure; 
