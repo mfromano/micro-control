@@ -33,17 +33,27 @@ load('metadata_motor_102518.mat')
 roi_simon_new(metadata);
 
 %%
-load('/fastdata/micro-control/micro-control-data/processed-data/imgDiff_simon_motor_102518.mat')
-load('/fastdata/micro-control/micro-control-data/processed-data/roi_simon_motor_102518.mat')
+load('micro-control-data/processed-data/imgDiff_simon_motor_102518.mat')
+load('micro-control-data/processed-data/roi_simon_motor_102518.mat')
 roi_overlay(roi_simon,imgDiff_simon);
+
+xlim([114 114+172]);
+ylim([487 487+172]);
 print('figures/roi_overlay_motor.svg','-dsvg');
 %%
 roi_overlay('',imgDiff_simon);
+xlim([114 114+172]);
+ylim([487 487+172]);
 print('figures/max_minus_mean_motor.svg','-dsvg');
 
 
+%% prune rois
+bb = [114 487 172 172];
+R = rois_in_bb(trace_simon,bb);
+save('micro-control-data/processed-data/roi_simon_motor_trimmed_102518','R');
 %%
-
+roi_overlay(R,imgDiff_simon);
+print('figures/roi_overlay_motor_trimmed.svg','-dsvg');
 %%
 x = csvread('micro-control-data/motor_control_v3_1247_102518.txt',1,0);
 %% now compute distance travelled in sum
@@ -72,11 +82,16 @@ taxis = x(:,1)/1e6;
 plot(taxis(1:2000),velocity2(1:2000));
 print('figures/example_movement_mouse_imaging.svg','-dsvg');
 %%
-load('micro-control-data/processed-data/trace_simon_motor_102518.mat');
-for r=1:numel(trace_simon)
-   figure; plot(taxis,(trace_simon(r).trace-mean(trace_simon(r).trace))/mean(trace_simon(r).trace));
-   title(sprintf('Trace # %d',r));
-   pause
-   close
+load('micro-control-data/processed-data/roi_simon_motor_trimmed_102518.mat');
+R = R([2 5 6 8 12 14 32 35]);
+trace = cat(1,R.trace);
+trace = trace';
+trace = (bsxfun(@rdivide,bsxfun(@minus,trace,mean(trace)),mean(trace)));
+figure;
+for r=1:numel(R)
+plot(taxis(1:2000),trace(1:2000,r)+r*1.5,'color',R(r).color);
+hold on;
 end
 
+%    title(sprintf('Trace # %d',r));
+   print(sprintf('figures/example_trace_motor.svg',r),'-dsvg');

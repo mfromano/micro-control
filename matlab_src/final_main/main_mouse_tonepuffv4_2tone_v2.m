@@ -97,29 +97,20 @@ print('figures/amplitude_examples.svg','-dsvg');
 %% now plot individual wave forms
 figure; 
 plt1 = plot((1:1:length(sound_tdt))/data.streams.Soun.fs,bp1,'b');
-plt1.Color(4) = .5;
-hold on;
-plt2 = plot((1:1:length(sound_tdt))/data.streams.Soun.fs,bp2,'r');
-plt2.Color(4) = .5;
 xlim([4.0563    4.0732]);
 hold off;
 xlabel('Time [s]');
 ylabel('Amplitude [mV]');
-legend('2000 Hz','8000 Hz');
 print('figures/lowfq_examples.svg','-dsvg');
- 
+
 %%
 figure; 
-plt1 = plot((1:1:length(sound_tdt))/data.streams.Soun.fs,bp1,'b');
-plt1.Color(4) = .5;
-hold on;
 plt2 = plot((1:1:length(sound_tdt))/data.streams.Soun.fs,bp2,'r');
 plt2.Color(4) = .5;
-xlim([6.0553    6.0596]);
+xlim([6.0553    6.0553+0.0169]);
 hold off;
 xlabel('Time [s]');
 ylabel('Amplitude [mV]');
-legend('2000 Hz','8000 Hz');
 print('figures/highfq_examples.svg','-dsvg');
 
 

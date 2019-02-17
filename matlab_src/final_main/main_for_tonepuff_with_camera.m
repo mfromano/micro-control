@@ -58,13 +58,21 @@ mvmt_triggered = movementTriggeredPeak(dff',tone_onset,50);
 mean_mvmt_triggered = (squeeze(mean(mvmt_triggered,2))');
 
 %% now sort
+figure;
 inds = 65:69;
 mn = mean(mean_mvmt_triggered(:,inds),2);
 [~,i] = sort(mn);
 mean_mvmt_triggered_sort = mean_mvmt_triggered(i,:);
-imagesc(-50:50,1:size(mean_mvmt_triggered_sort,1),mean_mvmt_triggered_sort);
+imagesc((-50:50)/20,1:size(mean_mvmt_triggered_sort,1),mean_mvmt_triggered_sort);
+hold on;
 colormap(jet)
 caxis([-0.1 0.2])
 colorbar
+
+plot([0 0],[0 size(mean_mvmt_triggered,1)],'color','k');
+% hold on;
+plot([13/20 13/20],[0 size(mean_mvmt_triggered,1)],'color','k');
+plot([19/20 19/20],[0 size(mean_mvmt_triggered,1)],'color','k');
+
 print('figures/tonepuff_aligned_to_tone.svg','-dsvg');
 %%
