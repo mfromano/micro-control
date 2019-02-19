@@ -9,3 +9,4 @@ mdl = fitlm(dat(:,1)/(10^6),ts_plx);
 fprintf('%f\n',mdl.Coefficients.Estimate(2))
 mdl.Coefficients.SE(2)
 mean(mdl.Residuals.Raw.^2)
+ 
