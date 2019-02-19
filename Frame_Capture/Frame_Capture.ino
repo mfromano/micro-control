@@ -222,6 +222,7 @@ void frameCapture(){
     readys = SPI.transfer(0); 
     readys = readys & 1;
     delayMicroseconds(20);
+    Serial.println(readys);
   }
 
     // prepare to read the pixel burst register continuously.
@@ -231,13 +232,13 @@ void frameCapture(){
   int i; 
   for(i = 0; i < 900; i++){
     if((i % 30) == 0 && i != 0){
-      Serial.print(";"); 
+      Serial.print("\n"); 
     }
     byte output = 0; 
     output = SPI.transfer(0); 
     // deliver frame pixels.
     Serial.print(output);
-    Serial.print(" "); 
+    Serial.print(","); 
     
     delayMicroseconds(15); // tload
   }
@@ -285,7 +286,7 @@ void UpdatePointer(void){
   void loop() {
       if(numCaptured < 100){
         frameCapture();
-        Serial.println(";  ");  // delimiter indicating the end of a frame (has two spaces). 
-        //numCaptured = numCaptured + 1; 
+        Serial.println(";\n\n");  // delimiter indicating the end of a frame (has two spaces). 
+        numCaptured = numCaptured + 1; 
       }
   }
