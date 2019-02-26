@@ -97,6 +97,20 @@ void loop(){
   }
 }
 
+void endCollection() {
+  trial_timer.end();
+  fastDigitalWrite(AMP_PIN,LOW);
+  fastDigitalWrite(LED_PIN, LOW);
+  fastDigitalWrite(PUFF_PIN, LOW);
+  fastDigitalWrite(CAMERA_PIN, !CAMERA_ON_STATE);
+  TONE = false;
+  LED = false;
+  PUFF = false;
+  sine1.amplitude(0);
+  isRunning = false;
+  Serial.println("END\n");
+}
+
 void begin(float ntrials, float trial_length) {
     NO_TRIALS = uint8_t(ntrials);
     TRIAL_LENGTH = trial_length;
@@ -110,7 +124,7 @@ void begin(float ntrials, float trial_length) {
     frame_t = 0;
     isRunning = true;
     char stopTrial[50];
-    fastDigitalWrite(CAMERA_PIN, CAMERA_ON_STATE);
+    fastDigitalWrite(CAMERA_PIN, !CAMERA_ON_STATE);
     float interval_t = 1000000.0/(float)CAMERA_FQ;
 
     while (isRunning) {
@@ -122,18 +136,14 @@ void begin(float ntrials, float trial_length) {
         if (Serial.available() > 0) {
           Serial.readBytes(stopTrial,sizeof(stopTrial));
           Serial.flush();
-          if strcmp(stopTrial,"STOP") {
+          if (strcmp(stopTrial,"STOP")) {
             isRunning = 0;
+            endCollection();
           }
         }
       }
 }
-void endCollection() {
-  trial_timer.end();
-  fastDigitalWrite(AMP_PIN,LOW);
-  isRunning = false;
-  Serial.println("END\n");
-}
+
 
 void capture() {
 
@@ -158,7 +168,7 @@ void capture() {
       endCollection();
       return;
     }
-    . = 0;
+    trial_t = 0;
     curr_t = trial_t;
   }
   // update tone
