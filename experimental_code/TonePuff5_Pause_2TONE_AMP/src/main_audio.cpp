@@ -14,7 +14,7 @@
 void setup() {
   fastPinMode(PUFF_PIN, OUTPUT);
   fastPinMode(CAMERA_PIN, OUTPUT);
-  fastDigitalWrite(CAMERA_PIN, !CAMERA_ON_STATE);
+  fastDigitalWrite(CAMERA_PIN, LOW);
   fastPinMode(LED_PIN, OUTPUT);
   Serial.begin(115200);
   AudioMemory(128);
@@ -51,7 +51,7 @@ void begin(float ntrials, float trial_length) {
     delay(10);
     initializeExpParams();
     char stopTrial[50];
-    fastDigitalWrite(CAMERA_PIN, !CAMERA_ON_STATE);
+    fastDigitalWrite(CAMERA_PIN, LOW);
     float interval_t = 1000000.0/(float)CAMERA_FQ;
 
     while (isRunning) {
@@ -104,7 +104,7 @@ void initializeExpParams() {
   isRunning = true;
   fastDigitalWrite(LED_PIN, LOW);
   fastDigitalWrite(PUFF_PIN, LOW);
-  fastDigitalWrite(CAMERA_PIN, !CAMERA_ON_STATE);
+  fastDigitalWrite(CAMERA_PIN, LOW);
   TONE1 = false;
   TONE2 = false;
   LED = false;
