@@ -219,10 +219,10 @@ void frameCapture(){
   while(readys == 0){
     SPI.transfer(REG_Motion & 0x7f);
     delayMicroseconds(100); // tSRAD
-    readys = SPI.transfer(0); 
+    readys = SPI.transfer(0);
+    Serial.println(readys);
     readys = readys & 1;
     delayMicroseconds(20);
-    Serial.println(readys);
   }
 
     // prepare to read the pixel burst register continuously.
