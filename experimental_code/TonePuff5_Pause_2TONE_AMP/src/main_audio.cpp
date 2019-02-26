@@ -51,7 +51,7 @@ void begin(float ntrials, float trial_length) {
     delay(10);
     initializeExpParams();
     char stopTrial[50];
-    fastDigitalWrite(CAMERA_PIN, CAMERA_ON_STATE);
+    fastDigitalWrite(CAMERA_PIN, !CAMERA_ON_STATE);
     float interval_t = 1000000.0/(float)CAMERA_FQ;
 
     while (isRunning) {

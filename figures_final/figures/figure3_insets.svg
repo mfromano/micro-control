@@ -13,7 +13,10 @@
    width="570"
    style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="figure3_insets.svg">
+   sodipodi:docname="figure3_insets.svg"
+   inkscape:export-filename="D:\research\micro-control\figures_final\submission2\figure3.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -27,13 +30,13 @@
      inkscape:window-height="1001"
      id="namedview497"
      showgrid="false"
-     inkscape:zoom="1.75"
-     inkscape:cx="253.54049"
-     inkscape:cy="182.60431"
+     inkscape:zoom="3.77"
+     inkscape:cx="302.9395"
+     inkscape:cy="108.33375"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g4565" />
+     inkscape:current-layer="g6011" />
   <metadata
      id="metadata149288">
     <rdf:RDF>
@@ -42,7 +45,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1890,41 +1893,6 @@
            style="fill:none;stroke-width:0.73707366"
            y2="35.419998" />
         <line
-           id="line537101"
-           y1="31"
-           x2="147.6667"
-           x1="147.6667"
-           style="fill:none;stroke-width:0.73707366"
-           y2="35.419998" />
-        <line
-           id="line537103"
-           y1="31"
-           x2="221.3333"
-           x1="221.3333"
-           style="fill:none;stroke-width:0.73707366"
-           y2="35.419998" />
-        <line
-           id="line537105"
-           y1="31"
-           x2="295"
-           x1="295"
-           style="fill:none;stroke-width:0.73707366"
-           y2="35.419998" />
-        <line
-           id="line537107"
-           y1="31"
-           x2="368.66669"
-           x1="368.66669"
-           style="fill:none;stroke-width:0.73707366"
-           y2="35.419998" />
-        <line
-           id="line537109"
-           y1="31"
-           x2="442.33331"
-           x1="442.33331"
-           style="fill:none;stroke-width:0.73707366"
-           y2="35.419998" />
-        <line
            id="line537111"
            y1="31"
            x2="516"
@@ -2094,41 +2062,6 @@
            x1="516"
            style="fill:none;stroke-width:0.73707366"
            y2="374" />
-        <line
-           id="line537167"
-           y1="316.83331"
-           x2="511.57999"
-           x1="516"
-           style="fill:none;stroke-width:0.73707366"
-           y2="316.83331" />
-        <line
-           id="line537169"
-           y1="259.66669"
-           x2="511.57999"
-           x1="516"
-           style="fill:none;stroke-width:0.73707366"
-           y2="259.66669" />
-        <line
-           id="line537171"
-           y1="202.5"
-           x2="511.57999"
-           x1="516"
-           style="fill:none;stroke-width:0.73707366"
-           y2="202.5" />
-        <line
-           id="line537173"
-           y1="145.3333"
-           x2="511.57999"
-           x1="516"
-           style="fill:none;stroke-width:0.73707366"
-           y2="145.3333" />
-        <line
-           id="line537175"
-           y1="88.166702"
-           x2="511.57999"
-           x1="516"
-           style="fill:none;stroke-width:0.73707366"
-           y2="88.166702" />
         <line
            id="line537177"
            y1="31"
@@ -3130,41 +3063,6 @@
                style="fill:none"
                y2="44.43" />
             <line
-               id="line2875"
-               y1="39"
-               x2="181.5"
-               x1="181.5"
-               style="fill:none"
-               y2="44.43" />
-            <line
-               id="line2877"
-               y1="39"
-               x2="272"
-               x1="272"
-               style="fill:none"
-               y2="44.43" />
-            <line
-               id="line2879"
-               y1="39"
-               x2="362.5"
-               x1="362.5"
-               style="fill:none"
-               y2="44.43" />
-            <line
-               id="line2881"
-               y1="39"
-               x2="453"
-               x1="453"
-               style="fill:none"
-               y2="44.43" />
-            <line
-               id="line2883"
-               y1="39"
-               x2="543.5"
-               x1="543.5"
-               style="fill:none"
-               y2="44.43" />
-            <line
                id="line2885"
                y1="39"
                x2="634"
@@ -3334,41 +3232,6 @@
                style="fill:none"
                y2="467" />
             <line
-               id="line2941"
-               y1="395.66669"
-               x2="628.57001"
-               x1="634"
-               style="fill:none"
-               y2="395.66669" />
-            <line
-               id="line2943"
-               y1="324.33331"
-               x2="628.57001"
-               x1="634"
-               style="fill:none"
-               y2="324.33331" />
-            <line
-               id="line2945"
-               y1="253"
-               x2="628.57001"
-               x1="634"
-               style="fill:none"
-               y2="253" />
-            <line
-               id="line2947"
-               y1="181.6667"
-               x2="628.57001"
-               x1="634"
-               style="fill:none"
-               y2="181.6667" />
-            <line
-               id="line2949"
-               y1="110.3333"
-               x2="628.57001"
-               x1="634"
-               style="fill:none"
-               y2="110.3333" />
-            <line
                id="line2951"
                y1="39"
                x2="628.57001"
@@ -3505,26 +3368,26 @@
                style="stroke:none"
                y="19"
                xml:space="preserve"
-               x="-9.4347687">[s]</text>
+               x="-9.4347687">Time [s]</text>
           </g>
           <text
              id="text2917-0-1"
              style="font-style:normal;font-weight:normal;font-size:18.33329964px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:optimizeQuality;image-rendering:optimizeQuality;shape-rendering:auto;text-rendering:geometricPrecision"
              y="396.51431"
              xml:space="preserve"
-             x="781.45087">[s]</text>
+             x="731.0163">Time [s]</text>
           <text
              id="text2917-0-6"
              style="font-style:normal;font-weight:normal;font-size:18.33329964px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:optimizeQuality;image-rendering:optimizeQuality;shape-rendering:auto;text-rendering:geometricPrecision"
-             y="147.60124"
+             y="142.55777"
              xml:space="preserve"
-             x="781.45087">[s]</text>
+             x="731.0163">Time [s]</text>
           <text
              id="text2917-0-7"
              style="font-style:normal;font-weight:normal;font-size:18.33329964px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:optimizeQuality;image-rendering:optimizeQuality;shape-rendering:auto;text-rendering:geometricPrecision"
              y="237.81863"
              xml:space="preserve"
-             x="1090.5378">[s]</text>
+             x="1090.5378">Time [s]</text>
         </g>
       </g>
     </g>
@@ -3602,62 +3465,6 @@
          x2="492.09079"
          y1="374"
          id="line50668" />
-      <line
-         y2="35.419998"
-         style="fill:none"
-         x1="92.222801"
-         x2="92.222801"
-         y1="31"
-         id="line50670" />
-      <line
-         y2="35.419998"
-         style="fill:none"
-         x1="149.3468"
-         x2="149.3468"
-         y1="31"
-         id="line50672" />
-      <line
-         y2="35.419998"
-         style="fill:none"
-         x1="206.47079"
-         x2="206.47079"
-         y1="31"
-         id="line50674" />
-      <line
-         y2="35.419998"
-         style="fill:none"
-         x1="263.59479"
-         x2="263.59479"
-         y1="31"
-         id="line50676" />
-      <line
-         y2="35.419998"
-         style="fill:none"
-         x1="320.71881"
-         x2="320.71881"
-         y1="31"
-         id="line50678" />
-      <line
-         y2="35.419998"
-         style="fill:none"
-         x1="377.8428"
-         x2="377.8428"
-         y1="31"
-         id="line50680" />
-      <line
-         y2="35.419998"
-         style="fill:none"
-         x1="434.9668"
-         x2="434.9668"
-         y1="31"
-         id="line50682" />
-      <line
-         y2="35.419998"
-         style="fill:none"
-         x1="492.09079"
-         x2="492.09079"
-         y1="31"
-         id="line50684" />
     </g>
     <g
        transform="matrix(0.49001412,0,0,0.49001412,46.710652,196.97742)"
@@ -3835,55 +3642,6 @@
          x2="511.57999"
          y1="374"
          id="line50746" />
-      <line
-         y2="331.125"
-         style="fill:none"
-         x1="516"
-         x2="511.57999"
-         y1="331.125"
-         id="line50748" />
-      <line
-         y2="288.25"
-         style="fill:none"
-         x1="516"
-         x2="511.57999"
-         y1="288.25"
-         id="line50750" />
-      <line
-         y2="245.375"
-         style="fill:none"
-         x1="516"
-         x2="511.57999"
-         y1="245.375"
-         id="line50752" />
-      <line
-         y2="202.5"
-         style="fill:none"
-         x1="516"
-         x2="511.57999"
-         y1="202.5"
-         id="line50754" />
-      <line
-         y2="159.625"
-         style="fill:none"
-         x1="516"
-         x2="511.57999"
-         y1="159.625"
-         id="line50756" />
-      <line
-         y2="116.75"
-         style="fill:none"
-         x1="516"
-         x2="511.57999"
-         y1="116.75"
-         id="line50758" />
-      <line
-         y2="73.875"
-         style="fill:none"
-         x1="516"
-         x2="511.57999"
-         y1="73.875"
-         id="line50760" />
       <line
          y2="31"
          style="fill:none"
@@ -4493,69 +4251,6 @@
                  style="fill:none"
                  y2="44.43" />
               <line
-                 id="line5197"
-                 y1="39"
-                 x2="145.3"
-                 x1="145.3"
-                 style="fill:none"
-                 y2="44.43" />
-              <line
-                 id="line5199"
-                 y1="39"
-                 x2="199.60001"
-                 x1="199.60001"
-                 style="fill:none"
-                 y2="44.43" />
-              <line
-                 id="line5201"
-                 y1="39"
-                 x2="253.89999"
-                 x1="253.89999"
-                 style="fill:none"
-                 y2="44.43" />
-              <line
-                 id="line5203"
-                 y1="39"
-                 x2="308.20001"
-                 x1="308.20001"
-                 style="fill:none"
-                 y2="44.43" />
-              <line
-                 id="line5205"
-                 y1="39"
-                 x2="362.5"
-                 x1="362.5"
-                 style="fill:none"
-                 y2="44.43" />
-              <line
-                 id="line5207"
-                 y1="39"
-                 x2="416.79999"
-                 x1="416.79999"
-                 style="fill:none"
-                 y2="44.43" />
-              <line
-                 id="line5209"
-                 y1="39"
-                 x2="471.10001"
-                 x1="471.10001"
-                 style="fill:none"
-                 y2="44.43" />
-              <line
-                 id="line5211"
-                 y1="39"
-                 x2="525.40002"
-                 x1="525.40002"
-                 style="fill:none"
-                 y2="44.43" />
-              <line
-                 id="line5213"
-                 y1="39"
-                 x2="579.70001"
-                 x1="579.70001"
-                 style="fill:none"
-                 y2="44.43" />
-              <line
                  id="line5215"
                  y1="39"
                  x2="634"
@@ -4665,69 +4360,6 @@
                  x1="634"
                  style="fill:none"
                  y2="467" />
-              <line
-                 id="line5295"
-                 y1="424.20001"
-                 x2="628.57001"
-                 x1="634"
-                 style="fill:none"
-                 y2="424.20001" />
-              <line
-                 id="line5297"
-                 y1="381.39999"
-                 x2="628.57001"
-                 x1="634"
-                 style="fill:none"
-                 y2="381.39999" />
-              <line
-                 id="line5299"
-                 y1="338.60001"
-                 x2="628.57001"
-                 x1="634"
-                 style="fill:none"
-                 y2="338.60001" />
-              <line
-                 id="line5301"
-                 y1="295.79999"
-                 x2="628.57001"
-                 x1="634"
-                 style="fill:none"
-                 y2="295.79999" />
-              <line
-                 id="line5303"
-                 y1="253"
-                 x2="628.57001"
-                 x1="634"
-                 style="fill:none"
-                 y2="253" />
-              <line
-                 id="line5305"
-                 y1="210.2"
-                 x2="628.57001"
-                 x1="634"
-                 style="fill:none"
-                 y2="210.2" />
-              <line
-                 id="line5307"
-                 y1="167.39999"
-                 x2="628.57001"
-                 x1="634"
-                 style="fill:none"
-                 y2="167.39999" />
-              <line
-                 id="line5309"
-                 y1="124.6"
-                 x2="628.57001"
-                 x1="634"
-                 style="fill:none"
-                 y2="124.6" />
-              <line
-                 id="line5311"
-                 y1="81.800003"
-                 x2="628.57001"
-                 x1="634"
-                 style="fill:none"
-                 y2="81.800003" />
               <line
                  id="line5313"
                  y1="39"
@@ -4999,34 +4631,6 @@
                  style="fill:none"
                  y2="44.369999" />
               <line
-                 id="line5923"
-                 y1="39"
-                 x2="204.39999"
-                 x1="204.39999"
-                 style="fill:none"
-                 y2="44.369999" />
-              <line
-                 id="line5925"
-                 y1="39"
-                 x2="311.79999"
-                 x1="311.79999"
-                 style="fill:none"
-                 y2="44.369999" />
-              <line
-                 id="line5927"
-                 y1="39"
-                 x2="419.20001"
-                 x1="419.20001"
-                 style="fill:none"
-                 y2="44.369999" />
-              <line
-                 id="line5929"
-                 y1="39"
-                 x2="526.59998"
-                 x1="526.59998"
-                 style="fill:none"
-                 y2="44.369999" />
-              <line
                  id="line5931"
                  y1="39"
                  x2="634"
@@ -5147,69 +4751,6 @@
                  x1="634"
                  style="fill:none"
                  y2="467" />
-              <line
-                 id="line5991"
-                 y1="424.20001"
-                 x2="628.63"
-                 x1="634"
-                 style="fill:none"
-                 y2="424.20001" />
-              <line
-                 id="line5993"
-                 y1="381.39999"
-                 x2="628.63"
-                 x1="634"
-                 style="fill:none"
-                 y2="381.39999" />
-              <line
-                 id="line5995"
-                 y1="338.60001"
-                 x2="628.63"
-                 x1="634"
-                 style="fill:none"
-                 y2="338.60001" />
-              <line
-                 id="line5997"
-                 y1="295.79999"
-                 x2="628.63"
-                 x1="634"
-                 style="fill:none"
-                 y2="295.79999" />
-              <line
-                 id="line5999"
-                 y1="253"
-                 x2="628.63"
-                 x1="634"
-                 style="fill:none"
-                 y2="253" />
-              <line
-                 id="line6001"
-                 y1="210.2"
-                 x2="628.63"
-                 x1="634"
-                 style="fill:none"
-                 y2="210.2" />
-              <line
-                 id="line6003"
-                 y1="167.39999"
-                 x2="628.63"
-                 x1="634"
-                 style="fill:none"
-                 y2="167.39999" />
-              <line
-                 id="line6005"
-                 y1="124.6"
-                 x2="628.63"
-                 x1="634"
-                 style="fill:none"
-                 y2="124.6" />
-              <line
-                 id="line6007"
-                 y1="81.800003"
-                 x2="628.63"
-                 x1="634"
-                 style="fill:none"
-                 y2="81.800003" />
               <line
                  id="line6009"
                  y1="39"

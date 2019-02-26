@@ -81,8 +81,8 @@ void setup() {
 }
 
 void loop(){
- if (!isRunning && (Serial.available() > 0)) {
     // add in Serial comprehension/parsing here once we find out what the user might want
+ if (!isRunning && (Serial.available() > 0)) {
     Serial.readBytes(matlabdata, sizeof(matlabdata)); //used from controller_main_synchronous file
     Serial.flush();
     char *ntrials_str = strtok(matlabdata,",");
