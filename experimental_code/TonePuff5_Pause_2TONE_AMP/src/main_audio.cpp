@@ -128,10 +128,6 @@ void endCollection() {
 }
 
 void capture() {
-
-  fastDigitalWrite(CAMERA_PIN, CAMERA_ON_STATE);
-  elapsedMicros campulse_t = 0;
-
   curr_t = trial_t;
   exp_t = experiment_t;
   if (trial_no == 0) {
@@ -159,7 +155,8 @@ void capture() {
   togglePUFF(curr_t);
 
   frame_data curr_frame = {frame_no, curr_t, exp_t, trial_no, PUFF, TONE1, TONE2, LED};
-
+  elapsedMicros campulse_t = 0;
+  fastDigitalWrite(CAMERA_PIN, CAMERA_ON_STATE);
   while (campulse_t < CAMERA_PULSE_MIN_MICROS){;}
   fastDigitalWrite(CAMERA_PIN, !CAMERA_ON_STATE);
 
