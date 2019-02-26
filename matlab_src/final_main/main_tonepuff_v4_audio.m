@@ -34,6 +34,34 @@ ylabel('Measured time [s]');
 % legend('Data','Model fitlocation','northwest');
 print(gcf,'figures/tone_puff_v4_model_fit.pdf','-dpdf');
 
+%% now perhaps plot drift?
+camera_on_times = data.epocs.Valu.onset(1:2:end);
+camera_on_times = camera_on_times-camera_on_times(1);
+theor = 0.05*(0:1:(length(camera_on_times)-1));
+figure;
+plt1 = plot(theor,camera_on_times(:),'r','LineWidth',1);
+hold on;
+plt2 = plot(theor,theor,'b','LineWidth',1);
+plt2.Color(4) = 0.5;
+hold off;
+xlabel('Theoretical time[s]');
+ylabel('Measured time [s]');
+print('figures/predicted_vs_theoretical_teensy_tonepuff.svg','-dsvg');
+
+%%
+xlim([0 .05])
+ylim([0 .05])
+print('figures/predicted_vs_theoretical_teensy_tonepuff_early.svg','-dsvg');
+
+%%
+plt2.Color(4) = 1;
+xlim([599.9 599.95])
+ylim([599.9 599.95])
+print('figures/predicted_vs_theoretical_teensy_tonepuff_late.svg','-dsvg');
+
+
+
+
 %% get puff statistics
 st.puff_length = data.epocs.Eval.offset-data.epocs.Eval.onset;
 st.puff_length = st.puff_length(1:2:end);
@@ -50,7 +78,6 @@ taxis_tdt = taxis_tdt/data.streams.Puls.fs; % divide through by the sampling fre
 taxis_sound_tdt = 0:1:(length(sound_tdt)-1);
 taxis_sound_tdt = taxis_sound_tdt/data.streams.Soun.fs;
 % %% get all camera frames
-% 
 camera_on_tdt = camera_tdt > 1;
 camera_start = find(~~[0 diff(camera_on_tdt) == 1],1,'first'); % find first time point above 1
 % 

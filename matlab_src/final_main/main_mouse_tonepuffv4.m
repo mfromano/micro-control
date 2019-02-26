@@ -25,3 +25,4 @@ metadata.tiffs = fi2;
 
 
 save('metadata_motor_102518.mat','metadata');
+
