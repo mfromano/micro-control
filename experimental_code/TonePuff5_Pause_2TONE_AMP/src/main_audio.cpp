@@ -114,7 +114,7 @@ void initializeExpParams() {
 
 void endCollection() {
   trial_timer.end();
-  fastDigitalWrite(AMP_PIN,LOW);
+  fastDigitalWrite(AMP_PIN, LOW);
   fastDigitalWrite(LED_PIN, LOW);
   fastDigitalWrite(PUFF_PIN, LOW);
   fastDigitalWrite(CAMERA_PIN, !CAMERA_ON_STATE);

@@ -168,11 +168,11 @@ void getRandomFrames(int samp_interval_ms_int, int *range_secs, int nreps)
     range_frames[j] = ((*range_secs)*1000/samp_interval_ms_int);
     range_secs++;
   }
-  waterFrames.push_back(rand() % range_frames[0] + range_frames[1]);
+  waterFrames.push_back(rand() % range_frames[1] + range_frames[0]);
   int element = 1;
   while (waterFrames[element-1] < nreps)
   {
-    waterFrames.push_back(waterFrames[element-1] + rand() % range_frames[0] + range_frames[1]);
+    waterFrames.push_back(waterFrames[element-1] + rand() % range_frames[1] + range_frames[0]);
     element++;
   }
 }
