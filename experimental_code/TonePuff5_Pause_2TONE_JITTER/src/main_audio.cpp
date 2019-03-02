@@ -17,7 +17,7 @@ void getRandomFrames(int *range_ms, int nreps)
   int range_frames[2];
   for (int j=0; j < 2; j++)
   {
-    range_frames[j] = ((*range_ms)*1000/samp_interval_us_int);
+    range_frames[j] = static_cast<int>(round((*range_ms)*1000/samp_interval_us_int));
     range_ms++;
   }
   trial_lengths.push_back(rand() % range_frames[1] + range_frames[0]);
@@ -26,17 +26,18 @@ void getRandomFrames(int *range_ms, int nreps)
   {
     trial_lengths.push_back(trial_lengths[element-1] + rand() % range_frames[1] + range_frames[0]);
     element++;
-  } 
+  }
 }
 
 std::vector<int> toneIndsFromLength(std::vector<int> trial_inds, float start_ms, float len_ms) {
   std::vector<int> tone_inds;
-  int start_inds = floor(start_ms/samp_interval_us_int*1000);
-  int len_inds = floor(len_ms/samp_interval_us_int*1000);
+  int start_inds = static_cast<int>(round(start_ms/samp_interval_us_int*1000));
+  int len_inds = static_cast<int>(round(len_ms/samp_interval_us_int*1000));
 
   for (uint16_t j=0; j < len_inds; j++) {
     tone_inds.push_back(start_inds+j);
   }
+
    for (uint16_t j=0; j < trial_inds.size()-1; j++) {
      for (uint16_t i=0; i < len_inds; i++) {
        tone_inds.push_back(trial_inds[j]+start_inds+i);
@@ -51,7 +52,7 @@ std::vector<int> getRandomTrials(int no_trial1, int no_trial2) {
   int total_trials = no_trial1 + no_trial2;
   std::vector<int> trial_list;
   // below with assistance from http://www.cplusplus.com/reference/algorithm/random_shuffle/
-  for (int i=0; i<total_trials; i++) {
+  for (int i=1; i<=total_trials; i++) {
     trial_list.push_back(i);
   }
   std::random_shuffle(trial_list.begin(), trial_list.end());
@@ -84,7 +85,7 @@ void loop(){
     long tone1_trials = atol(no_tone1_trials);
     char *no_tone2_trials = strtok(NULL,",");
     long tone2_trials = atol(no_tone2_trials);
-
+    NO_TRIALS = tone1_trials+tone2_trials;
     updateParams();
 
     range_in_ms[0] = trial_length-trial_jitter;
@@ -213,7 +214,6 @@ void capture() {
   fastDigitalWrite(CAMERA_PIN, CAMERA_ON_STATE);
   while (campulse_t < CAMERA_PULSE_MIN_MICROS){;}
   fastDigitalWrite(CAMERA_PIN, !CAMERA_ON_STATE);
-
   sendData(curr_frame);
 }
 
