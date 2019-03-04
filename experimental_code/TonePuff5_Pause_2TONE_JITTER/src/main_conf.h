@@ -61,7 +61,7 @@ elapsedMicros trial_t;
 IntervalTimer trial_timer;
 
 uint16_t frame_no;
-uint8_t trial_no;
+uint16_t trial_no;
 
 typedef struct {
   uint16_t frame_in_trial = 0;
@@ -80,8 +80,8 @@ void begin();
 void capture();
 void updateParams();
 void initializeExpParams();
-void togglePUFF(time_t t, int trial_no, int frame_no);
-void toggleTONE(time_t t,  int trial_no, int frame_no);
+void togglePUFF(int trial_no, int frame_no);
+void toggleTONE(int trial_no, int frame_no);
 void endCollection();
 
 

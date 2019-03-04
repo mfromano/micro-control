@@ -34,12 +34,12 @@ std::vector<int> toneIndsFromLength(std::vector<int> trial_inds, float start_ms,
   int start_inds = static_cast<int>(round(start_ms/samp_interval_us_int*1000));
   int len_inds = static_cast<int>(round(len_ms/samp_interval_us_int*1000));
 
-  for (uint16_t j=0; j < len_inds; j++) {
+  for (int j=0; j < len_inds; j++) {
     tone_inds.push_back(start_inds+j);
   }
 
-   for (uint16_t j=0; j < trial_inds.size()-1; j++) {
-     for (uint16_t i=0; i < len_inds; i++) {
+   for (int j=0; j < trial_inds.size()-1; j++) {
+     for (int i=0; i < len_inds; i++) {
        tone_inds.push_back(trial_inds[j]+start_inds+i);
      }
    }
@@ -56,6 +56,7 @@ std::vector<int> getRandomTrials(int no_trial1, int no_trial2) {
     trial_list.push_back(i);
   }
   std::random_shuffle(trial_list.begin(), trial_list.end());
+  //
   for (int i=0; i<no_trial2; i++) trial_list.pop_back();
   return trial_list;
 }
@@ -79,12 +80,16 @@ void loop(){
     Serial.readBytes(matlabdata, sizeof(matlabdata)); //used from controller_main_synchronous file
     char *trial_length_str = strtok(matlabdata,",");
     float trial_length = atof(trial_length_str);
+
     char *trial_jitter_str = strtok(NULL,",");
     float trial_jitter = atof(trial_jitter_str);
+
     char *no_tone1_trials = strtok(NULL,",");
     long tone1_trials = atol(no_tone1_trials);
+
     char *no_tone2_trials = strtok(NULL,",");
     long tone2_trials = atol(no_tone2_trials);
+
     NO_TRIALS = tone1_trials+tone2_trials;
     updateParams();
 
@@ -196,7 +201,7 @@ void capture() {
   frame_no++;
 
 
-  if ((frame_no == trial_lengths[trial_no-1])) {
+  if ((frame_no > trial_lengths[trial_no-1])) {
     trial_no++;
     if (trial_no > NO_TRIALS) {
       endCollection();
@@ -206,8 +211,8 @@ void capture() {
     curr_t = trial_t;
   }
 
-  toggleTONE(curr_t, trial_no, frame_no);
-  togglePUFF(curr_t, trial_no, frame_no);
+  toggleTONE(trial_no, frame_no);
+  togglePUFF(trial_no, frame_no);
 
   frame_data curr_frame = {frame_no, curr_t, exp_t, trial_no, PUFF, TONE1, TONE2, LED};
   elapsedMicros campulse_t = 0;
@@ -217,7 +222,7 @@ void capture() {
   sendData(curr_frame);
 }
 
-void togglePUFF(time_t t, int trial_no, int frame_no) {
+void togglePUFF(int trial_no, int frame_no) {
   if (std::find(PUFF_INDS.begin(), PUFF_INDS.end(),frame_no) != PUFF_INDS.end()) {
     if (std::find(TONE1_TRIALS.begin(), TONE1_TRIALS.end(), trial_no) != TONE1_TRIALS.end()) {
       PUFF = true;
@@ -230,7 +235,7 @@ void togglePUFF(time_t t, int trial_no, int frame_no) {
 
 }
 
-void toggleTONE(time_t t, int trial_no, int frame_no) {
+void toggleTONE(int trial_no, int frame_no) {
   // update tone
   if (std::find(TONE_INDS.begin(), TONE_INDS.end(),frame_no) != TONE_INDS.end()) {
     if (std::find(TONE1_TRIALS.begin(), TONE1_TRIALS.end(),trial_no) != TONE1_TRIALS.end()) {

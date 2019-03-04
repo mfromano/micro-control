@@ -41,18 +41,18 @@ text_input = @(position, text) uicontrol('Style','edit', 'Units', 'Normalized', 
 
 huiw1 = text_input([0.17 0.38 0.33 0.05],'Enter the Teensy Serial Port (i.e COM1)');
 huiw3 = text_input([0.17 0.31 0.33 0.05],'Experiment output file name');
-huiw17 = text_input([0.17 0.25 0.33 0.05],'Trial length jitter? [s]');
-huiw5 = text_input([0.17 0.19 0.33 0.05],'Length of trials? [s]');
+huiw17 = text_input([0.17 0.25 0.33 0.05],'Trial length jitter? [ms]');
+huiw5 = text_input([0.17 0.19 0.33 0.05],'Length of trials? [ms]');
 huiw10 = text_input([0.5 0.10 0.33 0.05],'Tone 1 Trials?');
 huiw11 = text_input([0.5 0.03 0.33 0.05],'Tone 2 Trials?');
     
-huiw13 = text_input([0.17 0.13 0.33 0.05],'Puff Start [us]');
-huiw14 = text_input([0.17 0.07 0.33 0.05],'Puff Length [us]');
-
+huiw13 = text_input([0.17 0.13 0.33 0.05],'Puff Start [ms]');
+huiw14 = text_input([0.17 0.07 0.33 0.05],'Puff Length [ms]');
+    
 huiw15 = text_input([0.5 0.52 0.33 0.05], 'Tone 1 amp');
 huiw9 = text_input([0.5 0.45 0.33 0.05],'Tone 1 FQ?');
-huiw7 = text_input([0.5 0.38 0.33 0.05],'Tone Start [us]?');
-huiw8 = text_input([0.5 0.31 0.33 0.05],'Tone Length [us]?');
+huiw7 = text_input([0.5 0.38 0.33 0.05],'Tone Start [ms]?');
+huiw8 = text_input([0.5 0.31 0.33 0.05],'Tone Length [ms]?');
 
 
 huiw16 = text_input([0.5 0.24 0.33 0.05], 'Tone 2 amp');
@@ -85,11 +85,11 @@ function callbackfn1(~,~)
     global fi;
     global movement;
     
-%     tone1end =  (str2double(huiw7.String)+str2double(huiw8.String));
-%     puffend =   (str2double(huiw13.String)+str2double(huiw14.String));
-%     assert(tone1end < str2double(huiw10.String));
-%     assert(str2double(huiw13.String) > tone2end);
-%     assert((puffend < str2double(huiw5.String)));
+    toneend =  (str2double(huiw7.String)+str2double(huiw8.String));
+    puffend =   (str2double(huiw13.String)+str2double(huiw14.String));
+    trialend = str2double(huiw5.String)-str2double(huiw17.String);
+    assert(toneend < str2double(huiw13.String)); % tone stops before puff starts
+    assert((puffend < str2double(trialend))); % puff stops before trial ends
     
     fname = [huiw3.String '_' huiw9.String 'Hz1_' huiw15.String 'amp1_' huiw12.String 'Hz2_' huiw16.String 'amp2.txt'];
     
@@ -123,7 +123,9 @@ function callbackfn1(~,~)
         pause(0.0001);
     end
     for i=1:numel(movement)
-        fprintf(fi,'%s\n',movement{i});
+        if ~strcmp(movement{i},'END')
+            fprintf(fi,'%s\n',movement{i});
+        end
     end
     fclose(fi);
     set(huiw6,'enable','off');
