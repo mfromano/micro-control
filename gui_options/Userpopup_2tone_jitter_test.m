@@ -1,12 +1,12 @@
     fi = fopen('two_tone_test.txt','w');
-    uart = serial('com3', 'BaudRate', 115200);
+    uart = serial('com8', 'BaudRate', 115200);
     fopen(uart);
 
     pause(2);
     
     fwrite(uart,sprintf('%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s',...
         '20000', ... % add in trials/trial length
-        '5000', '10', '10',... % jitter/no trials for both
+        '5000', '2', '2',... % jitter/no trials for both
         '10000', '200',... % add in puff/puff length;
         '2000', '800', '8000','0.1',... % tone for fq1
         '2000','0.1'... % tone for fq2

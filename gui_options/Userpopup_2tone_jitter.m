@@ -49,14 +49,14 @@ huiw11 = text_input([0.5 0.03 0.33 0.05],'Tone 2 Trials?');
 huiw13 = text_input([0.17 0.13 0.33 0.05],'Puff Start [ms]');
 huiw14 = text_input([0.17 0.07 0.33 0.05],'Puff Length [ms]');
     
-huiw15 = text_input([0.5 0.52 0.33 0.05], 'Tone 1 amp');
-huiw9 = text_input([0.5 0.45 0.33 0.05],'Tone 1 FQ?');
+huiw15 = text_input([0.5 0.52 0.33 0.05], 'Neutral Tone amp');
+huiw9 = text_input([0.5 0.45 0.33 0.05],'Neutral Tone FQ?');
 huiw7 = text_input([0.5 0.38 0.33 0.05],'Tone Start [ms]?');
 huiw8 = text_input([0.5 0.31 0.33 0.05],'Tone Length [ms]?');
 
 
-huiw16 = text_input([0.5 0.24 0.33 0.05], 'Tone 2 amp');
-huiw12 = text_input([0.5 0.17 0.33 0.05],'Tone 2 FQ?');
+huiw16 = text_input([0.5 0.24 0.33 0.05], 'CS Tone amp');
+huiw12 = text_input([0.5 0.17 0.33 0.05],'CS Tone FQ?');
 
 huiw6 = uicontrol('Style','pushbutton', 'Units', 'Normalized', ...
     'Position', [0.5 0.7 0.3 0.1],'string','Stop','CallBack',@callbackfn2,...
@@ -89,7 +89,7 @@ function callbackfn1(~,~)
     puffend =   (str2double(huiw13.String)+str2double(huiw14.String));
     trialend = str2double(huiw5.String)-str2double(huiw17.String);
     assert(toneend < str2double(huiw13.String)); % tone stops before puff starts
-    assert((puffend < str2double(trialend))); % puff stops before trial ends
+    assert((puffend < (trialend))); % puff stops before trial ends
     
     fname = [huiw3.String '_' huiw9.String 'Hz1_' huiw15.String 'amp1_' huiw12.String 'Hz2_' huiw16.String 'amp2.txt'];
     

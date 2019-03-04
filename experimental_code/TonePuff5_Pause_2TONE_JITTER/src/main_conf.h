@@ -65,9 +65,9 @@ uint16_t trial_no;
 
 typedef struct {
   uint16_t frame_in_trial = 0;
-  uint32_t trial_time = 0;
-  uint32_t experiment_time = 0;
-  uint8_t trial_number = 0;
+  time_t trial_time = 0;
+  time_t experiment_time = 0;
+  uint16_t trial_number = 0;
   bool puff_on = false;
   bool tone1_on = false;
   bool tone2_on = false;

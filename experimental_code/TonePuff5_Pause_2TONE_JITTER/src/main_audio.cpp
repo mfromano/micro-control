@@ -11,7 +11,7 @@
 #include <main_conf.h>
 #include <algorithm>
 
-void getRandomFrames(int *range_ms, int nreps)
+void getRandomFrames(int *range_ms, uint32_t nreps)
 {
   trial_lengths.clear();
   int range_frames[2];
@@ -35,12 +35,12 @@ std::vector<int> toneIndsFromLength(std::vector<int> trial_inds, float start_ms,
   int len_inds = static_cast<int>(round(len_ms/samp_interval_us_int*1000));
 
   for (int j=0; j < len_inds; j++) {
-    tone_inds.push_back(start_inds+j);
+    tone_inds.push_back(start_inds+j+1);
   }
 
-   for (int j=0; j < trial_inds.size()-1; j++) {
+   for (uint32_t j=0; j < trial_inds.size()-1; j++) {
      for (int i=0; i < len_inds; i++) {
-       tone_inds.push_back(trial_inds[j]+start_inds+i);
+       tone_inds.push_back(trial_inds[j]+start_inds+i+1);
      }
    }
    return tone_inds;
@@ -96,7 +96,7 @@ void loop(){
     range_in_ms[0] = trial_length-trial_jitter;
     range_in_ms[1] = trial_jitter+trial_jitter;
 
-    getRandomFrames(range_in_ms, tone1_trials+tone2_trials);
+    getRandomFrames(range_in_ms, uint32_t(tone1_trials+tone2_trials));
 
     getRandomTrials(tone1_trials, tone2_trials);
 
