@@ -20,6 +20,7 @@ void getRandomFrames(int *range_ms, uint32_t nreps)
     range_frames[j] = static_cast<int>(round((*range_ms)*1000/samp_interval_us_int));
     range_ms++;
   }
+  // Serial.println(String(range_frames[0])+','+String(range_frames[1]));
   trial_lengths.push_back(rand() % range_frames[1] + range_frames[0]);
   int element = 1;
   while (trial_lengths.size() < nreps)

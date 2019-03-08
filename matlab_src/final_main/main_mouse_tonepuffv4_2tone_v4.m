@@ -114,7 +114,6 @@ xlabel('Time [s]');
 ylabel('Amplitude [mV]');
 print('figures/highfq_examples.svg','-dsvg');
 
-
 %%
 st.sound_start2 = taxis_sound_tdt(sound_on)' - (tdt_camera_times(tone_starts2)-tdt_camera_times(1));
 st.sound_length2 = taxis_sound_tdt(sound_off+1)-taxis_sound_tdt(sound_on);

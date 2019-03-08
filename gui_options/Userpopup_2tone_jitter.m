@@ -43,20 +43,19 @@ huiw1 = text_input([0.17 0.38 0.33 0.05],'Enter the Teensy Serial Port (i.e COM1
 huiw3 = text_input([0.17 0.31 0.33 0.05],'Experiment output file name');
 huiw17 = text_input([0.17 0.25 0.33 0.05],'Trial length jitter? [ms]');
 huiw5 = text_input([0.17 0.19 0.33 0.05],'Length of trials? [ms]');
-huiw10 = text_input([0.5 0.10 0.33 0.05],'Tone 1 Trials?');
-huiw11 = text_input([0.5 0.03 0.33 0.05],'Tone 2 Trials?');
+huiw10 = text_input([0.5 0.10 0.33 0.05],'Neutral Tone Trials?');
+huiw11 = text_input([0.5 0.03 0.33 0.05],'CS Tone Trials?');
     
 huiw13 = text_input([0.17 0.13 0.33 0.05],'Puff Start [ms]');
 huiw14 = text_input([0.17 0.07 0.33 0.05],'Puff Length [ms]');
     
-huiw15 = text_input([0.5 0.52 0.33 0.05], 'Neutral Tone amp');
-huiw9 = text_input([0.5 0.45 0.33 0.05],'Neutral Tone FQ?');
+huiw15 = text_input([0.5 0.52 0.33 0.05], 'CS Tone amp');
+huiw9 = text_input([0.5 0.45 0.33 0.05],'CS Tone FQ?');
 huiw7 = text_input([0.5 0.38 0.33 0.05],'Tone Start [ms]?');
 huiw8 = text_input([0.5 0.31 0.33 0.05],'Tone Length [ms]?');
 
-
-huiw16 = text_input([0.5 0.24 0.33 0.05], 'CS Tone amp');
-huiw12 = text_input([0.5 0.17 0.33 0.05],'CS Tone FQ?');
+huiw16 = text_input([0.5 0.24 0.33 0.05], 'Neutral Tone amp');
+huiw12 = text_input([0.5 0.17 0.33 0.05],'Neutral Tone FQ?');
 
 huiw6 = uicontrol('Style','pushbutton', 'Units', 'Normalized', ...
     'Position', [0.5 0.7 0.3 0.1],'string','Stop','CallBack',@callbackfn2,...
@@ -90,7 +89,8 @@ function callbackfn1(~,~)
     trialend = str2double(huiw5.String)-str2double(huiw17.String);
     assert(toneend < str2double(huiw13.String)); % tone stops before puff starts
     assert((puffend < (trialend))); % puff stops before trial ends
-    
+    assert(str2double(huiw17.String) > 0); % positively valued puff jitter
+
     fname = [huiw3.String '_' huiw9.String 'Hz1_' huiw15.String 'amp1_' huiw12.String 'Hz2_' huiw16.String 'amp2.txt'];
     
     fi = fopen(fname,'w');
