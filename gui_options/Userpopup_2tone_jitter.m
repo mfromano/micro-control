@@ -43,8 +43,8 @@ huiw1 = text_input([0.17 0.38 0.33 0.05],'Enter the Teensy Serial Port (i.e COM1
 huiw3 = text_input([0.17 0.31 0.33 0.05],'Experiment output file name');
 huiw17 = text_input([0.17 0.25 0.33 0.05],'Trial length jitter? [ms]');
 huiw5 = text_input([0.17 0.19 0.33 0.05],'Length of trials? [ms]');
-huiw10 = text_input([0.5 0.10 0.33 0.05],'Neutral Tone Trials?');
-huiw11 = text_input([0.5 0.03 0.33 0.05],'CS Tone Trials?');
+huiw10 = text_input([0.5 0.10 0.33 0.05],'CS Tone Trials?');
+huiw11 = text_input([0.5 0.03 0.33 0.05],'Neutral Tone Trials?');
     
 huiw13 = text_input([0.17 0.13 0.33 0.05],'Puff Start [ms]');
 huiw14 = text_input([0.17 0.07 0.33 0.05],'Puff Length [ms]');
